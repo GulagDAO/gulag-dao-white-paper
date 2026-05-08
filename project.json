@@ -1,0 +1,26 @@
+{
+  "overview": "A narrative-driven, lore-immersive White Paper landing app for Gulag DAO — a decentralized autonomous organization built on the Internet Computer. Tells the story of operative Steven G. Jacobson, the billion-dollar Klondike Gold mission, and the DAO's founding as a digital liberation front. Features seven full-page portals with a dark metallic design, cyan and gold accents, and a classified operational aesthetic.",
+  "features": [
+    "Seven full-page portals (Hero, What is a DAO, Mission, Ecosystem, Governance, Lore, Participation)",
+    "Dark metallic design with cyan (#00FFFF) and gold (#FFD700) accents",
+    "Classified/operational typography and portal transition philosophy",
+    "Geometric reinvented Hammer & Sickle motif as DAO emblem",
+    "Circuit-board texture overlays and glowing CTA hover effects",
+    "Dual CTAs: Launch The Gate (primary) and Exit",
+    "Embedded lore content — Jacobson narrative, Klondike Gold, 2009 rescue",
+    "ICP treasury, Payok Coin, governance, and participation explained",
+    "Fully responsive mobile layout"
+  ],
+  "category": "showcase",
+  "tags": [
+    "dao",
+    "web3",
+    "internet-computer",
+    "lore",
+    "dark-design",
+    "landing-page",
+    "white-paper",
+    "decentralized"
+  ],
+  "last_updated": "2026-05-06T06:44:32.124Z"
+}

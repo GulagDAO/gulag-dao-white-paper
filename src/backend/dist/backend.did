@@ -1,0 +1,3 @@
+service : {
+  submitInquiry: (message: text) -> (text);
+}
