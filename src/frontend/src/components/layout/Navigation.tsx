@@ -1,9 +1,11 @@
+import { EcoSystemsModal } from "@/components/EcoSystemsModal";
 import { ParticipationModal } from "@/components/ParticipationModal";
 import { TokenomicsModal } from "@/components/TokenomicsModal";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { GulagSymbol } from "@/components/ui/GulagSymbol";
 import { cn } from "@/lib/utils";
 import { PORTALS } from "@/types/portal";
+import { generateDossierText } from "@/utils/dossierContent";
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { ChevronRight, Lock, Menu, Radio, Shield, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -12,7 +14,6 @@ type PortalPath =
   | "/"
   | "/dao"
   | "/mission"
-  | "/ecosystem"
   | "/governance"
   | "/lore"
   | "/participate"
@@ -24,7 +25,6 @@ function isValidPath(p: string): p is PortalPath {
     "/",
     "/dao",
     "/mission",
-    "/ecosystem",
     "/governance",
     "/lore",
     "/participate",
@@ -157,7 +157,7 @@ function IntegratedAppNavModal({
               {app.badge}
             </span>
             <h2
-              className="font-display font-black text-xl uppercase tracking-widest"
+              className="font-display font-black text-base uppercase tracking-widest"
               style={{ color: "#000" }}
             >
               {app.label}
@@ -289,7 +289,7 @@ function EnterGateNavModal({ onClose }: { onClose: () => void }) {
             {"//CLASSIFIED// STATUS: SCHEDULED"}
           </p>
           <p
-            className="font-display font-black text-2xl uppercase tracking-widest leading-tight"
+            className="font-display font-black text-lg uppercase tracking-widest leading-tight"
             style={{ color: "oklch(0.55 0.28 195)" }}
           >
             ONBOARDING PORTAL
@@ -307,7 +307,7 @@ function EnterGateNavModal({ onClose }: { onClose: () => void }) {
             </span>
           </p>
           <p
-            className="font-display font-black text-xl uppercase tracking-widest"
+            className="font-display font-black text-base uppercase tracking-widest"
             style={{ color: "oklch(0.65 0.26 65)" }}
           >
             Financial Independence Day
@@ -407,7 +407,7 @@ function CryptoSubModal({
               {"//AFFILIATED APP: CRYPTO PLAYGROUND//"}
             </span>
             <h2
-              className="font-display font-black text-xl uppercase tracking-widest"
+              className="font-display font-black text-base uppercase tracking-widest"
               style={{ color: "#000" }}
             >
               {data.title}
@@ -537,7 +537,7 @@ function OperationalDirectivesModal({ onClose }: { onClose: () => void }) {
               ☠ CLASSIFIED DIRECTIVE ☠
             </p>
             <h2
-              className="font-display font-black text-2xl uppercase tracking-widest leading-tight"
+              className="font-display font-black text-lg uppercase tracking-widest leading-tight"
               style={{ color: "#FFD700" }}
             >
               OPERATIONAL DIRECTIVES
@@ -568,7 +568,7 @@ function OperationalDirectivesModal({ onClose }: { onClose: () => void }) {
                 ◆
               </span>
               <p
-                className="font-display font-black text-xl uppercase tracking-widest leading-snug"
+                className="font-display font-black text-base uppercase tracking-widest leading-snug"
                 style={{ color: "#ffffff" }}
               >
                 {directive}
@@ -680,7 +680,7 @@ function SecureCommunicationModal({ onClose }: { onClose: () => void }) {
                 {"//CHANNEL: ENCRYPTED — ANONYMOUS//"}
               </span>
               <h2
-                className="font-display font-black text-lg uppercase tracking-widest leading-none"
+                className="font-display font-black text-sm uppercase tracking-widest leading-none"
                 style={{ color: "oklch(0.55 0.28 195)" }}
               >
                 SECURE COMMUNICATION
@@ -909,7 +909,514 @@ function SecureCommunicationModal({ onClose }: { onClose: () => void }) {
   );
 }
 
-// ── Main Navigation component ─────────────────────────────────────────────────
+// ── Coming Soon modal ───────────────────────────────────────────────────────
+function ComingSoonModal({
+  title,
+  onClose,
+}: {
+  title: string;
+  onClose: () => void;
+}) {
+  useEffect(() => {
+    const h = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", h);
+    return () => document.removeEventListener("keydown", h);
+  }, [onClose]);
+  return (
+    <div
+      className="fixed inset-0 z-[300] flex items-center justify-center p-4"
+      style={{ background: "rgba(0,0,0,0.85)" }}
+      data-ocid="nav.coming_soon_dialog"
+    >
+      {/* Backdrop */}
+      <button
+        type="button"
+        className="absolute inset-0"
+        onClick={onClose}
+        aria-label="Close"
+        tabIndex={-1}
+      />
+      {/* Modal card */}
+      <div
+        className="relative z-10 w-full max-w-md flex flex-col overflow-hidden"
+        style={{
+          background: "#0a0e14",
+          border: "1px solid #00FFFF",
+          boxShadow:
+            "0 0 60px rgba(0,255,255,0.15), 0 0 120px rgba(0,255,255,0.05), 0 32px 80px rgba(0,0,0,0.95)",
+        }}
+      >
+        {/* Top accent bar */}
+        <div
+          className="h-0.5 w-full flex-shrink-0"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, #00FFFF, #FFD700, transparent)",
+          }}
+        />
+        {/* Barbed-wire decorative strip */}
+        <div
+          className="flex items-center px-4 py-1.5 flex-shrink-0 overflow-hidden"
+          style={{
+            background: "rgba(255,215,0,0.04)",
+            borderBottom: "1px solid rgba(255,215,0,0.15)",
+          }}
+          aria-hidden
+        >
+          <span
+            className="font-mono text-[0.5rem] tracking-[0.15em] whitespace-nowrap overflow-hidden w-full"
+            style={{ color: "rgba(255,215,0,0.4)" }}
+          >
+            {"─────⊸──╂──◇──╂──⊸─────⊸──╂──◇──╂──⊸─────⊸──╂──◇──╂──⊸─────"}
+          </span>
+        </div>
+        {/* Header */}
+        <div
+          className="flex items-center justify-between px-6 py-4 flex-shrink-0"
+          style={{ borderBottom: "1px solid rgba(0,255,255,0.2)" }}
+        >
+          <div className="flex flex-col gap-0.5">
+            <span
+              className="classified-badge text-[0.52rem] tracking-widest"
+              style={{ color: "rgba(255,215,0,0.6)" }}
+            >
+              {"//ACCESS RESTRICTED — PORTAL OFFLINE//"}
+            </span>
+            <h2
+              className="font-display font-black text-sm uppercase tracking-widest leading-none"
+              style={{ color: "#00FFFF" }}
+            >
+              {title}
+            </h2>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="p-1.5 transition-colors duration-200"
+            style={{ color: "rgba(0,255,255,0.6)" }}
+            aria-label="Close"
+            data-ocid="nav.coming_soon_close_button"
+          >
+            <X size={16} />
+          </button>
+        </div>
+        {/* Body */}
+        <div className="flex flex-col items-center gap-5 px-6 py-8 text-center">
+          {/* Restricted SVG badge */}
+          <svg
+            width="64"
+            height="64"
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Restricted access badge"
+          >
+            <circle
+              cx="32"
+              cy="32"
+              r="30"
+              fill="rgba(255,215,0,0.05)"
+              stroke="#FFD700"
+              strokeWidth="2"
+              strokeDasharray="4 3"
+            />
+            <circle
+              cx="32"
+              cy="32"
+              r="22"
+              fill="rgba(255,215,0,0.08)"
+              stroke="rgba(255,215,0,0.5)"
+              strokeWidth="1.5"
+            />
+            <text
+              x="32"
+              y="26"
+              textAnchor="middle"
+              fontSize="11"
+              fontWeight="900"
+              fill="#FFD700"
+              fontFamily="monospace"
+              letterSpacing="1"
+            >
+              PORTAL
+            </text>
+            <text
+              x="32"
+              y="39"
+              textAnchor="middle"
+              fontSize="9"
+              fontWeight="700"
+              fill="rgba(0,255,255,0.8)"
+              fontFamily="monospace"
+              letterSpacing="1"
+            >
+              OFFLINE
+            </text>
+          </svg>
+          {/* COMING SOON */}
+          <p
+            className="font-display font-black text-2xl uppercase tracking-[0.2em] leading-none"
+            style={{
+              color: "#FFD700",
+              textShadow: "0 0 24px rgba(255,215,0,0.4)",
+            }}
+          >
+            COMING SOON
+          </p>
+          {/* Message */}
+          <p
+            className="font-body text-sm leading-relaxed max-w-xs"
+            style={{ color: "rgba(0,255,255,0.85)" }}
+          >
+            This portal is currently offline. Operational launch scheduled for{" "}
+            <span
+              className="font-bold font-display"
+              style={{ color: "#FFD700" }}
+            >
+              July 4, 2026
+            </span>
+            {" — Financial Independence Day."}
+          </p>
+          {/* Separator */}
+          <div
+            className="w-3/4 h-px"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, rgba(0,255,255,0.3), transparent)",
+            }}
+          />
+          {/* Classification footer */}
+          <p
+            className="classified-badge text-[0.52rem] tracking-[0.3em]"
+            style={{ color: "rgba(0,255,255,0.35)" }}
+          >
+            {"//LIBERATION THROUGH CODE — GULAG DAO//"}
+          </p>
+        </div>
+        {/* Close button */}
+        <div className="px-6 pb-6 flex justify-center">
+          <button
+            type="button"
+            onClick={onClose}
+            className="px-8 py-2 font-display font-black text-sm uppercase tracking-widest transition-all duration-200"
+            style={{
+              background: "rgba(0,255,255,0.07)",
+              border: "1px solid rgba(0,255,255,0.45)",
+              color: "#00FFFF",
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.background = "rgba(0,255,255,0.18)";
+              e.currentTarget.style.boxShadow = "0 0 16px rgba(0,255,255,0.25)";
+            }}
+            onFocus={(e) => {
+              e.currentTarget.style.background = "rgba(0,255,255,0.18)";
+              e.currentTarget.style.boxShadow = "0 0 16px rgba(0,255,255,0.25)";
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.background = "rgba(0,255,255,0.07)";
+              e.currentTarget.style.boxShadow = "none";
+            }}
+            onBlur={(e) => {
+              e.currentTarget.style.background = "rgba(0,255,255,0.07)";
+              e.currentTarget.style.boxShadow = "none";
+            }}
+            data-ocid="nav.coming_soon_dismiss_button"
+          >
+            CLOSE CHANNEL
+          </button>
+        </div>
+        {/* Bottom accent bar */}
+        <div
+          className="h-0.5 w-full flex-shrink-0"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, #FFD700, #00FFFF, transparent)",
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+
+// ── Dossier Access Modal ──────────────────────────────────────────────────────
+function DossierModal({ onClose }: { onClose: () => void }) {
+  const [code, setCode] = useState("");
+  const [error, setError] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const h = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", h);
+    return () => document.removeEventListener("keydown", h);
+  }, [onClose]);
+
+  useEffect(() => {
+    setTimeout(() => inputRef.current?.focus(), 50);
+  }, []);
+
+  function handleDownload(e: React.FormEvent) {
+    e.preventDefault();
+    if (code === "Download Dossier") {
+      const text = generateDossierText();
+      const blob = new Blob([text], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Gulag DAO Dossier.txt";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      onClose();
+    } else {
+      setError(true);
+      setCode("");
+      setTimeout(() => setError(false), 3000);
+    }
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-[300] flex items-center justify-center p-4"
+      data-ocid="dossier.dialog"
+    >
+      <button
+        type="button"
+        className="absolute inset-0 bg-black/85 backdrop-blur-sm"
+        onClick={onClose}
+        aria-label="Close"
+        tabIndex={-1}
+      />
+      <div
+        className="relative z-10 w-full max-w-md flex flex-col overflow-hidden"
+        style={{
+          background: "oklch(0.06 0.015 200)",
+          border: "1px solid oklch(0.55 0.28 195 / 0.6)",
+          boxShadow:
+            "0 0 60px oklch(0.55 0.28 195 / 0.2), 0 32px 80px rgba(0,0,0,0.95)",
+        }}
+      >
+        <div
+          className="h-0.5 w-full flex-shrink-0"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, oklch(0.55 0.28 195), oklch(0.65 0.26 65), transparent)",
+          }}
+        />
+        <div
+          className="flex items-center justify-between px-6 py-4 flex-shrink-0"
+          style={{ borderBottom: "1px solid oklch(0.55 0.28 195 / 0.2)" }}
+        >
+          <div className="flex items-center gap-3">
+            <div
+              className="flex items-center justify-center w-7 h-7 border"
+              style={{
+                borderColor: "oklch(0.55 0.28 195 / 0.5)",
+                background: "oklch(0.55 0.28 195 / 0.1)",
+              }}
+            >
+              <Shield size={13} style={{ color: "oklch(0.55 0.28 195)" }} />
+            </div>
+            <div className="flex flex-col gap-0.5">
+              <span
+                className="classified-badge text-[0.55rem] tracking-widest"
+                style={{ color: "oklch(0.65 0.26 65 / 0.7)" }}
+              >
+                {"//SECURE DOSSIER ACCESS//"}
+              </span>
+              <h2
+                className="font-display font-black text-sm uppercase tracking-widest leading-none"
+                style={{ color: "oklch(0.55 0.28 195)" }}
+              >
+                SECURE DOSSIER ACCESS
+              </h2>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="p-1.5 transition-colors duration-200"
+            style={{ color: "oklch(0.55 0.28 195 / 0.6)" }}
+            aria-label="Close"
+            data-ocid="dossier.close_button"
+          >
+            <X size={16} />
+          </button>
+        </div>
+        <form
+          onSubmit={handleDownload}
+          className="flex flex-col gap-5 px-6 py-6"
+        >
+          <div
+            className="flex gap-3 px-4 py-3"
+            style={{
+              background: "oklch(0.65 0.26 65 / 0.05)",
+              border: "1px solid oklch(0.65 0.26 65 / 0.2)",
+            }}
+          >
+            <span
+              className="flex-shrink-0 mt-0.5 text-sm"
+              style={{ color: "oklch(0.65 0.26 65)" }}
+            >
+              ◆
+            </span>
+            <p
+              className="classified-badge text-[0.62rem] tracking-wide leading-relaxed"
+              style={{ color: "oklch(0.75 0.15 65)" }}
+            >
+              EYES ONLY — Authorized personnel may download the complete Gulag
+              DAO Classified Dossier. Enter the access code to proceed.
+            </p>
+          </div>
+          <div className="flex flex-col gap-2">
+            <label
+              htmlFor="dossier-access-code"
+              className="classified-badge text-[0.6rem] tracking-widest uppercase"
+              style={{ color: "oklch(0.55 0.28 195 / 0.8)" }}
+            >
+              ACCESS CODE:
+            </label>
+            <input
+              ref={inputRef}
+              id="dossier-access-code"
+              type="password"
+              value={code}
+              onChange={(e) => {
+                setCode(e.target.value);
+                if (error) setError(false);
+              }}
+              placeholder="Enter access code..."
+              className="w-full font-mono text-sm px-4 py-3 focus:outline-none transition-colors duration-200"
+              style={{
+                background: "oklch(0.09 0.015 200)",
+                border: error
+                  ? "1px solid rgba(220, 50, 50, 0.8)"
+                  : "1px solid oklch(0.55 0.28 195 / 0.3)",
+                color: "oklch(0.88 0 0)",
+                caretColor: "oklch(0.55 0.28 195)",
+                letterSpacing: "0.1em",
+              }}
+              onFocus={(e) => {
+                if (!error)
+                  e.currentTarget.style.borderColor =
+                    "oklch(0.55 0.28 195 / 0.7)";
+              }}
+              onBlur={(e) => {
+                if (!error)
+                  e.currentTarget.style.borderColor =
+                    "oklch(0.55 0.28 195 / 0.3)";
+              }}
+              autoComplete="off"
+              data-ocid="dossier.input"
+            />
+          </div>
+          {error && (
+            <div
+              className="px-4 py-2.5"
+              style={{
+                background: "rgba(140, 0, 0, 0.25)",
+                border: "1px solid rgba(220, 50, 50, 0.5)",
+              }}
+              data-ocid="dossier.error_state"
+            >
+              <p
+                className="classified-badge text-[0.65rem] tracking-widest"
+                style={{ color: "rgba(255, 120, 120, 0.95)" }}
+              >
+                ACCESS DENIED — Invalid access code.
+              </p>
+            </div>
+          )}
+          <div className="flex gap-3">
+            <button
+              type="submit"
+              disabled={!code.trim()}
+              className="flex-1 py-3 font-display font-black text-sm uppercase tracking-widest transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
+              style={{
+                background: "oklch(0.55 0.28 195 / 0.12)",
+                border: "1px solid oklch(0.55 0.28 195 / 0.5)",
+                color: "oklch(0.55 0.28 195)",
+              }}
+              onMouseOver={(e) => {
+                if (code.trim()) {
+                  e.currentTarget.style.background =
+                    "oklch(0.55 0.28 195 / 0.22)";
+                  e.currentTarget.style.boxShadow =
+                    "0 0 16px oklch(0.55 0.28 195 / 0.2)";
+                }
+              }}
+              onFocus={(e) => {
+                if (code.trim())
+                  e.currentTarget.style.background =
+                    "oklch(0.55 0.28 195 / 0.22)";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background =
+                  "oklch(0.55 0.28 195 / 0.12)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.background =
+                  "oklch(0.55 0.28 195 / 0.12)";
+                e.currentTarget.style.boxShadow = "none";
+              }}
+              data-ocid="dossier.submit_button"
+            >
+              DOWNLOAD
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              className="px-5 py-3 font-display font-black text-sm uppercase tracking-widest transition-all duration-200"
+              style={{
+                background: "transparent",
+                border: "1px solid oklch(0.55 0.28 195 / 0.2)",
+                color: "oklch(0.55 0.28 195 / 0.6)",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background =
+                  "oklch(0.55 0.28 195 / 0.08)";
+                e.currentTarget.style.borderColor =
+                  "oklch(0.55 0.28 195 / 0.45)";
+              }}
+              onFocus={(e) => {
+                e.currentTarget.style.background =
+                  "oklch(0.55 0.28 195 / 0.08)";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.borderColor =
+                  "oklch(0.55 0.28 195 / 0.2)";
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.background = "transparent";
+                e.currentTarget.style.borderColor =
+                  "oklch(0.55 0.28 195 / 0.2)";
+              }}
+              data-ocid="dossier.cancel_button"
+            >
+              CANCEL
+            </button>
+          </div>
+        </form>
+        <div
+          className="h-0.5 w-full flex-shrink-0"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, oklch(0.65 0.26 65 / 0.4), oklch(0.55 0.28 195 / 0.6), transparent)",
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+
+// ── Main Navigation component ───────────────────────────────────────────────────────────────────
 export function Navigation() {
   const [open, setOpen] = useState(false);
   const [underConstructionMsg, setUnderConstructionMsg] = useState(false);
@@ -930,6 +1437,11 @@ export function Navigation() {
   const [operationalDirectivesOpen, setOperationalDirectivesOpen] =
     useState(false);
   const [secureCommunicationOpen, setSecureCommunicationOpen] = useState(false);
+  const [showPresaleComingSoon, setShowPresaleComingSoon] = useState(false);
+  const [showWhitelistComingSoon, setShowWhitelistComingSoon] = useState(false);
+  const [ecosystemsModalOpen, setEcosystemsModalOpen] = useState(false);
+  const [ecosystemsTopic, setEcosystemsTopic] = useState("");
+  const [dossierModalOpen, setDossierModalOpen] = useState(false);
   const integratedAppsRef = useRef<HTMLDivElement>(null);
   const affiliatedAppsRef = useRef<HTMLDivElement>(null);
   const routerState = useRouterState();
@@ -983,8 +1495,9 @@ export function Navigation() {
       navigate({ to: "/participate" });
     } else if (val === "nav:/governance") {
       navigate({ to: "/governance" });
-    } else if (val === "nav:/ecosystem") {
-      navigate({ to: "/ecosystem" });
+    } else if (val.startsWith("eco-")) {
+      setEcosystemsTopic(val);
+      setEcosystemsModalOpen(true);
     } else {
       setUnderConstructionMsg(true);
     }
@@ -1087,7 +1600,7 @@ export function Navigation() {
           <div className="flex items-center gap-2">
             <button
               type="button"
-              onClick={() => navigate({ to: "/presale" })}
+              onClick={() => setShowPresaleComingSoon(true)}
               className="px-3 py-1.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border transition-colors duration-200"
               style={{
                 background: "rgba(255,215,0,0.07)",
@@ -1120,7 +1633,7 @@ export function Navigation() {
             </button>
             <button
               type="button"
-              onClick={() => navigate({ to: "/whitelist" })}
+              onClick={() => setShowWhitelistComingSoon(true)}
               className="px-3 py-1.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border transition-colors duration-200"
               style={{
                 background: "oklch(0.55 0.28 195 / 0.07)",
@@ -1270,6 +1783,28 @@ export function Navigation() {
             >
               LORE
             </Link>
+            {/* COMPARATIVE ANALYSIS — wide portal button */}
+            <Link
+              to="/comparative"
+              className="px-6 py-1.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border transition-colors duration-200 whitespace-nowrap"
+              style={{
+                background:
+                  currentPath === "/comparative"
+                    ? "oklch(0.55 0.28 195 / 0.2)"
+                    : "oklch(0.08 0.01 200)",
+                borderColor:
+                  currentPath === "/comparative"
+                    ? "oklch(0.55 0.28 195)"
+                    : "oklch(0.55 0.28 195 / 0.4)",
+                color:
+                  currentPath === "/comparative"
+                    ? "oklch(0.80 0.25 195)"
+                    : "oklch(0.60 0.25 195)",
+              }}
+              data-ocid="nav.secondary_comparative_link"
+            >
+              COMPARATIVE ANALYSIS
+            </Link>
             {/* row divider */}
             <div
               className="w-px h-5 self-center flex-shrink-0"
@@ -1367,6 +1902,51 @@ export function Navigation() {
               </select>
             </div>
 
+            {/* DOSSIER download button — subtle, classified admin tool */}
+            <button
+              type="button"
+              onClick={() => setDossierModalOpen(true)}
+              className="ml-auto px-3 py-1.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border transition-colors duration-200 flex items-center gap-1.5 flex-shrink-0"
+              style={{
+                background: "oklch(0.55 0.28 195 / 0.05)",
+                borderColor: "oklch(0.55 0.28 195 / 0.28)",
+                color: "oklch(0.55 0.28 195 / 0.65)",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background =
+                  "oklch(0.55 0.28 195 / 0.14)";
+                e.currentTarget.style.borderColor =
+                  "oklch(0.55 0.28 195 / 0.6)";
+                e.currentTarget.style.color = "oklch(0.70 0.25 195)";
+              }}
+              onFocus={(e) => {
+                e.currentTarget.style.background =
+                  "oklch(0.55 0.28 195 / 0.14)";
+                e.currentTarget.style.borderColor =
+                  "oklch(0.55 0.28 195 / 0.6)";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background =
+                  "oklch(0.55 0.28 195 / 0.05)";
+                e.currentTarget.style.borderColor =
+                  "oklch(0.55 0.28 195 / 0.28)";
+                e.currentTarget.style.color = "oklch(0.55 0.28 195 / 0.65)";
+              }}
+              onBlur={(e) => {
+                e.currentTarget.style.background =
+                  "oklch(0.55 0.28 195 / 0.05)";
+                e.currentTarget.style.borderColor =
+                  "oklch(0.55 0.28 195 / 0.28)";
+                e.currentTarget.style.color = "oklch(0.55 0.28 195 / 0.65)";
+              }}
+              aria-label="Download Dossier"
+              title="Download Dossier"
+              data-ocid="nav.dossier_download_button"
+            >
+              <ChevronRight size={10} aria-hidden />
+              DOSSIER
+            </button>
+
             {/* ECOSYSTEMS */}
             <div className="flex flex-col gap-0.5">
               <label
@@ -1386,11 +1966,24 @@ export function Navigation() {
                 <option value="" disabled>
                   — ECOSYSTEMS —
                 </option>
-                <option value="nav:/ecosystem">EcoSystem Overview</option>
-                <option value="option-e2">Option 2</option>
-                <option value="option-e3">Option 3</option>
-                <option value="option-e4">Option 4</option>
-                <option value="option-e5">Option 5</option>
+                <option value="eco-apps">Apps EcoSystem</option>
+                <option value="eco-treasury">Treasury EcoSystem</option>
+                <option value="eco-governance">Governance EcoSystem</option>
+                <option value="eco-lore">Lore EcoSystem</option>
+                <option value="eco-gameplay">Game-Play EcoSystem</option>
+                <option value="eco-unified-doc">
+                  Unified Document EcoSystem
+                </option>
+                <option value="eco-comms">
+                  Communications &amp; Outreach EcoSystem
+                </option>
+                <option value="eco-security">
+                  Security &amp; Verification EcoSystem
+                </option>
+                <option value="eco-development">Development EcoSystem</option>
+                <option value="eco-community">
+                  Community Engagement EcoSystem
+                </option>
               </select>
             </div>
 
@@ -1716,6 +2309,16 @@ export function Navigation() {
         />
       )}
 
+      {/* EcoSystems modal */}
+      <EcoSystemsModal
+        isOpen={ecosystemsModalOpen}
+        topic={ecosystemsTopic}
+        onClose={() => {
+          setEcosystemsModalOpen(false);
+          setEcosystemsTopic("");
+        }}
+      />
+
       {/* Tokenomics modal */}
       {tokenomicsModalOpen && (
         <TokenomicsModal
@@ -1725,6 +2328,27 @@ export function Navigation() {
             setTokenomicsModalTopic("");
           }}
         />
+      )}
+
+      {/* Pre-Sale Coming Soon modal */}
+      {showPresaleComingSoon && (
+        <ComingSoonModal
+          title="PRE-SALE PORTAL"
+          onClose={() => setShowPresaleComingSoon(false)}
+        />
+      )}
+
+      {/* Whitelisting Coming Soon modal */}
+      {showWhitelistComingSoon && (
+        <ComingSoonModal
+          title="WHITELISTING PORTAL"
+          onClose={() => setShowWhitelistComingSoon(false)}
+        />
+      )}
+
+      {/* Dossier access modal */}
+      {dossierModalOpen && (
+        <DossierModal onClose={() => setDossierModalOpen(false)} />
       )}
 
       {/* Dossier overlay — mobile drawer */}

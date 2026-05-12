@@ -21,7 +21,7 @@ export function PortalLayout({
     <div
       className={cn(
         "relative min-h-screen flex flex-col bg-background",
-        "pt-28", // offset fixed two-row nav
+        "pt-28 pb-20", // offset fixed two-row nav; pb-20 clears fixed footer
       )}
       data-ocid={`${portal.id}.page`}
     >

@@ -142,7 +142,7 @@ function LaunchGateModal({ onClose }: { onClose: () => void }) {
             {"//CLASSIFIED// STATUS: SCHEDULED"}
           </p>
           <p
-            className="font-display font-black text-2xl uppercase tracking-widest leading-tight"
+            className="font-display font-black text-lg uppercase tracking-widest leading-tight"
             style={{ color: "oklch(0.55 0.28 195)" }}
           >
             ONBOARDING PORTAL
@@ -645,7 +645,7 @@ function NoticeModal({ onClose }: { onClose: () => void }) {
                 Coming in 2027
               </p>
               <p
-                className="font-display font-black text-2xl uppercase tracking-widest leading-tight"
+                className="font-display font-black text-lg uppercase tracking-widest leading-tight"
                 style={{
                   color: "oklch(0.65 0.26 65)",
                   textShadow: "0 0 20px oklch(0.65 0.26 65 / 0.4)",
@@ -673,7 +673,7 @@ function NoticeModal({ onClose }: { onClose: () => void }) {
                 Coming in 2028
               </p>
               <p
-                className="font-display font-black text-2xl uppercase tracking-widest leading-tight"
+                className="font-display font-black text-lg uppercase tracking-widest leading-tight"
                 style={{
                   color: "oklch(0.65 0.26 65)",
                   textShadow: "0 0 20px oklch(0.65 0.26 65 / 0.4)",
@@ -732,7 +732,7 @@ function HomePage() {
   const [showNoticeModal, setShowNoticeModal] = useState(false);
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-background pt-28 overflow-hidden">
+    <div className="relative min-h-screen flex flex-col bg-background pt-28 pb-20 overflow-hidden">
       {showLaunchModal && (
         <LaunchGateModal onClose={() => setShowLaunchModal(false)} />
       )}
@@ -849,13 +849,13 @@ function HomePage() {
             </p>
             <h1 className="font-display font-black uppercase leading-none tracking-tight">
               <span
-                className="block text-5xl md:text-6xl lg:text-7xl text-foreground"
+                className="block text-3xl md:text-4xl lg:text-4xl text-foreground"
                 style={{ letterSpacing: "-0.02em" }}
               >
                 GULAG DAO
               </span>
               <span
-                className="block text-4xl md:text-5xl lg:text-6xl gradient-text mt-1"
+                className="block text-2xl md:text-3xl lg:text-3xl gradient-text mt-1"
                 style={{ letterSpacing: "-0.02em" }}
               >
                 WHITE PAPER
@@ -868,7 +868,7 @@ function HomePage() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-display font-bold text-xl md:text-2xl uppercase italic text-secondary tracking-widest"
+            className="font-display font-bold text-base md:text-lg uppercase italic text-secondary tracking-widest"
           >
             Liberation Through Code
           </motion.p>
@@ -904,7 +904,7 @@ function HomePage() {
               <span className="classified-badge text-secondary/60 text-[0.55rem] tracking-widest block">
                 &#47;&#47;CLAIM&#47;&#47;
               </span>
-              <p className="font-display font-black text-xl md:text-2xl uppercase tracking-widest text-secondary leading-tight">
+              <p className="font-display font-black text-base md:text-lg uppercase tracking-widest text-secondary leading-tight">
                 The world&apos;s most sophisticated meme coin.
               </p>
             </div>
@@ -926,7 +926,7 @@ function HomePage() {
               <span className="classified-badge text-secondary/60 text-[0.55rem] tracking-widest block">
                 &#47;&#47;THEME&#47;&#47;
               </span>
-              <p className="font-display font-black text-lg md:text-xl uppercase tracking-widest text-primary leading-tight">
+              <p className="font-display font-black text-sm md:text-base uppercase tracking-widest text-primary leading-tight">
                 Free the Gulag &ndash; Invest in Freedom
               </p>
             </div>
@@ -1031,13 +1031,13 @@ function HomePage() {
                 />
                 <div className="flex items-start gap-3 flex-1">
                   <span
-                    className="text-2xl text-primary/50 group-hover:text-primary transition-colors font-mono leading-none mt-1 flex-shrink-0"
+                    className="text-sm text-primary/50 group-hover:text-primary transition-colors font-mono leading-none mt-1 flex-shrink-0"
                     aria-hidden
                   >
                     {card.icon}
                   </span>
                   <div>
-                    <h3 className="font-display font-black text-lg uppercase leading-tight tracking-wide text-foreground group-hover:text-primary transition-colors whitespace-pre-line">
+                    <h3 className="font-display font-black text-sm uppercase leading-tight tracking-wide text-foreground group-hover:text-primary transition-colors whitespace-pre-line">
                       {card.title}
                     </h3>
                     <p className="classified-badge text-muted-foreground mt-2 whitespace-pre-line">

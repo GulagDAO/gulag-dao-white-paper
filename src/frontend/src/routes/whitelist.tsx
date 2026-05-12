@@ -104,7 +104,7 @@ function WhitelistPage() {
             >
               {"//AUTHORIZATION PROTOCOL: ACTIVE//"}
             </p>
-            <h1 className="font-display font-black text-4xl md:text-5xl uppercase leading-tight tracking-tight mb-3">
+            <h1 className="font-display font-black text-3xl md:text-4xl uppercase leading-tight tracking-tight mb-3">
               <span className="text-foreground">{"//WHITELIST"}</span>{" "}
               <span className="gradient-text">{"REGISTRY//"}</span>
             </h1>
@@ -150,7 +150,7 @@ function WhitelistPage() {
                   {stat.label}
                 </span>
                 <span
-                  className="font-display font-black text-2xl"
+                  className="font-display font-black text-lg"
                   style={{ color: "#FFD700" }}
                 >
                   {stat.value}
@@ -177,7 +177,7 @@ function WhitelistPage() {
                 className="w-1 h-8 flex-shrink-0"
                 style={{ background: "oklch(0.55 0.28 195)" }}
               />
-              <h2 className="font-display font-black text-xl uppercase tracking-widest text-foreground">
+              <h2 className="font-display font-black text-base uppercase tracking-widest text-foreground">
                 CHECK YOUR STATUS
               </h2>
             </div>
@@ -275,7 +275,7 @@ function WhitelistPage() {
                 className="w-1 h-8 flex-shrink-0"
                 style={{ background: "#FFD700" }}
               />
-              <h2 className="font-display font-black text-xl uppercase tracking-widest text-foreground">
+              <h2 className="font-display font-black text-base uppercase tracking-widest text-foreground">
                 REQUEST AUTHORIZATION
               </h2>
             </div>
@@ -647,7 +647,7 @@ function WhitelistPage() {
             </div>
             <div className="flex flex-col gap-2">
               <h2
-                className="font-display font-black text-base uppercase tracking-widest"
+                className="font-display font-black text-sm uppercase tracking-widest"
                 style={{ color: "oklch(0.70 0.25 195)" }}
               >
                 SECURE CHANNEL

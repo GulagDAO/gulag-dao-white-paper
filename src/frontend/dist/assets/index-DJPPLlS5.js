@@ -23637,6 +23637,113 @@ function RouterContextProvider({
 function RouterProvider({ router: router2, ...rest }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsx(RouterContextProvider, { router: router2, ...rest, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Matches, {}) });
 }
+const FOOTER_BUTTONS = {
+  "/": [
+    { label: "WHAT IS A DAO", to: "/dao" },
+    { label: "THE MISSION", to: "/mission" },
+    { label: "LORE", to: "/lore" },
+    { label: "GOVERNANCE", to: "/governance" },
+    { label: "PARTICIPATE", to: "/participate" },
+    { label: "COMPARATIVE", to: "/comparative" }
+  ],
+  "/dao": [
+    { label: "← HOME", to: "/" },
+    { label: "THE MISSION", to: "/mission" },
+    { label: "COMPARATIVE ANALYSIS", to: "/comparative" },
+    { label: "LORE", to: "/lore" }
+  ],
+  "/mission": [
+    { label: "← HOME", to: "/" },
+    { label: "WHAT IS A DAO", to: "/dao" },
+    { label: "GOVERNANCE", to: "/governance" },
+    { label: "PARTICIPATE", to: "/participate" }
+  ],
+  "/governance": [
+    { label: "← HOME", to: "/" },
+    { label: "THE MISSION", to: "/mission" },
+    { label: "PARTICIPATE", to: "/participate" },
+    { label: "LORE", to: "/lore" }
+  ],
+  "/lore": [
+    { label: "← HOME", to: "/" },
+    { label: "WHAT IS A DAO", to: "/dao" },
+    { label: "THE MISSION", to: "/mission" },
+    { label: "GOVERNANCE", to: "/governance" }
+  ],
+  "/participate": [
+    { label: "← HOME", to: "/" },
+    { label: "GOVERNANCE", to: "/governance" },
+    { label: "LORE", to: "/lore" },
+    { label: "COMPARATIVE", to: "/comparative" }
+  ],
+  "/comparative": [
+    { label: "← HOME", to: "/" },
+    { label: "WHAT IS A DAO", to: "/dao" },
+    { label: "THE MISSION", to: "/mission" }
+  ],
+  "/presale": [
+    { label: "← HOME", to: "/" },
+    { label: "WHITELISTING", to: "/whitelist" }
+  ],
+  "/whitelist": [
+    { label: "← HOME", to: "/" },
+    { label: "PRE-SALE", to: "/presale" }
+  ]
+};
+function FooterNav() {
+  const location2 = useRouterState({ select: (s) => s.location.pathname });
+  const buttons = FOOTER_BUTTONS[location2] ?? FOOTER_BUTTONS["/"];
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "footer",
+    {
+      className: "fixed bottom-0 left-0 right-0 z-50 flex items-center gap-1.5 px-3 overflow-x-auto h-12 border-t",
+      style: {
+        background: "rgba(0,0,0,0.96)",
+        borderColor: "rgba(0,255,255,0.18)",
+        boxShadow: "0 -2px 24px rgba(0,255,255,0.05)"
+      },
+      "aria-label": "Page navigation",
+      "data-ocid": "footer_nav.bar",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "span",
+          {
+            className: "flex-shrink-0 font-mono text-[0.45rem] tracking-[0.2em] uppercase pr-2 hidden sm:block",
+            style: {
+              color: "rgba(0,255,255,0.25)",
+              borderRight: "1px solid rgba(0,255,255,0.12)"
+            },
+            "aria-hidden": true,
+            children: "NAV"
+          }
+        ),
+        buttons.map((btn) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Link,
+          {
+            to: btn.to,
+            onClick: () => window.scrollTo({ top: 0, behavior: "instant" }),
+            className: "flex-shrink-0 px-2.5 py-1 font-mono text-[0.55rem] tracking-widest uppercase border transition-all duration-200 whitespace-nowrap",
+            style: {
+              color: "rgba(0,255,255,0.75)",
+              borderColor: "rgba(0,255,255,0.3)",
+              background: "rgba(0,255,255,0.04)"
+            },
+            activeProps: {
+              style: {
+                color: "#FFD700",
+                borderColor: "rgba(255,215,0,0.5)",
+                background: "rgba(255,215,0,0.06)"
+              }
+            },
+            "data-ocid": `footer_nav.${btn.label.replace(/[^a-z0-9]/gi, "_").toLowerCase()}_link`,
+            children: btn.label
+          },
+          btn.to
+        ))
+      ]
+    }
+  );
+}
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -23736,17 +23843,6 @@ const createLucideIcon = (iconName, iconNode) => {
   Component2.displayName = toPascalCase(iconName);
   return Component2;
 };
-/**
- * @license lucide-react v0.511.0 - ISC
- *
- * This source code is licensed under the ISC license.
- * See the LICENSE file in the root directory of this source tree.
- */
-const __iconNode$a = [
-  ["path", { d: "M5 12h14", key: "1ays0h" }],
-  ["path", { d: "m12 5 7 7-7 7", key: "xquz4c" }]
-];
-const ArrowRight = createLucideIcon("arrow-right", __iconNode$a);
 /**
  * @license lucide-react v0.511.0 - ISC
  *
@@ -23867,6 +23963,150 @@ const __iconNode = [
   ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
 ];
 const X = createLucideIcon("x", __iconNode);
+const INTRO = "The Gulag DAO framework is supported by a network of interlocking global EcoSystems. Each EcoSystem functions as a self‑contained yet interconnected organ within the greater DAO civilization structure, balancing governance, culture, economy, and experience into a unified operational order.";
+const OUTRO = "Together, these EcoSystems complete the external, internal, structural, and cultural axes of Gulag DAO’s civilization model.";
+const ECOSYSTEMS_CONTENT = {
+  "eco-apps": {
+    title: "Apps EcoSystem",
+    body: "The Apps EcoSystem serves as the operational interface of Gulag DAO, linking participant interaction with governance logic through modular technology. It functions as both the engine and expression of the DAO’s structural civilization."
+  },
+  "eco-treasury": {
+    title: "Treasury EcoSystem",
+    body: "The Treasury EcoSystem maintains equilibrium between Governance and Utility Vaults, ensuring transparency, scarcity, and fiscal durability. It anchors the DAO’s economic rituals within verifiable accountability."
+  },
+  "eco-governance": {
+    title: "Governance EcoSystem",
+    body: "The Governance EcoSystem codifies collective will into executable structure. It transforms belief and participation into organized sovereignty, uniting ideology and protocol under common law."
+  },
+  "eco-lore": {
+    title: "Lore EcoSystem",
+    body: "The Lore EcoSystem preserves Gulag DAO’s mythic continuity, recording its evolving mythos, doctrine, and operational story. It is the cultural DNA that sustains shared identity between code and civilization."
+  },
+  "eco-gameplay": {
+    title: "Game-Play EcoSystem",
+    body: "The Game-Play EcoSystem integrates narrative interactivity, rank progression, and reward mechanics. It converts governance and culture into lived experience, turning participation into an immersive civic game."
+  },
+  "eco-unified-doc": {
+    title: "Unified Document EcoSystem",
+    body: "See selections under Integrated Apps: DAO Protectorate, Archipelago Portal, Cortex Archivum, Malyava Cove."
+  },
+  "eco-comms": {
+    title: "Communications & Outreach EcoSystem",
+    body: "This EcoSystem governs narrative dissemination, media synchronization, and external diplomatic messaging. It ensures Gulag DAO’s story, values, and mission remain coherent and visible across all public channels."
+  },
+  "eco-security": {
+    title: "Security & Verification EcoSystem",
+    body: "This EcoSystem safeguards canisters, audit trails, and identity validation. It preserves institutional trust and operational safety by embedding verification and authentication at every level."
+  },
+  "eco-development": {
+    title: "Development EcoSystem",
+    body: "The Development EcoSystem is the technical layer supporting continuous app creation, iteration, and integration. It represents the engineering circulation system of the DAO, ensuring innovation remains aligned with doctrine."
+  },
+  "eco-community": {
+    title: "Community Engagement EcoSystem",
+    body: "This EcoSystem maintains morale, onboarding, education, and cultural retention. It binds the human and ideological heart of Gulag DAO, ensuring the population remains active, informed, and united in purpose."
+  }
+};
+function EcoSystemsModal({
+  isOpen,
+  topic,
+  onClose
+}) {
+  const content = ECOSYSTEMS_CONTENT[topic];
+  reactExports.useEffect(() => {
+    if (!isOpen) return;
+    const handler = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handler);
+    return () => document.removeEventListener("keydown", handler);
+  }, [isOpen, onClose]);
+  if (!isOpen || !content) return null;
+  return reactDomExports.createPortal(
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: "fixed inset-0 z-[300] flex items-center justify-center p-4",
+        "data-ocid": "ecosystems.modal",
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "button",
+            {
+              type: "button",
+              className: "absolute inset-0 bg-black/70 backdrop-blur-sm",
+              onClick: onClose,
+              "aria-label": "Close",
+              tabIndex: -1
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "relative z-10 w-full max-w-2xl flex flex-col bg-white text-black rounded-sm shadow-2xl",
+              style: { border: "2px solid #00FFFF" },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "flex items-center justify-between px-6 py-4",
+                    style: { borderBottom: "1px solid #e5e5e5" },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "span",
+                          {
+                            className: "text-[0.55rem] font-mono tracking-widest uppercase",
+                            style: { color: "#00AAAA" },
+                            children: "//GULAG DAO ECOSYSTEMS//"
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-bold text-sm uppercase tracking-wide text-black", children: content.title })
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "button",
+                        {
+                          type: "button",
+                          onClick: onClose,
+                          className: "p-1.5 text-gray-500 hover:text-black transition-colors",
+                          "aria-label": "Close",
+                          "data-ocid": "ecosystems.close_button",
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 18 })
+                        }
+                      )
+                    ]
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-6 py-5 overflow-y-auto max-h-[70vh] space-y-4", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-gray-600 leading-relaxed italic", children: INTRO }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-gray-800 leading-relaxed", children: content.body }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-sm text-gray-600 leading-relaxed italic", children: OUTRO })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    className: "px-6 py-3 flex justify-end",
+                    style: { borderTop: "1px solid #e5e5e5" },
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "button",
+                      {
+                        type: "button",
+                        onClick: onClose,
+                        className: "px-4 py-1.5 text-xs font-mono uppercase tracking-widest border border-gray-400 text-gray-600 hover:bg-gray-100 transition-colors",
+                        "data-ocid": "ecosystems.dismiss_button",
+                        children: "CLOSE"
+                      }
+                    )
+                  }
+                )
+              ]
+            }
+          )
+        ]
+      }
+    ),
+    document.body
+  );
+}
 const PARTICIPATION_CONTENT = {
   "participation-levels": {
     title: "Phase I – Participation Levels",
@@ -23958,7 +24198,7 @@ function ParticipationModal({
                             children: "//PARTICIPATION//"
                           }
                         ),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-bold text-lg uppercase tracking-wide text-black", children: content.title })
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-bold text-sm uppercase tracking-wide text-black", children: content.title })
                       ] }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
                         "button",
@@ -24014,7 +24254,8 @@ const TOKENOMICS_CONTENT = {
     body: [
       '"Whaling" activity is any Game-Play or DAO participation which is intended to weaken the confidence in the Protocol. Friendly Whales are welcome as investors and participants, but not as speculators.',
       "Key Protocols:\n• No treasury investing using leverage.\n• Pre-sale for early adopters has anti-whaling mechanisms.\n• Harnessing the Whale (Financiers).\n• Initial 5-year treasury lock.\n• After lock release: Treasury governance using multisig strategy, where 51% of signees are non-whale participants.",
-      'Whitelisted Pre-Sale:\n• Discount on both Gulag Tokens and Payok coins.\n• Amplifies voting rights for "certified" small (non-whale) whitelisted early adopters.\n• Part of the Anti-Whaling Protocols.'
+      'Whitelisted Pre-Sale:\n• Discount on both Gulag Tokens and Payok coins.\n• Amplifies voting rights for "certified" small (non-whale) whitelisted early adopters.\n• Part of the Anti-Whaling Protocols.',
+      "Anti-Whaling Protocols are always under development and consideration, and will adapt as treasury activities advances. In accordance with governance guidance."
     ]
   },
   "token-coin": {
@@ -24048,7 +24289,7 @@ const TOKENOMICS_CONTENT = {
       "Most of the development of this DAO project will happen after the initial publishing to the IC. The first year after initial deployment will be devoted to building out DAO governance functions, lore mission portal, and very basic treasury functions.",
       `We intend to lock all funds in the treasury for the first five years. Income and fees feed into the treasury, but no withdrawing for the first five years — a simple man's "deferred rewards" scheme.`,
       `This phased approach and the "deferred rewards" mechanism fits the Gulag DAO's ethos of discipline and delayed gratification.`,
-      "For the first year, the treasury operates as a symbolic and strategic holding cell: all inflows from mission participation, token taxes, NFT activities, and suite fees are accumulated but cannot be withdrawn. This establishes trust, transparency, and economic integrity, showing that early contributors build the foundation before claiming benefit.",
+      "For the first five years, the treasury operates as a symbolic and strategic holding cell: all inflows from mission participation, token taxes, NFT activities, and suite fees are accumulated but cannot be withdrawn. This establishes trust, transparency, and economic integrity, showing that early contributors build the foundation before claiming benefit.",
       "During this phase, governance and lore modules evolve — token voting, mission creation, and on-chain recordkeeping — while the treasury smart contract enforces the five-year lock window automatically.",
       `After that "Liberation Cycle," controlled reward functions unlock gradually, signaling the DAO's transition from foundational solidarity to active prosperity — aligning perfectly with the narrative of endurance, restraint, and eventual economic emancipation.`,
       "During this phase:\n• Governance features and lore modules are deployed (token voting, mission portals, etc.)\n• Smart contracts enforce the lock automatically\n• Contributors build the foundation before accessing rewards",
@@ -24118,7 +24359,7 @@ function TokenomicsModal({
                             children: "//TOKENOMICS//"
                           }
                         ),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-bold text-lg uppercase tracking-wide text-black", children: content.title })
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-bold text-sm uppercase tracking-wide text-black", children: content.title })
                       ] }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
                         "button",
@@ -27141,12 +27382,463 @@ const PORTALS = [
     tagline: "Operative Access Authorization Protocol"
   }
 ];
+const HR = "================================================================================\n";
+const hr = "--------------------------------------------------------------------------------\n";
+function section(title, content) {
+  return `${HR}=== ${title} ===
+${HR}
+${content}
+
+`;
+}
+function sub(label, body) {
+  return `${hr}${label}
+${hr}${body}
+
+`;
+}
+function generateDossierText() {
+  const parts = [];
+  parts.push(
+    `${HR}GULAG DAO — CLASSIFIED DOSSIER
+//LIBERATION THROUGH CODE//
+${HR}Generated: ${(/* @__PURE__ */ new Date()).toUTCString()}
+Classification: EYES ONLY
+Document: Complete White Paper Text Dump
+
+`
+  );
+  parts.push(
+    section(
+      "HERO / LANDING",
+      [
+        sub("PORTAL STATUS", "PORTAL: ENTRY — STATUS: ACTIVE"),
+        sub("DAO NAME", "GULAG DAO WHITE PAPER"),
+        sub("TAGLINE", "Liberation Through Code"),
+        sub(
+          "LORE HOOK",
+          "In the shadowed year of 2005, operative Steven G. Jacobson and his team vanished behind the iron gates pursuing the Klondike Gold — an ancient treasure stolen from an Alaskan federal vault. In 2009, an unauthorized rescue freed Jacobson, but six Operatives were left behind. Disillusioned survivors turned to code. Gulag DAO was born."
+        ),
+        sub(
+          "CLAIMS",
+          `CLAIM: The world's most sophisticated meme coin.
+MEME: "Over the years I have heard many people say, the happiest day of their life was their wedding day or the birth of their child; clearly these are people who have never escaped from the Gulag! That was the most thrilling day of my life!"
+THEME: Free the Gulag – Invest in Freedom`
+        ),
+        sub(
+          "CLASSIFIED CARDS",
+          "1. DECENTRALIZED AUTONOMY — Protocol Structure & Governance Model\n2. SECURE CONSENSUS — Cryptographic Mechanisms & Consensus\n3. DAO TREASURY — Asset Management & Resource Allocation\n4. RESISTANCE ECONOMICS — Tokenomics & Incentive Mechanisms"
+        ),
+        sub(
+          "NOTICE / DAO EXPANSION ANNOUNCEMENT",
+          "It is the intent of the Gulag DAO to be an overwhelming force within the IC. Get on board or be left stand still.\n\nComing in 2027\nGulag DAO: Rogue\n\nComing in 2028\nGulag DAO: Shadow Authority"
+        ),
+        sub(
+          "ENTER THE GATE",
+          "Onboarding portal to launch on July 4, 2026 — Financial Independence Day."
+        )
+      ].join("")
+    )
+  );
+  parts.push(
+    section(
+      "WHAT IS A DAO",
+      [
+        sub(
+          "OVERVIEW",
+          "A Decentralized Autonomous Organization is a collective governed by code, not corporations. Where traditional organizations depend on legal entities and human trust, DAOs operate through transparent smart contracts that cannot be altered without collective consent. This is the architecture of liberation."
+        ),
+        sub(
+          "CONCEPT: DECENTRALIZATION",
+          "Centralized systems have a single point of authority — a CEO, a server, a government. When that center is compromised, everything below it collapses. History is littered with the failures of centralized power.\n\nDecentralization removes the center. Instead of one authority, you have many equal participants. Instead of one server, you have thousands of nodes. Instead of one decision-maker, you have a protocol — a set of rules that every participant agrees to follow and no single participant can override."
+        ),
+        sub(
+          "FROM CONCEPT TO DAO",
+          "A Decentralized Autonomous Organization applies this principle to collective action. A DAO is a group of people who pool resources and coordinate around a shared mission — without needing a company, a country, or a corporation to authorize them.\n\nThe rules of the DAO — who can vote, how funds are spent, what the mission is — are written into smart contracts. Once deployed, those rules execute automatically. No one person can override them. No court can freeze them. The code is the law."
+        ),
+        sub(
+          "THREE PRINCIPLES",
+          "01 // DECENTRALIZATION\n— No single authority controls the organization\nPower is distributed across every participant. No executive can unilaterally redirect funds. No board can dissolve the mission. Every rule is encoded in immutable smart contracts — visible to all, changeable only by collective vote.\n\n02 // AUTONOMY\n— Rules enforced automatically through smart contracts\nThe organization executes itself. Treasury disbursements, mission allocations, and protocol upgrades flow through automated on-chain logic. Human discretion is confined to governance proposals — the code carries out the rest.\n\n03 // TRANSPARENCY\n— All decisions and funds recorded on-chain forever\nEvery vote cast, every proposal submitted, every token transferred — permanently inscribed on the Internet Computer. No hidden ledgers. No closed-door decisions. The chain is the record and the record is final."
+        ),
+        sub(
+          "HOW GULAG DAO OPERATES ON THE INTERNET COMPUTER",
+          "The Internet Computer Protocol (ICP) is a blockchain engineered to run software — smart contracts called canisters — at web speed, with no centralized servers. Unlike traditional cloud infrastructure, there is no AWS, no Google Cloud, no single company that can pull the plug. The network is maintained by independent node operators distributed globally.\n\nGulag DAO's treasury, governance contracts, and mission coordination logic all live on ICP canisters. Treasury disbursements require on-chain votes. Proposals are submitted and executed automatically when thresholds are met. No bank account. No corporate charter. No jurisdiction.\n\nFULLY ON-CHAIN: No off-chain reliance. Governance, treasury, and logic live on ICP.\nCENSORSHIP-RESISTANT: No single party can block proposals or freeze the treasury.\nWEB-SPEED EXECUTION: Smart contracts execute in milliseconds — not waiting blocks.\nSOVEREIGN NETWORK: Node operators are independent. No single country controls the chain."
+        ),
+        sub(
+          "WHY A DAO",
+          "Distributed resistance for distributed liberation — when operatives scattered across borders needed coordination without compromise, decentralized code became the command structure.\n\nThe survivors of the 2009 rescue couldn't convene in boardrooms. They couldn't open bank accounts in hostile jurisdictions. They couldn't trust any institution that could be pressured, bribed, or compromised. The DAO model wasn't a preference — it was the only viable architecture for a mission that cannot afford a single point of failure."
+        )
+      ].join("")
+    )
+  );
+  parts.push(
+    section(
+      "THE MISSION — OPERATION KLONDIKE CASE FILE",
+      [
+        sub(
+          "OVERVIEW",
+          "Six operatives. One billion dollars. A classified mission unfinished since 2009. The following dossier reconstructs the chain of events that led to the founding of Gulag DAO — the decentralized front for liberation and recovery."
+        ),
+        sub(
+          "MILESTONE 01 — 1974 — THE THEFT [UNRECOVERED]",
+          "//CLASSIFIED// ASSET: KLONDIKE-GOLD\nKlondike Gold stolen from a federal historic reserve vault beneath the Alaskan frost. An ancient cache of immeasurable strategic value quietly removed from the nation's custody — no official investigation, no recovered trail. Value: $1B+ USD. Location: classified."
+        ),
+        sub(
+          "MILESTONE 02 — 2005 — OPERATIVES VANISH [MIA]",
+          "//RESTRICTED// TEAM: JACOBSON-7\nIntelligence operative Steven G. Jacobson leads a classified 7-man team behind enemy lines to retrieve the Klondike Gold. The operation goes dark. All seven operatives disappear behind the iron gates of the Gulag. No official records. No mission acknowledgment."
+        ),
+        sub(
+          "MILESTONE 03 — 2009 — UNAUTHORIZED RESCUE [PARTIAL]",
+          "//EYES ONLY// OP: EXTRACTION\nAn unauthorized black-ops extraction operation frees Jacobson. Six operatives are left behind in the chaos — their names redacted, their fates sealed. Jacobson survives disillusioned: the mission failed, the gold is unrecovered, the team is lost. Governments deny everything."
+        ),
+        sub(
+          "MILESTONE 04 — FOUNDING — THE CODE INSURGENCY [ACTIVE]",
+          "//CONFIDENTIAL// ORIGIN: GULAG-DAO\nSurvivors turn to the only system they trust: code. Gulag DAO is born — a distributed liberation front operating on the Internet Computer. Mission: fund, coordinate, and execute the final rescue and recovery. Every token holder is an operative. Every vote advances the mission."
+        ),
+        sub(
+          "THE TOOL TURNED AGAINST THE OPPRESSOR",
+          "The Hammer and Sickle — once a symbol of Soviet oppression — is commandeered, reinvented, and turned against economic oppressors. In Gulag DAO, it becomes the geometric emblem of patriotic resistance: the tools of labor and harvest reclaimed as instruments of liberation and decentralized sovereignty.\n\nThe original symbol is dismantled. What remains is angular, precise, deliberate — a digital weapon forged from the very chains used to bind the six. This is not Soviet imagery. This is the flag of the resistance."
+        )
+      ].join("")
+    )
+  );
+  parts.push(
+    section(
+      "THE ECOSYSTEM",
+      [
+        sub(
+          "OVERVIEW",
+          "Gulag DAO operates a sovereign closed-loop economic system. Every component — treasury vault, governance token, liquidity pool, and fee routing — is enforced on-chain and auditable by every token holder. No back doors. No exceptions."
+        ),
+        sub(
+          "ICP TREASURY VAULT",
+          "All DAO funds are held in an Internet Computer Protocol canister smart contract. Treasury movements require governance approval via on-chain proposal. No single entity can access, redirect, or freeze treasury assets — only the collective can authorize disbursements.\n\nNETWORK: Internet Computer Protocol\nSMART CONTRACT: Motoko Canister\nAUDIT STATUS: Public, on-chain ledger\nACCESS CONTROL: Token-weighted proposal vote\nTREASURY STATUS: ACTIVE"
+        ),
+        sub(
+          "PAYOK COIN",
+          "Payok Coin is the native governance and utility token of the Gulag DAO. Holders possess binding voting power over all proposals — treasury moves, mission funding, protocol upgrades.\n\nHOLDER RIGHTS:\nVOTING: Submit and vote on governance proposals. One token equals one vote. No founder override.\nSTAKING: Lock Payok Coin to earn protocol staking rewards from fee redistribution.\nMISSION YIELD: Proportional share of Klondike Gold recovery proceeds upon mission completion.\nDISTRIBUTION: Future DAO distributions to active stakers as treasury grows from protocol activity."
+        ),
+        sub(
+          "LIQUIDITY POOLS — 5-YEAR LOCK",
+          "All Gulag DAO liquidity pools are subject to a mandatory 5-year time-lock enforced at the smart contract level. This prevents extraction attacks, discourages speculative dumping, and ensures uninterrupted capital allocation for mission operations.\n\nNo governance vote can override the lock duration. The protocol is immutable on this point — a deliberate architectural decision to protect long-term mission integrity.\n\n5-YEAR LOCK ACTIVE — 1,825 DAYS — SMART CONTRACT ENFORCED\nPURPOSE: Mission stability | ENFORCER: Motoko canister | OVERRIDE: None — immutable | UNLOCK: Day 1,826 only"
+        ),
+        sub(
+          "FEE ROUTING ARCHITECTURE",
+          "Every DAO-generated transaction triggers an automatic fee split. The routing logic is hardcoded at the protocol level — no governance actor can redirect fees outside the approved channels. Transparency is mandatory, not optional.\n\nTRANSACTION FEE → TREASURY ALLOCATION → REDISTRIBUTION\n40% — Mission Operations Fund\n30% — Treasury Reserve\n20% — Payok Staker Rewards\n10% — Protocol Development"
+        )
+      ].join("")
+    )
+  );
+  parts.push(
+    section(
+      "ON-CHAIN GOVERNANCE",
+      [
+        sub(
+          "OVERVIEW",
+          "Gulag DAO is governed entirely on-chain via Internet Computer smart contracts. No off-chain influence. No backroom deals. Every vote, every proposal, and every execution is recorded permanently and immutably on the blockchain. There is no CEO. There is no override. The code is the constitution."
+        ),
+        sub(
+          "SECTION 01 — ON-CHAIN VOTING",
+          "Smart Contract Execution: All governance logic lives in Motoko canisters on the Internet Computer. Proposal outcomes are executed automatically — no human intermediary can block or delay an approved directive.\n\nPermanent Record: Every vote cast is timestamped and cryptographically signed on-chain. The full governance history — from founding to present — is permanently auditable by any participant or outside observer.\n\nNo Off-Chain Influence: Token-weighted voting ensures power is proportional to stake. No forum polls, no Discord votes, no 'soft consensus' — only on-chain results carry legal and financial authority within the DAO."
+        ),
+        sub(
+          "SECTION 02 — CHAIN OF COMMAND",
+          "RANK-01 — OPERATOR — MAXIMUM VOTING WEIGHT\nTreasury custodian and strategic director. Accountable for mission fund allocation and overall DAO direction. Holds maximum voting authority with full access to all treasury operations.\n\nRANK-02 — STRATEGIST — FULL VOTING RIGHTS\nFull voting rights and proposal submission authority. Coordinates operational directives and translates mission objectives into actionable governance proposals for the DAO.\n\nRANK-03 — EXECUTIONER — FIELD EXECUTION RIGHTS\nMission coordination specialist. Executes approved DAO directives in the field. Converts on-chain decisions into real-world action and reports mission status back to the DAO.\n\nRANK-04 — OBSERVER — READ-ONLY ACCESS\nMonitors DAO health, proposals, and treasury activity without voting rights. Observers serve as transparency witnesses — tracking every move, ensuring the mission stays honest."
+        ),
+        sub(
+          "SECTION 03 — PROPOSAL LIFECYCLE",
+          "01 — SUBMISSION: Strategist or Operator submits a proposal on-chain with objective, budget, timeline, and success criteria. Proposal is assigned a unique mission ID and enters the queue.\n\n02 — DISCUSSION (72 HOURS): 72-hour community review window. All participant roles may comment and submit amendments. Minimum quorum feedback required before the vote phase activates.\n\n03 — VOTING (48 HOURS): Token-weighted voting window of 48 hours. Voting power is proportional to staked Payok Coin. No off-chain influence. Every vote is permanently recorded on the Internet Computer.\n\n04 — EXECUTION: Approved proposals are automatically executed by Internet Computer smart contract. Funds release on milestone confirmation. No manual override. The code is the constitution."
+        ),
+        sub(
+          "SECTION 04 — KEY METRICS",
+          "ACTIVE PROPOSALS: 3 — LIVE\nVOTING POWER: DISTRIBUTED — DECENTRALIZED\nRECENT CONSENSUS: 97% — TREASURY ALLOCATION\nON-CHAIN EXECUTION: 100% — NO OVERRIDE"
+        ),
+        sub(
+          "SECTION 05 — QUORUM & THRESHOLDS",
+          "10% QUORUM: Minimum 10% of circulating Payok Coin supply must participate in a vote for it to be valid. Quorum ensures no small group can manipulate outcomes during low-activity periods.\n\n51% SIMPLE MAJORITY: Standard proposals — such as operational directives, role assignments, and partnership approvals — require a simple majority of 51% to pass.\n\n67% SUPERMAJORITY: Critical treasury proposals — including large fund releases, liquidity pool modifications, and Klondike Gold recovery operations — require a supermajority of 67%."
+        )
+      ].join("")
+    )
+  );
+  parts.push(
+    section(
+      "LORE — THE FULL DOSSIER",
+      [
+        sub(
+          "SECTION 01 — OPERATIVE BIOGRAPHY: STEVEN G. JACOBSON",
+          "NAME: STEVEN G. JACOBSON\nDESIGNATION: SENIOR INTELLIGENCE OPERATIVE\nUNIT: CLASSIFIED RETRIEVAL DIV. — UNIT 7\nINITIAL STATUS: COMPROMISED — 2005\nEXTRACTION STATUS: EXTRACTED — 2009\nCURRENT STATUS: ACTIVE — MISSION CONTINUES\n\nSteven G. Jacobson entered intelligence service in the early 1990s — a career defined by methodical planning, unwavering loyalty to his team, and an institutional distrust of bureaucratic interference. His record was nearly flawless: eleven successful retrieval operations, zero civilian casualties, zero unauthorized disclosures.\n\nHe was chosen for the Klondike mission because he was the best. And because he asked too many questions about where the gold had gone. The selection was not just a deployment — it was a silencing. The agency needed the mission attempted and the operative contained. Jacobson was both asset and liability, and the architects of the mission knew it.\n\nJacobson emerged from the Gulag a changed man. Methodical became obsessive. Loyal became haunted. He spent the years after extraction attempting every sanctioned channel to recover the six operatives left behind. Every door was closed. Every file was buried. The state had written them off. Jacobson refused to."
+        ),
+        sub(
+          "SECTION 02 — ARTIFACT HISTORY: THE KLONDIKE GOLD",
+          "ASSET FILE: THE KLONDIKE GOLD\n\nThe gold predates every government that now claims jurisdiction over it. First extracted during the Klondike Gold Rush era — a period when raw resource extraction defined the northern frontier — it was later processed, refined, and quietly transferred to federal custody, catalogued under a historic reserve classification that placed it beyond public audit.\n\nIn 1974, 2.3 metric tons of refined gold bars vanished from a federal historic reserve vault buried beneath the Alaskan permafrost. The official record describes a clerical reclassification. There was no clerical reclassification. There was theft — institutional, coordinated, and covered by the same agencies tasked with protecting the national reserve.\n\nThe gold became more than wealth. It became a symbol of what institutions conceal from the people they claim to serve. Its recovery is not merely financial. It is an act of historical correction.\n\nASSET METRICS:\nMASS: 2.3 METRIC TONS\nFORM: REFINED GOLD BARS\nTHEFT DATE: 1974\nVAULT LOCATION: ALASKA — CLASSIFIED\nCURRENT VALUE: $1.2B+ USD\nLOCATION STATUS: UNKNOWN"
+        ),
+        sub(
+          "SECTION 03 — OPERATION: 2005",
+          "In 2005, intelligence operative Jacobson assembled a seven-man team and launched a classified cross-border retrieval mission. The objective: locate and recover the Klondike Gold, now believed to be held in transit through a detention complex near the eastern frontier — a facility known in intelligence circles as the Gulag.\n\nThe Gulag was not a metaphor. It was a sprawling detention and containment complex with a documented history of swallowing operatives whole. Intelligence estimates placed the success probability at 34%. Jacobson's team accepted the brief.\n\nThe team crossed the border under commercial cover at 03:00 local. Within 18 hours, all communications ceased. The extraction window passed. Command declared the operation a failure. The team was officially reclassified as casualties of an undisclosed operation — paperwork filed, files sealed, families told nothing.\n\nSeven went in. None came out — officially.\n\n01 JACOBSON — EXTRACTED\n02 OPERATIVE — MIA\n03 OPERATIVE — MIA\n04 OPERATIVE — MIA\n05 OPERATIVE — MIA\n06 OPERATIVE — MIA\n07 OPERATIVE — MIA"
+        ),
+        sub(
+          "SECTION 04 — OPERATION: 2009 EXTRACTION",
+          "Four years after the disappearance, a covert network of sympathizers within the intelligence community — individuals who knew the truth and refused to accept the official narrative — organized and funded an unauthorized rescue operation. No government sanction. No official support. No contingency plan.\n\nThe operation was rapid, chaotic, and incomplete by design — the window for extraction was measured in minutes, not hours. They found Jacobson. They brought him out. But the compound was larger than the intelligence suggested, the opposition was heavier, and the exit was closing.\n\nSix operatives were left behind. Their exact location within the complex — unknown. Their current status — unknown. Whether they still draw breath — unknown. What is known: they were abandoned by the state that sent them, and the system that buried their files made no attempt to recover them.\n\nJacobson emerged carrying nothing but the mission's failure and a determination that would take years to find its form. He had tried every legitimate channel. Every door was shut. Something else would have to be built.\n\nSTATUS: SIX OPERATIVES — UNACCOUNTED\nTheir names are known to the DAO Council. Their records are sealed pending mission completion. Until the final operation is executed and their status is confirmed, their identities remain protected — a security measure and a promise."
+        ),
+        sub(
+          "SECTION 05 — THE CODE INSURGENCY / DAO FOUNDING",
+          "Jacobson and the surviving sympathizers did not give up. They regrouped slowly, carefully — communicating through methods that left no traceable record. In the years after the rescue, as distributed ledger technology matured and blockchain protocols demonstrated the capacity for trustless coordination at scale, a new architecture became possible.\n\nThey began building Gulag DAO — not as a company, not as a nonprofit, not as any structure the state could seize, freeze, or dissolve. A fully decentralized liberation front, built on the Internet Computer protocol. No central authority. No single point of failure. No CEO to arrest. No headquarters to raid.\n\nDAO FOUNDING TIMELINE:\n2009 — Jacobson extracted. Mission failure logged.\n2012 — Sympathizer network reactivated. Research begins.\n2017 — ICP protocol evaluated. Architecture drafted.\n2021 — Internet Computer launches. DAO scaffolded.\n2026 — Gulag DAO deployment. Recruitment opens.\n2027 — Gulag DAO: Rogue.\n2028 — Gulag DAO: Shadow Authority."
+        ),
+        sub(
+          "SECTION 06 — THE REINVENTED SYMBOL",
+          "We took the symbol of oppression and turned it into a weapon of liberation. Every line redrawn. Every meaning inverted. The tools of the regime become the tools of resistance.\n\nThe Hammer and Sickle carries centuries of misappropriated meaning — first as the working tools of farmers and laborers, then seized by authoritarian machinery as an emblem of state control. We seize it back. Not as communists. Not as Soviet sympathizers. As patriots who understand that a symbol only holds the power you give it.\n\nIn our hands: the hammer drives the stake of accountability into corrupt institutions. The sickle cuts through the bureaucratic thicket that hides stolen gold and abandoned operatives. The tools of oppression, reclaimed by those they were used against.\n\nOPERATIVE CREED: 'WE DO NOT CARRY THIS SYMBOL. WE CARRY ITS INVERSION.'"
+        ),
+        sub(
+          "SECTION 07 — FORMAL DECLARATION / MISSION STATEMENT",
+          "GULAG DAO — OFFICIAL MISSION STATEMENT\n\nTo fund, coordinate, and execute the final mission — the rescue of six operatives left behind, and the recovery of the Klondike Gold. Through decentralized governance, on-chain transparency, and collective action, we will complete what the state abandoned.\n\nLiberation through code.\n\nRATIFIED ON-CHAIN — GULAG DAO GENESIS BLOCK — PROPOSAL #0001"
+        )
+      ].join("")
+    )
+  );
+  parts.push(
+    section(
+      "HOW TO PARTICIPATE",
+      [
+        sub(
+          "OVERVIEW",
+          "Joining Gulag DAO is an act of deliberate choice. No advertisements. No referrals. No shortcut. Follow the three-step onboarding protocol."
+        ),
+        sub(
+          "STEP 01 — INTERNET IDENTITY [AUTH PROTOCOL]",
+          "Internet Identity is the Internet Computer's native authentication system. It replaces passwords with cryptographic keys stored on your device. No email. No phone number. Just cryptographic proof.\n\n> Visit identity.ic0.app\n> Create your identity\n> Save your recovery phrase securely"
+        ),
+        sub(
+          "STEP 02 — WALLET CREATION [ASSET CUSTODY]",
+          "Once your identity is established, create an ICP wallet to hold your assets. Use NNS (Network Nervous System) at nns.ic0.app or a compatible ICP wallet provider.\n\n> Visit nns.ic0.app and authenticate with your Internet Identity\n> Your wallet is auto-generated from your principal\n> IMPORTANT: Back up your seed phrase — it cannot be recovered if lost. You are the custodian of your own funds."
+        ),
+        sub(
+          "STEP 03 — ROLE ASSIGNMENT [DAO INTEGRATION]",
+          "Submit a governance proposal to be assigned your DAO role. The DAO votes on role assignments. Roles carry different voting weights and responsibilities. Choose deliberately.\n\n> Acquire PAYOK Coin via the DAO's on-chain exchange\n> Submit a role assignment proposal through the governance interface\n> Roles: Operator, Strategist, Executioner, or Observer\n> The DAO votes — your role is granted by the collective"
+        ),
+        sub(
+          "FAQ — FIELD QUESTIONS",
+          "Q: What is a canister?\nA: A canister is a smart contract on the Internet Computer. Gulag DAO's entire treasury, governance, and state live in canisters — self-executing, on-chain, unstoppable.\n\nQ: What is the difference between ICP, the GULAG Token, and the PAYOK Coin?\nA: ICP (Internet Computer Protocol) is the native token of the Internet Computer network — used to pay for network fees, fuel computation (cycles), and participate in the broader IC ecosystem. It is NOT a Gulag DAO token. GULAG Token is Gulag DAO's governance token — used exclusively for voting on proposals, staking, and mission coordination within the DAO. PAYOK Coin is Gulag DAO's utility and transaction coin — used for day-to-day transactions, payments within the ecosystem, and incentivizing participation. Each serves a distinct and separate purpose."
+        )
+      ].join("")
+    )
+  );
+  parts.push(
+    section(
+      "COMPARATIVE ANALYSIS — ADOPTION AND AVOIDANCE IN DAO EVOLUTION",
+      [
+        sub(
+          "INTRODUCTION",
+          "Author: Captain Proton\n\nThe Gulag DAO Comparative Analysis v1.0 examines the structural evolution, ideological frameworks, and systemic safeguards distinguishing Gulag DAO from prior decentralized governance projects. It is both a historical reflection and a forward design study, articulating how lessons from nine years of DAO development converge into a singular narrative of resilient autonomy.\n\nThe objective is simple but radical: to ensure that liberation through code is not chaos but construction, not randomness but ritual. Gulag DAO formalizes belief into function and culture into mechanism — an ideological architecture designed for durability, adaptability, and moral coherence."
+        ),
+        sub(
+          "SECTION 01 — ARCHITECTURAL OVERVIEW",
+          "I. FOUNDATIONAL PREMISE\nGulag DAO arises from the study of historical decentralized systems and their operational vulnerabilities. It redefines governance as a living narrative structure, combining social myth and economic design into a unified operational ideology.\n\nII. THE CORE DOCTRINE — LIBERATION THROUGH STRUCTURE\nWhile traditional DAOs emphasize autonomy, Gulag DAO emphasizes resilience. Its architecture binds autonomy to accountability through immutability, multisignature regulation, and community-verified execution. Liberation is sustained, not assumed.\n\nIII. THE DUAL VAULT FRAMEWORK\nTwo primary vaults govern all treasury motion: the Governance Vault and the Utility Vault. Governance Vault controls proposal execution and funding, while Utility Vault stabilizes resource flow through adaptive staking cycles. Dual control prevents treasury abuse and isolates risk domains.\n\nIV. STRUCTURAL OBJECTIVES\nThe design ensures that governance tokens remain instruments of decision, not instruments of speculation. Participants who act constructively advance both wealth and myth, reinforcing a loop where belief and architecture fortify each other."
+        ),
+        sub(
+          "SECTION 02 — COMPARATIVE CONTEXT: LESSONS FROM PREDECESSORS",
+          "I. ETHEREUM'S EARLY DAOs\nThe earliest decentralized organizations operated in experimental isolation. Their failures — most notably that of The DAO — reveal that code immutability without moral coherence is not resilience. Gulag DAO fuses technical rigor with defined civic ethos.\n\nII. MakerDAO AND THE PROBLEM OF MISSION DRIFT\nMakerDAO demonstrated regulatory endurance yet faltered under narrative fatigue. By contrast, Gulag DAO embeds ideological continuity directly into its governance fabric.\n\nIII. Uniswap AND THE LIQUIDITY OVER GOVERNANCE DICHOTOMY\nUniswap achieved liquidity supremacy but separated purpose from participation. Gulag DAO unites both.\n\nIV. Aave, Curve, AND THE QUESTION OF CULTURAL IDENTITY\nWhere these protocols refined mechanics, they lacked civilization. Gulag DAO defines its identity as civilization first.\n\nV. SYNTHESIS OF OBSERVED PATTERNS\nEach predecessor supplied an evolution in function but suffered absence of mythos. Gulag DAO inherits their efficiencies without their existential vacuum."
+        ),
+        sub(
+          "STANDING ON THE SHOULDERS OF GIANTS",
+          "MakerDAO (Decentralized Stability): GULAG's stable $1 peg governance token provides stability without collateral fragility or reliance on central assets.\nAave (Community Driven Finance): DAO funded Mission Wallets extend the lending pool logic to reward verified contributions, not passive capital.\nUniswap (True Autonomy): Gulag's on-chain voting and rank structure ensure open participation while curbing whale dominance via tiered authority.\nGnosis (Transparency and Tooling): Gulag's blockchain-native dashboards and on-chain audits bring full transparency to every wallet, mission, and Burn Bag event.\nCurve (Liquidity Incentives): Payok rewards anchor productive participation instead of speculative inflation, sustaining real economic growth.\nLido & Arbitrum (Scale and Governance Reach): The DAO scales horizontally via Mission Wallet expansion and cross-app economics within the Suite Services ecosystem.\nApeCoin DAO (Branding and Culture): Gulag DAO's narrative mission — liberation through code — transcends fandom, offering purpose through participation."
+        ),
+        sub(
+          "SECTION 03 — FAILURES AVOIDED BY DESIGN",
+          "I. GOVERNANCE CAPTURE AND POWER CENTRALIZATION — Lessons from The DAO (2016)\nThe collapse of The DAO highlighted the dangers of concentrated control and exploitable contracts. Gulag DAO's architecture prevents such failures through permanent multisignature requirements, immutable core canisters, and community quorum governance.\n\nII. TREASURY MISMANAGEMENT AND MISSION DRIFT — Avoiding the Fate of EOS and Steem\nGulag DAO ensures financial discipline by dividing its Treasury into Governance and Utility Vaults, each bound by timed locks and auditable return cycles.\n\nIII. VOTER APATHY AND TOKEN DISENGAGEMENT\nGulag DAO combats this through ranked incentives, interactive education, and mission-based participation that tie governance to story and reward.\n\nIV. SECURITY BREACHES AND CODE EXPLOITATION\nGulag DAO undergoes continuous audit cycles and employs Guardian Scripts — automated security filters that suspend any detected anomaly until community review completes.\n\nV. LACK OF CULTURAL COHESION\nGulag DAO reunites purpose and currency under a singular mythology."
+        ),
+        sub(
+          "FAILURES DOCTRINE TABLE",
+          "Smart Contract Exploits → Multi-stage audits, immutable Motoko logic, no self-destruct functions.\nLeadership Failures (SushiSwap, Wonderland) → Tiered governance with transparent succession and identity-verified pseudonymity.\nEconomic Instability (Terra, Olympus) → Dual token model — non-redeemable stable token (Gulag) & deflationary utility token (Payok) with Burn Bag balancing.\nCentralization of Power (Dash DAO) → Structured rank hierarchy distributing influence between Liberators, Officers, and Operatives.\nGovernance Gridlock (BitShares, Aragon) → Weighted proposal scoring and mission metrics ensure active alignment.\nSecurity Front-End Breaches (BadgerDAO) → Internet Identity authentication and segregated interface layers prevent access injection."
+        ),
+        sub(
+          "CASE STUDY: WONDERLAND / TIME — A CAUTIONARY TALE",
+          "Wonderland was a decentralized finance (DeFi) protocol launched on the Avalanche blockchain in 2021. It was an Olympus DAO fork presenting itself as the first decentralized reserve currency protocol on Avalanche. The protocol's native token was TIME.\n\nTHE RISE: Promised APYs over 80,000%. Treasury peaked at over $1 billion. TIME token reached an all-time high of nearly $10,000 in November 2021.\n\nTHE FALL: TIME token price plummeted over 99% from peak. Over $45 million from the treasury used to cover personal debts. Protocol collapsed.\n\nLEGACY: The Wonderland saga highlighted dangers of anonymity, lack of robust governance, unsustainability of excessively high APYs, and the potential for founders to engage in questionable practices. Protocol ceased operations. TIME deprecated. wMEMO trades at near-zero value."
+        ),
+        sub(
+          "SECTION 04 — SYNTHESIS AND STRATEGIC ALIGNMENT",
+          "I. INTEGRATION OF PROVEN DOCTRINE: Gulag DAO absorbs the operational strengths of MakerDAO, Aave, and Uniswap while aligning them within its narrative-centric framework.\n\nII. IDEOLOGICAL ADAPTATION AND FEEDBACK MECHANICS: Where older DAOs relied on static rules, Liberation adopts self-adaptive parameters that adjust to participation data without external intervention.\n\nIII. TRANSPARENCY AS COVENANT: Public ledger integrity reinforces trust as ritual. Every action within the DAO is a visible act of faith — an assurance that belief has become auditable fact.\n\nIV. MATURITY THROUGH CULTURAL GOVERNANCE: By uniting aesthetic identity, moral ethos, and collective governance, Gulag DAO transcends the limitations of formal decentralization.\n\nV. THE BLUEPRINT OF RESILIENT AUTONOMY: Synthesis reveals a systems ecology where every lesson from success and failure coalesces into a sustainable form of autonomous order. Gulag DAO is not history repeated; it is history refined.\n\nVI. ECONOMIC INTEGRITY THROUGH NON-INFLATIONARY DESIGN: Gulag DAO employs two non-inflationary assets: the Gulag Governance Token and the Payok Utility Coin. Both retain fixed supply structures that preserve total value and prevent dilution of existing holdings."
+        ),
+        sub(
+          "THE GULAG DOCTRINE — CODE, COMMUNITY, CONTINUITY",
+          `"Success is not an accident; it is architecture."
+
+Gulag DAO's doctrine fuses economic realism, governance discipline, and narrative unity. Code safeguards social trust; hierarchy balances democracy; and lore sustains cohesion. Each decision — whether in a Treasury motion or a mission vote — aligns with the movement's creed: liberation through structure.
+
+ASSURANCE TO PROSPECTIVE MEMBERS:
+New members can trust that every Payok spent, every mission executed, and every vote cast exists within an ecosystem purpose-built for endurance — free from the cycles of hype, compromise, and collapse that plagued earlier projects.
+
+"In Gulag DAO, participation is not risk — it is resistance."`
+        ),
+        sub(
+          "CONCLUSION",
+          'Gulag DAO represents the synthesis of all DAO historical experience into a living model of governed liberation. Its architecture binds efficiency to ethics, story to structure, and will to verification.\n\nThrough comparative rigor and ideological clarity, this analysis confirms Gulag DAO as the mature successor to the decentralized experiments that preceded it. In Gulag DAO, structure is freedom perfected through understanding; what began as a revolution becomes an order of belief refined by purpose.\n\n"From the failures of the past, we forge our unbreakable code." — Gulag DAO Codex'
+        )
+      ].join("")
+    )
+  );
+  parts.push(
+    section(
+      "TOKENOMICS",
+      [
+        sub(
+          "ANTI-WHALING PROTOCOLS",
+          '"Whaling" activity is any Game-Play or DAO participation which is intended to weaken the confidence in the Protocol. Friendly Whales are welcome as investors and participants, but not as speculators.\n\nKey Protocols:\n• No treasury investing using leverage.\n• Pre-sale for early adopters has anti-whaling mechanisms.\n• Harnessing the Whale (Financiers).\n• Initial 5-year treasury lock.\n• After lock release: Treasury governance using multisig strategy, where 51% of signees are non-whale participants.\n\nWhitelisted Pre-Sale:\n• Discount on both Gulag Tokens and Payok coins.\n• Amplifies voting rights for "certified" small (non-whale) whitelisted early adopters.\n• Part of the Anti-Whaling Protocols.\n\nAnti-Whaling Protocols are always under development and consideration, and will adapt as treasury activities advances. In accordance with governance guidance.'
+        ),
+        sub(
+          "TOKEN / COIN",
+          "GULAG – Governance Token\nPAYOK – Utility and Liquidity Coin\n\nGulag token will be purely a governance token: voting, rewards, and DAO participation; to protect its governance integrity. Gulag governance token (pegged to $1 and controlled by DAO policy) doesn't need any burn mechanism since its value stability relies on fixed pricing and treasury logic, not supply contraction.\n\nPayok: The Payok coin will be a broader IC-wide utility currency. Other decentralized apps on the Internet Computer could integrate Payok into their canisters for payments, in-app purchases, or service fees, provided they recognize its token standard (such as a DIP20 or ICRC variant).\n\nFor long-term success, the use of robust liquidity pools (e.g., Payok/ICP) and clear governance on external adoption guidelines maintain ecosystem trust and deflationary scarcity through the Burn Bag mechanism.\n\nThis separation maintains clear financial roles: the stable governance token ensures consistent voting power and system integrity, while the market-driven coin fuels ecosystem growth and economic dynamics."
+        ),
+        sub(
+          "LIQUIDITY POOLS & AMM SYSTEM",
+          "Built on the Internet Computer (IC) and governed by Gulag DAO.\n\nSmart contracts (canisters) can hold token pairs, track liquidity provider (LP) shares, and run an automated market maker algorithm — effectively mimicking Uniswap-style mechanics. LPs can earn trading fees distributed proportionally, and the DAO can control fee parameters, reward schedules, or pool listings.\n\nThe two tokens coexist beautifully if structured right:\n• Gulag (governance token) sets policies, DAO parameters, and fee rates for the AMM.\n• Payok (utility/liquidity coin) powers liquidity, staking, and fee generation — creating tangible value.\n\nTreasury Managed AMM Structure: Pools are on-chain smart contracts (canisters) holding token pairs — e.g., Payok/ICP, Payok/ckBTC, or Payok/Gulag.\n\nLiquidity Provider (LP) Tokens: When participants contribute assets to a pool, they receive LP tokens (ICRC-2 compatible) representing their share of total liquidity. LPs earn proportional trading fees (e.g., 0.3% per swap).\n\nRisk & Control: Because all pool logic runs natively on the IC, there are no external bridge risks. Prices and balances are fully on-chain, auditable by DAO members, and upgradeable through democratic proposals."
+        ),
+        sub(
+          "PHASED TREASURY IMPLEMENTATION",
+          `Most of the development of this DAO project will happen after the initial publishing to the IC. The first year after initial deployment will be devoted to building out DAO governance functions, lore mission portal, and very basic treasury functions.
+
+We intend to lock all funds in the treasury for the first five years. Income and fees feed into the treasury, but no withdrawing for the first five years — a simple man's "deferred rewards" scheme.
+
+For the first five years, the treasury operates as a symbolic and strategic holding cell: all inflows from mission participation, token taxes, NFT activities, and suite fees are accumulated but cannot be withdrawn.
+
+After the "Liberation Cycle," controlled reward functions unlock gradually, signaling the DAO's transition from foundational solidarity to active prosperity — aligning perfectly with the narrative of endurance, restraint, and eventual economic emancipation.`
+        ),
+        sub(
+          "GLOBAL OBJECTIVES",
+          `1. Establishing a Store of Wealth Coin – Market Capitalization Target: $1 Billion
+The DAO's core economic ambition is to create a store of wealth digital asset that maintains a sustainable market capitalization of $1 Billion USD.
+
+2. Maintaining a Spot Price Above $1 per Coin
+A foundational performance indicator for the Gulag DAO is a per-coin valuation that consistently trades above $1.
+
+3. Managed Scarcity through Deflationary Supply Compression
+From an initial mint of 1 billion coins, the DAO enacts a deflationary pressure model. Controlled burns — executed via the Burn Bag mechanism — gradually remove circulating coins from liquidity pools and inactive wallets.
+
+4. Liquidity and Utility Fusion – "The Spigot Mechanism"
+The token functions simultaneously as a Liquidity and Utility coin, forming an inter-dependent loop between use, reward, and treasury enrichment.
+
+5. Game Play as Economic Acceleration and Deflationary Engine
+Gameplay serves as both the cultural heart and the economic throttle of Gulag DAO. Through interactive missions, challenges, and achievements, game events generate Payok circulation and Burn Bag triggers. In Gulag DAO, play is not leisure — it is the act of economic liberation.
+
+6. Strategic Outcome
+By merging these elements — store of value engineering, deflationary design, liquidity pool control, and gamified utility — Gulag DAO positions its coin as a self-reinforcing digital economy.`
+        )
+      ].join("")
+    )
+  );
+  parts.push(
+    section(
+      "PARTICIPATION — DETAILED MODULES",
+      [
+        sub(
+          "PARTICIPATION LEVELS — PHASE I",
+          "Freelance Operative (Level 1)\n• No persona\n• No governance\n• No Team GamePlay\n• Purchase Payok ($0.1 per coin, minimum $5.00)\n• Complete onboarding indoctrination (education)\n• Can explore the various EcoSystem portals – restricted rights.\n• Can engage the Suite Service\n\nPatriot Recruit (Level 2)\n• Meet all requirements for Freelance Operative\n• Purchase a minimum of $15 in Gulag governance tokens\n• Must complete a second purchase of Payok\n• Complete – Treasury EcoSystem indoctrination\n• Create a persona\n• Can join a Team for extended GamePlay\n\nVeteran Operative (Level 3)\n• Meet all requirements for Patriot Recruit\n• Complete required participation missions\n• Increase stake in (purchased) governance tokens\n• Total stake needed – minimum $25\n• Complete – GamePay EcoSystem indoctrination\n\nCommander (Level 4)\n• Meet all requirements for Veteran Operative\n• Complete required participation missions\n• Create/lead a team. Must lead a minimum team of 3\n• Must complete at least 1 team mission.\n• Total stake needed – minimum $50\n• Minimum of $250 in Liquidity Pool participation\n• Complete – Full EcoSystem indoctrination\n\nHigh Commander (Level 5)\n• Meet all requirements for Commander.\n• Must have a minimum team of 10, all reaching the Veteran Operative PL minimum.\n• Must complete at least 5 team missions.\n• Total stake needed – minimum $100.\n• Must acquire a minimum of $500 in Liquidity Pool Participation.\n• Complete – ALL EcoSystem – indoctrination (education).\n\nFinancier – Special Participation Level for Whales:\n• Different levels.\n• Buys Payok from Dev-Team to raise funding for continued development.\n• Earns Gulag Governance tokens.\n• This creates a Quadratic Voting mechanism for Whales.\n• Financiers receive additional voting rights through participation. However, those voting rights are diluted — they cost the financier more per Token received.\n• Non-whale rate: $1 per Token standard | Financier rate: $2–$5 per Token"
+        ),
+        sub(
+          "PARTICIPATION GOVERNANCE",
+          "Accumulating Gulag Governance Tokens empowers DAO participants with genuine influence and long-term rewards. These tokens grant direct voting power over policy, treasury allocation, and EcoSystem development proposals.\n\nComparison — DAO Governance Participant vs. Board Member of a Financial Institution:\nA DAO participant earns power through token ownership and community consensus, exercising it transparently on-chain via smart contract voting. A board member's authority stems from appointment, regulation, and fiduciary duty within a centralized corporate framework.\n\nI. Basis of Authority: DAO – token ownership and decentralized consensus. Board – appointment, regulation, fiduciary structure.\nII. Governance Framework: DAO – open, transparent, algorithmic. Board – hierarchical, regulated, centralized.\nIII. Participation and Access: DAO – inclusive, token-based. Board – limited to accredited individuals.\nIV. Accountability and Transparency: DAO – all decisions on-chain. Board – deliberations private.\nV. Structural Philosophy: DAO – democratized, community-driven. Board – custodial, hierarchy-driven."
+        ),
+        sub(
+          "PERSONAS",
+          `Each participant will only have one persona. Canister apps maintain a Map<Principal, PersonaRecord> structure — where each participant's DAO_LIS ID serves as the key and their single persona record stores evolving data like level, roles, achievements, and mission flags.
+
+Core Identity:
+• Persona ID (UUID)
+• Display Name / Codename (Operative Handle, e.g., "Captain Proton")
+• Registration Timestamp and Internet Identity Anchor ID
+• Assigned Role / Rank (Classification Level within DAO)
+
+Functional Attributes:
+• Wallet Addresses (IC Principal IDs and linked accounts)
+• Mission Participation History
+• Governance Activity (Votes cast, proposals authored)
+• Treasury Interactions
+
+Narrative and Lore:
+• Faction Alignment or Division assigned
+• Agent Affinity and Lore Titles
+• Legacy Achievements and DAO rank badges
+
+Security and Verification:
+• Authentication status (verified through Internet Identity)
+• Reputation Score / Trust Tier
+• Key Event Log`
+        ),
+        sub(
+          "REWARDING EARLY ADOPTERS",
+          "Successful DAOs have used several strategies to reward early adopters while fostering long-term commitment. Common methods include governance token airdrops (e.g., Uniswap's initial UNI airdrop), vesting rewards where tokens unlock gradually (Aave, MakerDAO), and founding NFTs that grant exclusive privileges or yield multipliers (Curve, ENS).\n\nDeferred Reward Model:\nNFT receipts accumulate and become redeemable after specific maturity triggers (e.g., a five-year lock or reaching economic stability). Once mature, these NFTs can be exchanged for PAYOK distributions or dividends.\n\nEarly Adopter Rewards — Gulag DAO will leverage:\n• Governance token airdrops for early participants\n• Vesting schedules, where rewards unlock gradually\n• Founders' NFTs, tied to privileges or yield multipliers\n• Enhanced voting weights and retroactive funding rounds\n\nMulti-Tiered Earning System:\n• Direct Task Reward: Instant Payok payout upon task validation\n• Vested Bonus: Accrues over repeated participation epochs\n• Reputation Amplifier: Gain in governance weight or expanded mission access\n\nFairness Protocols:\nAll rewards are issued via NFT certificates, identity-bound to Operatives, and tied directly to achievement indices and on-chain validation — ensuring non-duplicative, exploit-resistant distribution."
+        )
+      ].join("")
+    )
+  );
+  parts.push(
+    section(
+      "INTEGRATED APPLICATIONS",
+      [
+        sub(
+          "THE DAO PROTECTORATE",
+          "//INTEGRATED APP: SECURITY APPARATUS//\n\nOVERVIEW: The DAO Protectorate is the defensive perimeter and internal security apparatus of the Gulag DAO EcoSystem. It is not a police force, not a tribunal, and not a governance chamber. Instead, it is the structural shield that ensures the health, stability, and discipline of every app, every participant, and every operational flow that enters the DAO's domain.\n\nFUNCTIONALITY: This app will have a portal where DAO participants can go and learn about: Anonymity on the IC, how to protect their account, IC account Protocols, the Principal ID, how to protect their wallets; and other appropriate functionality."
+        ),
+        sub(
+          "ARCHIPELAGO PORTAL",
+          `//INTEGRATED APP: RESEARCH & MISSION COORDINATION//
+
+FUNCTIONALITY, GAMEPLAY, AND LORE INTEGRATION OVERVIEW: The Archipelago Portal is the Gulag DAO's official research and mission coordination interface, designed to transform community intelligence into actionable strategy. Within the broader lore, it represents the distributed network of outposts that survived the Old World's collapse, where Liberators gather evidence, decode historical fragments, and prepare operations to expand the DAO's influence.
+
+PURPOSE: The Gulag DAO's central research and mission intelligence hub, integrating decentralized knowledge creation with governance and strategic coordination. Archipelago Portal is the viewing App for documents stored by "Cortex Archivum."`
+        ),
+        sub(
+          "CORTEX ARCHIVUM",
+          "//INTEGRATED APP: CENTRAL MEMORY ORGAN//\n\nTHE CENTRAL MEMORY ORGAN: The Cortex Archivum is the central memory organ of the Gulag DAO EcoSystem — the place where all doctrinal texts, mission briefs, dossiers, ecological maps, governance manifests, and historical records are stored, cross-linked, interpreted, and surfaced.\n\nFUNCTIONALITY: A neural schema database framed as the DAO's collective digital consciousness. Cortex Archivum, the DAO's document database application. It will function as a fully styled Operational Module, housing lore documents, design manifests, and classified records."
+        ),
+        sub(
+          "MALYAVA COVE",
+          "//INTEGRATED APP: ENCRYPTED COMMUNICATION LAYER//\n\nLORE & OVERVIEW: Malyava Cove is a DAO-linked secure communication layer showcasing encrypted message exchanges among users. The application demonstrates the encrypted autonomy layer of the Gulag DAO ecosystem through a functional messaging interface with encryption capabilities and DAO identity validation.\n\nSTRATEGIC OVERVIEW: Malyava Cove is the strategic privacy and communication core of the Gulag Suite ecosystem — an encrypted autonomy layer that merges secure interpersonal messaging with tokenized, verifiable integrity."
+        )
+      ].join("")
+    )
+  );
+  parts.push(
+    section(
+      "AFFILIATED APPS — CRYPTO PLAYGROUND",
+      [
+        sub(
+          "CRYPTO FETCH",
+          "Crypto Fetch serves as the Gulag DAO's decentralized intelligence hub, designed to gather, analyze, and visualize multi-chain market data in support of informed governance, treasury oversight, and strategic coordination across connected EcoSystems. Architecturally, it operates as a data and analytics layer within the DAO's on-chain framework, providing transparent metrics for proposal evaluation and performance tracking. Its modular portals enable members to perform sanctioned fetches, visualize outcomes, manage access roles, and export validated reports to other operational canisters. Functionally, it underpins decision-making efficiency by aligning tokenized incentives, analytical transparency, and community-driven development under a unified cultural and economic structure."
+        ),
+        sub(
+          "CRYPTO TRADING ANALYTICS",
+          "Within the Gulag DAO framework, the Crypto Trading Analytics Portal functions as the analytical and strategic intelligence hub supporting governance, treasury, and member decision processes. Designed to integrate seamlessly with other EcoSystems, it analyzes Bitcoin and broader market data to produce actionable insights, performance metrics, and trading simulations that inform DAO treasury strategies and governance votes. Its architecture merges decentralized data management, portfolio modeling, and automated insight generation to strengthen Gulag's economic resilience, transparency, and collective intelligence while reinforcing its cultural identity of disciplined analysis and cooperative strategy execution."
+        ),
+        sub(
+          "CRYPTO LOTTERY",
+          "Crypto Lottery serves as the interactive probability and contribution mechanism within the Gulag DAO's digital architecture, linking governance, treasury flow, and cultural participation through tokenized chance and transparent reward logic. Designed to integrate seamlessly across the DAO's broader EcoSystems, it enables Creators, Players, and Administrators to engage in governed lotteries that distribute tokens according to verified smart contracts while reinforcing DAO accountability. Its architecture harmonizes token utility with governance incentives, routing Coin and Token movements through smart contracts that echo treasury transparency and communal equity, effectively merging entertainment, decentralized finance, and ideological engagement into a cohesive Gulag DAO mechanism."
+        )
+      ].join("")
+    )
+  );
+  parts.push(
+    section(
+      "OPERATIONAL DIRECTIVES",
+      [
+        sub(
+          "DIRECTIVES",
+          "◆ Anonymity strictly enforced\n◆ Autonomy from all centralized authority.\n◆ Trust No One!"
+        )
+      ].join("")
+    )
+  );
+  parts.push(
+    `${HR}//LIBERATION THROUGH CODE — GULAG DAO//
+END OF CLASSIFIED DOSSIER
+${HR}`
+  );
+  return parts.join("");
+}
 function isValidPath(p) {
   return [
     "/",
     "/dao",
     "/mission",
-    "/ecosystem",
     "/governance",
     "/lore",
     "/participate",
@@ -27277,7 +27969,7 @@ function IntegratedAppNavModal({
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
                         "h2",
                         {
-                          className: "font-display font-black text-xl uppercase tracking-widest",
+                          className: "font-display font-black text-base uppercase tracking-widest",
                           style: { color: "#000" },
                           children: app.label
                         }
@@ -27442,7 +28134,7 @@ function EnterGateNavModal({ onClose }) {
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "p",
                   {
-                    className: "font-display font-black text-2xl uppercase tracking-widest leading-tight",
+                    className: "font-display font-black text-lg uppercase tracking-widest leading-tight",
                     style: { color: "oklch(0.55 0.28 195)" },
                     children: "ONBOARDING PORTAL"
                   }
@@ -27469,7 +28161,7 @@ function EnterGateNavModal({ onClose }) {
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "p",
                   {
-                    className: "font-display font-black text-xl uppercase tracking-widest",
+                    className: "font-display font-black text-base uppercase tracking-widest",
                     style: { color: "oklch(0.65 0.26 65)" },
                     children: "Financial Independence Day"
                   }
@@ -27583,7 +28275,7 @@ function CryptoSubModal({
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
                         "h2",
                         {
-                          className: "font-display font-black text-xl uppercase tracking-widest",
+                          className: "font-display font-black text-base uppercase tracking-widest",
                           style: { color: "#000" },
                           children: data.title
                         }
@@ -27747,7 +28439,7 @@ function OperationalDirectivesModal({ onClose }) {
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
                     "h2",
                     {
-                      className: "font-display font-black text-2xl uppercase tracking-widest leading-tight",
+                      className: "font-display font-black text-lg uppercase tracking-widest leading-tight",
                       style: { color: "#FFD700" },
                       children: "OPERATIONAL DIRECTIVES"
                     }
@@ -27780,7 +28472,7 @@ function OperationalDirectivesModal({ onClose }) {
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "p",
                   {
-                    className: "font-display font-black text-xl uppercase tracking-widest leading-snug",
+                    className: "font-display font-black text-base uppercase tracking-widest leading-snug",
                     style: { color: "#ffffff" },
                     children: directive
                   }
@@ -27896,7 +28588,7 @@ function SecureCommunicationModal({ onClose }) {
                         /* @__PURE__ */ jsxRuntimeExports.jsx(
                           "h2",
                           {
-                            className: "font-display font-black text-lg uppercase tracking-widest leading-none",
+                            className: "font-display font-black text-sm uppercase tracking-widest leading-none",
                             style: { color: "oklch(0.55 0.28 195)" },
                             children: "SECURE COMMUNICATION"
                           }
@@ -28143,6 +28835,577 @@ function SecureCommunicationModal({ onClose }) {
     }
   );
 }
+function ComingSoonModal({
+  title,
+  onClose
+}) {
+  reactExports.useEffect(() => {
+    const h = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", h);
+    return () => document.removeEventListener("keydown", h);
+  }, [onClose]);
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "fixed inset-0 z-[300] flex items-center justify-center p-4",
+      style: { background: "rgba(0,0,0,0.85)" },
+      "data-ocid": "nav.coming_soon_dialog",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            type: "button",
+            className: "absolute inset-0",
+            onClick: onClose,
+            "aria-label": "Close",
+            tabIndex: -1
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "relative z-10 w-full max-w-md flex flex-col overflow-hidden",
+            style: {
+              background: "#0a0e14",
+              border: "1px solid #00FFFF",
+              boxShadow: "0 0 60px rgba(0,255,255,0.15), 0 0 120px rgba(0,255,255,0.05), 0 32px 80px rgba(0,0,0,0.95)"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: "h-0.5 w-full flex-shrink-0",
+                  style: {
+                    background: "linear-gradient(90deg, transparent, #00FFFF, #FFD700, transparent)"
+                  }
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: "flex items-center px-4 py-1.5 flex-shrink-0 overflow-hidden",
+                  style: {
+                    background: "rgba(255,215,0,0.04)",
+                    borderBottom: "1px solid rgba(255,215,0,0.15)"
+                  },
+                  "aria-hidden": true,
+                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "span",
+                    {
+                      className: "font-mono text-[0.5rem] tracking-[0.15em] whitespace-nowrap overflow-hidden w-full",
+                      style: { color: "rgba(255,215,0,0.4)" },
+                      children: "─────⊸──╂──◇──╂──⊸─────⊸──╂──◇──╂──⊸─────⊸──╂──◇──╂──⊸─────"
+                    }
+                  )
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center justify-between px-6 py-4 flex-shrink-0",
+                  style: { borderBottom: "1px solid rgba(0,255,255,0.2)" },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "span",
+                        {
+                          className: "classified-badge text-[0.52rem] tracking-widest",
+                          style: { color: "rgba(255,215,0,0.6)" },
+                          children: "//ACCESS RESTRICTED — PORTAL OFFLINE//"
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "h2",
+                        {
+                          className: "font-display font-black text-sm uppercase tracking-widest leading-none",
+                          style: { color: "#00FFFF" },
+                          children: title
+                        }
+                      )
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "button",
+                      {
+                        type: "button",
+                        onClick: onClose,
+                        className: "p-1.5 transition-colors duration-200",
+                        style: { color: "rgba(0,255,255,0.6)" },
+                        "aria-label": "Close",
+                        "data-ocid": "nav.coming_soon_close_button",
+                        children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 16 })
+                      }
+                    )
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col items-center gap-5 px-6 py-8 text-center", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "svg",
+                  {
+                    width: "64",
+                    height: "64",
+                    viewBox: "0 0 64 64",
+                    fill: "none",
+                    xmlns: "http://www.w3.org/2000/svg",
+                    role: "img",
+                    "aria-label": "Restricted access badge",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "circle",
+                        {
+                          cx: "32",
+                          cy: "32",
+                          r: "30",
+                          fill: "rgba(255,215,0,0.05)",
+                          stroke: "#FFD700",
+                          strokeWidth: "2",
+                          strokeDasharray: "4 3"
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "circle",
+                        {
+                          cx: "32",
+                          cy: "32",
+                          r: "22",
+                          fill: "rgba(255,215,0,0.08)",
+                          stroke: "rgba(255,215,0,0.5)",
+                          strokeWidth: "1.5"
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "text",
+                        {
+                          x: "32",
+                          y: "26",
+                          textAnchor: "middle",
+                          fontSize: "11",
+                          fontWeight: "900",
+                          fill: "#FFD700",
+                          fontFamily: "monospace",
+                          letterSpacing: "1",
+                          children: "PORTAL"
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "text",
+                        {
+                          x: "32",
+                          y: "39",
+                          textAnchor: "middle",
+                          fontSize: "9",
+                          fontWeight: "700",
+                          fill: "rgba(0,255,255,0.8)",
+                          fontFamily: "monospace",
+                          letterSpacing: "1",
+                          children: "OFFLINE"
+                        }
+                      )
+                    ]
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "p",
+                  {
+                    className: "font-display font-black text-2xl uppercase tracking-[0.2em] leading-none",
+                    style: {
+                      color: "#FFD700",
+                      textShadow: "0 0 24px rgba(255,215,0,0.4)"
+                    },
+                    children: "COMING SOON"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "p",
+                  {
+                    className: "font-body text-sm leading-relaxed max-w-xs",
+                    style: { color: "rgba(0,255,255,0.85)" },
+                    children: [
+                      "This portal is currently offline. Operational launch scheduled for",
+                      " ",
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "span",
+                        {
+                          className: "font-bold font-display",
+                          style: { color: "#FFD700" },
+                          children: "July 4, 2026"
+                        }
+                      ),
+                      " — Financial Independence Day."
+                    ]
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "div",
+                  {
+                    className: "w-3/4 h-px",
+                    style: {
+                      background: "linear-gradient(90deg, transparent, rgba(0,255,255,0.3), transparent)"
+                    }
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "p",
+                  {
+                    className: "classified-badge text-[0.52rem] tracking-[0.3em]",
+                    style: { color: "rgba(0,255,255,0.35)" },
+                    children: "//LIBERATION THROUGH CODE — GULAG DAO//"
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "px-6 pb-6 flex justify-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "button",
+                {
+                  type: "button",
+                  onClick: onClose,
+                  className: "px-8 py-2 font-display font-black text-sm uppercase tracking-widest transition-all duration-200",
+                  style: {
+                    background: "rgba(0,255,255,0.07)",
+                    border: "1px solid rgba(0,255,255,0.45)",
+                    color: "#00FFFF"
+                  },
+                  onMouseOver: (e) => {
+                    e.currentTarget.style.background = "rgba(0,255,255,0.18)";
+                    e.currentTarget.style.boxShadow = "0 0 16px rgba(0,255,255,0.25)";
+                  },
+                  onFocus: (e) => {
+                    e.currentTarget.style.background = "rgba(0,255,255,0.18)";
+                    e.currentTarget.style.boxShadow = "0 0 16px rgba(0,255,255,0.25)";
+                  },
+                  onMouseOut: (e) => {
+                    e.currentTarget.style.background = "rgba(0,255,255,0.07)";
+                    e.currentTarget.style.boxShadow = "none";
+                  },
+                  onBlur: (e) => {
+                    e.currentTarget.style.background = "rgba(0,255,255,0.07)";
+                    e.currentTarget.style.boxShadow = "none";
+                  },
+                  "data-ocid": "nav.coming_soon_dismiss_button",
+                  children: "CLOSE CHANNEL"
+                }
+              ) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: "h-0.5 w-full flex-shrink-0",
+                  style: {
+                    background: "linear-gradient(90deg, transparent, #FFD700, #00FFFF, transparent)"
+                  }
+                }
+              )
+            ]
+          }
+        )
+      ]
+    }
+  );
+}
+function DossierModal({ onClose }) {
+  const [code, setCode] = reactExports.useState("");
+  const [error, setError] = reactExports.useState(false);
+  const inputRef = reactExports.useRef(null);
+  reactExports.useEffect(() => {
+    const h = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", h);
+    return () => document.removeEventListener("keydown", h);
+  }, [onClose]);
+  reactExports.useEffect(() => {
+    setTimeout(() => {
+      var _a2;
+      return (_a2 = inputRef.current) == null ? void 0 : _a2.focus();
+    }, 50);
+  }, []);
+  function handleDownload(e) {
+    e.preventDefault();
+    if (code === "Download Dossier") {
+      const text = generateDossierText();
+      const blob = new Blob([text], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Gulag DAO Dossier.txt";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      onClose();
+    } else {
+      setError(true);
+      setCode("");
+      setTimeout(() => setError(false), 3e3);
+    }
+  }
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    "div",
+    {
+      className: "fixed inset-0 z-[300] flex items-center justify-center p-4",
+      "data-ocid": "dossier.dialog",
+      children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "button",
+          {
+            type: "button",
+            className: "absolute inset-0 bg-black/85 backdrop-blur-sm",
+            onClick: onClose,
+            "aria-label": "Close",
+            tabIndex: -1
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          "div",
+          {
+            className: "relative z-10 w-full max-w-md flex flex-col overflow-hidden",
+            style: {
+              background: "oklch(0.06 0.015 200)",
+              border: "1px solid oklch(0.55 0.28 195 / 0.6)",
+              boxShadow: "0 0 60px oklch(0.55 0.28 195 / 0.2), 0 32px 80px rgba(0,0,0,0.95)"
+            },
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: "h-0.5 w-full flex-shrink-0",
+                  style: {
+                    background: "linear-gradient(90deg, transparent, oklch(0.55 0.28 195), oklch(0.65 0.26 65), transparent)"
+                  }
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "div",
+                {
+                  className: "flex items-center justify-between px-6 py-4 flex-shrink-0",
+                  style: { borderBottom: "1px solid oklch(0.55 0.28 195 / 0.2)" },
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "div",
+                        {
+                          className: "flex items-center justify-center w-7 h-7 border",
+                          style: {
+                            borderColor: "oklch(0.55 0.28 195 / 0.5)",
+                            background: "oklch(0.55 0.28 195 / 0.1)"
+                          },
+                          children: /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { size: 13, style: { color: "oklch(0.55 0.28 195)" } })
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "span",
+                          {
+                            className: "classified-badge text-[0.55rem] tracking-widest",
+                            style: { color: "oklch(0.65 0.26 65 / 0.7)" },
+                            children: "//SECURE DOSSIER ACCESS//"
+                          }
+                        ),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "h2",
+                          {
+                            className: "font-display font-black text-sm uppercase tracking-widest leading-none",
+                            style: { color: "oklch(0.55 0.28 195)" },
+                            children: "SECURE DOSSIER ACCESS"
+                          }
+                        )
+                      ] })
+                    ] }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "button",
+                      {
+                        type: "button",
+                        onClick: onClose,
+                        className: "p-1.5 transition-colors duration-200",
+                        style: { color: "oklch(0.55 0.28 195 / 0.6)" },
+                        "aria-label": "Close",
+                        "data-ocid": "dossier.close_button",
+                        children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 16 })
+                      }
+                    )
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                "form",
+                {
+                  onSubmit: handleDownload,
+                  className: "flex flex-col gap-5 px-6 py-6",
+                  children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                      "div",
+                      {
+                        className: "flex gap-3 px-4 py-3",
+                        style: {
+                          background: "oklch(0.65 0.26 65 / 0.05)",
+                          border: "1px solid oklch(0.65 0.26 65 / 0.2)"
+                        },
+                        children: [
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "span",
+                            {
+                              className: "flex-shrink-0 mt-0.5 text-sm",
+                              style: { color: "oklch(0.65 0.26 65)" },
+                              children: "◆"
+                            }
+                          ),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx(
+                            "p",
+                            {
+                              className: "classified-badge text-[0.62rem] tracking-wide leading-relaxed",
+                              style: { color: "oklch(0.75 0.15 65)" },
+                              children: "EYES ONLY — Authorized personnel may download the complete Gulag DAO Classified Dossier. Enter the access code to proceed."
+                            }
+                          )
+                        ]
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-2", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "label",
+                        {
+                          htmlFor: "dossier-access-code",
+                          className: "classified-badge text-[0.6rem] tracking-widest uppercase",
+                          style: { color: "oklch(0.55 0.28 195 / 0.8)" },
+                          children: "ACCESS CODE:"
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "input",
+                        {
+                          ref: inputRef,
+                          id: "dossier-access-code",
+                          type: "password",
+                          value: code,
+                          onChange: (e) => {
+                            setCode(e.target.value);
+                            if (error) setError(false);
+                          },
+                          placeholder: "Enter access code...",
+                          className: "w-full font-mono text-sm px-4 py-3 focus:outline-none transition-colors duration-200",
+                          style: {
+                            background: "oklch(0.09 0.015 200)",
+                            border: error ? "1px solid rgba(220, 50, 50, 0.8)" : "1px solid oklch(0.55 0.28 195 / 0.3)",
+                            color: "oklch(0.88 0 0)",
+                            caretColor: "oklch(0.55 0.28 195)",
+                            letterSpacing: "0.1em"
+                          },
+                          onFocus: (e) => {
+                            if (!error)
+                              e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.7)";
+                          },
+                          onBlur: (e) => {
+                            if (!error)
+                              e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.3)";
+                          },
+                          autoComplete: "off",
+                          "data-ocid": "dossier.input"
+                        }
+                      )
+                    ] }),
+                    error && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                      "div",
+                      {
+                        className: "px-4 py-2.5",
+                        style: {
+                          background: "rgba(140, 0, 0, 0.25)",
+                          border: "1px solid rgba(220, 50, 50, 0.5)"
+                        },
+                        "data-ocid": "dossier.error_state",
+                        children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "p",
+                          {
+                            className: "classified-badge text-[0.65rem] tracking-widest",
+                            style: { color: "rgba(255, 120, 120, 0.95)" },
+                            children: "ACCESS DENIED — Invalid access code."
+                          }
+                        )
+                      }
+                    ),
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "button",
+                        {
+                          type: "submit",
+                          disabled: !code.trim(),
+                          className: "flex-1 py-3 font-display font-black text-sm uppercase tracking-widest transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed",
+                          style: {
+                            background: "oklch(0.55 0.28 195 / 0.12)",
+                            border: "1px solid oklch(0.55 0.28 195 / 0.5)",
+                            color: "oklch(0.55 0.28 195)"
+                          },
+                          onMouseOver: (e) => {
+                            if (code.trim()) {
+                              e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.22)";
+                              e.currentTarget.style.boxShadow = "0 0 16px oklch(0.55 0.28 195 / 0.2)";
+                            }
+                          },
+                          onFocus: (e) => {
+                            if (code.trim())
+                              e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.22)";
+                          },
+                          onMouseOut: (e) => {
+                            e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.12)";
+                            e.currentTarget.style.boxShadow = "none";
+                          },
+                          onBlur: (e) => {
+                            e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.12)";
+                            e.currentTarget.style.boxShadow = "none";
+                          },
+                          "data-ocid": "dossier.submit_button",
+                          children: "DOWNLOAD"
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "button",
+                        {
+                          type: "button",
+                          onClick: onClose,
+                          className: "px-5 py-3 font-display font-black text-sm uppercase tracking-widest transition-all duration-200",
+                          style: {
+                            background: "transparent",
+                            border: "1px solid oklch(0.55 0.28 195 / 0.2)",
+                            color: "oklch(0.55 0.28 195 / 0.6)"
+                          },
+                          onMouseOver: (e) => {
+                            e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.08)";
+                            e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.45)";
+                          },
+                          onFocus: (e) => {
+                            e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.08)";
+                          },
+                          onMouseOut: (e) => {
+                            e.currentTarget.style.background = "transparent";
+                            e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.2)";
+                          },
+                          onBlur: (e) => {
+                            e.currentTarget.style.background = "transparent";
+                            e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.2)";
+                          },
+                          "data-ocid": "dossier.cancel_button",
+                          children: "CANCEL"
+                        }
+                      )
+                    ] })
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "div",
+                {
+                  className: "h-0.5 w-full flex-shrink-0",
+                  style: {
+                    background: "linear-gradient(90deg, transparent, oklch(0.65 0.26 65 / 0.4), oklch(0.55 0.28 195 / 0.6), transparent)"
+                  }
+                }
+              )
+            ]
+          }
+        )
+      ]
+    }
+  );
+}
 function Navigation() {
   const [open, setOpen] = reactExports.useState(false);
   const [underConstructionMsg, setUnderConstructionMsg] = reactExports.useState(false);
@@ -28159,6 +29422,11 @@ function Navigation() {
   const [cryptoModalTopic, setCryptoModalTopic] = reactExports.useState(null);
   const [operationalDirectivesOpen, setOperationalDirectivesOpen] = reactExports.useState(false);
   const [secureCommunicationOpen, setSecureCommunicationOpen] = reactExports.useState(false);
+  const [showPresaleComingSoon, setShowPresaleComingSoon] = reactExports.useState(false);
+  const [showWhitelistComingSoon, setShowWhitelistComingSoon] = reactExports.useState(false);
+  const [ecosystemsModalOpen, setEcosystemsModalOpen] = reactExports.useState(false);
+  const [ecosystemsTopic, setEcosystemsTopic] = reactExports.useState("");
+  const [dossierModalOpen, setDossierModalOpen] = reactExports.useState(false);
   const integratedAppsRef = reactExports.useRef(null);
   const affiliatedAppsRef = reactExports.useRef(null);
   const routerState = useRouterState();
@@ -28201,8 +29469,9 @@ function Navigation() {
       navigate({ to: "/participate" });
     } else if (val === "nav:/governance") {
       navigate({ to: "/governance" });
-    } else if (val === "nav:/ecosystem") {
-      navigate({ to: "/ecosystem" });
+    } else if (val.startsWith("eco-")) {
+      setEcosystemsTopic(val);
+      setEcosystemsModalOpen(true);
     } else {
       setUnderConstructionMsg(true);
     }
@@ -28296,7 +29565,7 @@ function Navigation() {
                 "button",
                 {
                   type: "button",
-                  onClick: () => navigate({ to: "/presale" }),
+                  onClick: () => setShowPresaleComingSoon(true),
                   className: "px-3 py-1.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border transition-colors duration-200",
                   style: {
                     background: "rgba(255,215,0,0.07)",
@@ -28330,7 +29599,7 @@ function Navigation() {
                 "button",
                 {
                   type: "button",
-                  onClick: () => navigate({ to: "/whitelist" }),
+                  onClick: () => setShowWhitelistComingSoon(true),
                   className: "px-3 py-1.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border transition-colors duration-200",
                   style: {
                     background: "oklch(0.55 0.28 195 / 0.07)",
@@ -28455,6 +29724,20 @@ function Navigation() {
                   }
                 ),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Link,
+                  {
+                    to: "/comparative",
+                    className: "px-6 py-1.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border transition-colors duration-200 whitespace-nowrap",
+                    style: {
+                      background: currentPath === "/comparative" ? "oklch(0.55 0.28 195 / 0.2)" : "oklch(0.08 0.01 200)",
+                      borderColor: currentPath === "/comparative" ? "oklch(0.55 0.28 195)" : "oklch(0.55 0.28 195 / 0.4)",
+                      color: currentPath === "/comparative" ? "oklch(0.80 0.25 195)" : "oklch(0.60 0.25 195)"
+                    },
+                    "data-ocid": "nav.secondary_comparative_link",
+                    children: "COMPARATIVE ANALYSIS"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "div",
                   {
                     className: "w-px h-5 self-center flex-shrink-0",
@@ -28549,6 +29832,45 @@ function Navigation() {
                     }
                   )
                 ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "button",
+                  {
+                    type: "button",
+                    onClick: () => setDossierModalOpen(true),
+                    className: "ml-auto px-3 py-1.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border transition-colors duration-200 flex items-center gap-1.5 flex-shrink-0",
+                    style: {
+                      background: "oklch(0.55 0.28 195 / 0.05)",
+                      borderColor: "oklch(0.55 0.28 195 / 0.28)",
+                      color: "oklch(0.55 0.28 195 / 0.65)"
+                    },
+                    onMouseOver: (e) => {
+                      e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.14)";
+                      e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.6)";
+                      e.currentTarget.style.color = "oklch(0.70 0.25 195)";
+                    },
+                    onFocus: (e) => {
+                      e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.14)";
+                      e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.6)";
+                    },
+                    onMouseOut: (e) => {
+                      e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.05)";
+                      e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.28)";
+                      e.currentTarget.style.color = "oklch(0.55 0.28 195 / 0.65)";
+                    },
+                    onBlur: (e) => {
+                      e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.05)";
+                      e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.28)";
+                      e.currentTarget.style.color = "oklch(0.55 0.28 195 / 0.65)";
+                    },
+                    "aria-label": "Download Dossier",
+                    title: "Download Dossier",
+                    "data-ocid": "nav.dossier_download_button",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { size: 10, "aria-hidden": true }),
+                      "DOSSIER"
+                    ]
+                  }
+                ),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
                     "label",
@@ -28569,11 +29891,16 @@ function Navigation() {
                       "data-ocid": "nav.secondary_select.4",
                       children: [
                         /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", disabled: true, children: "— ECOSYSTEMS —" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "nav:/ecosystem", children: "EcoSystem Overview" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "option-e2", children: "Option 2" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "option-e3", children: "Option 3" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "option-e4", children: "Option 4" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "option-e5", children: "Option 5" })
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-apps", children: "Apps EcoSystem" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-treasury", children: "Treasury EcoSystem" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-governance", children: "Governance EcoSystem" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-lore", children: "Lore EcoSystem" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-gameplay", children: "Game-Play EcoSystem" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-unified-doc", children: "Unified Document EcoSystem" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-comms", children: "Communications & Outreach EcoSystem" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-security", children: "Security & Verification EcoSystem" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-development", children: "Development EcoSystem" }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-community", children: "Community Engagement EcoSystem" })
                       ]
                     }
                   )
@@ -28934,6 +30261,17 @@ function Navigation() {
         }
       }
     ),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
+      EcoSystemsModal,
+      {
+        isOpen: ecosystemsModalOpen,
+        topic: ecosystemsTopic,
+        onClose: () => {
+          setEcosystemsModalOpen(false);
+          setEcosystemsTopic("");
+        }
+      }
+    ),
     tokenomicsModalOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(
       TokenomicsModal,
       {
@@ -28944,6 +30282,21 @@ function Navigation() {
         }
       }
     ),
+    showPresaleComingSoon && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ComingSoonModal,
+      {
+        title: "PRE-SALE PORTAL",
+        onClose: () => setShowPresaleComingSoon(false)
+      }
+    ),
+    showWhitelistComingSoon && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      ComingSoonModal,
+      {
+        title: "WHITELISTING PORTAL",
+        onClose: () => setShowWhitelistComingSoon(false)
+      }
+    ),
+    dossierModalOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(DossierModal, { onClose: () => setDossierModalOpen(false) }),
     open && /* @__PURE__ */ jsxRuntimeExports.jsxs(
       "div",
       {
@@ -29022,15 +30375,31 @@ function Navigation() {
 const rootRoute = createRootRoute({
   component: RootLayout
 });
+function ScrollToTop() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  reactExports.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [pathname]);
+  return null;
+}
 function RootLayout() {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "dark min-h-screen bg-background text-foreground", children: [
+    /* @__PURE__ */ jsxRuntimeExports.jsx(ScrollToTop, {}),
     /* @__PURE__ */ jsxRuntimeExports.jsx(Navigation, {}),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {})
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}),
+    /* @__PURE__ */ jsxRuntimeExports.jsx(FooterNav, {})
   ] });
 }
 function PortalFooter({ portal: portal2, className }) {
   const year = (/* @__PURE__ */ new Date()).getFullYear();
   const hostname = typeof window !== "undefined" ? window.location.hostname : "gulag.dao";
+  const navigate = useNavigate();
+  function handleReturn(e) {
+    e.preventDefault();
+    navigate({ to: "/" }).then(() => {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    });
+  }
   return /* @__PURE__ */ jsxRuntimeExports.jsx(
     "footer",
     {
@@ -29045,6 +30414,7 @@ function PortalFooter({ portal: portal2, className }) {
             "a",
             {
               href: "/",
+              onClick: handleReturn,
               className: "classified-badge text-primary/60 hover:text-primary transition-colors duration-200",
               "data-ocid": "footer.return_link",
               children: "← RETURN TO ENTRY"
@@ -29118,8 +30488,8 @@ function PortalLayout({
     {
       className: cn(
         "relative min-h-screen flex flex-col bg-background",
-        "pt-28"
-        // offset fixed two-row nav
+        "pt-28 pb-20"
+        // offset fixed two-row nav; pb-20 clears fixed footer
       ),
       "data-ocid": `${portal2.id}.page`,
       children: [
@@ -37027,7 +38397,7 @@ const comparativeRoute = createRoute({
   path: "/comparative",
   component: ComparativePage
 });
-const portal$7 = PORTALS.find((p) => p.id === "comparative");
+const portal$6 = PORTALS.find((p) => p.id === "comparative");
 function SectionDivider$1({ stamp }) {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-4 py-2", "aria-hidden": true, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 h-px bg-primary/40" }),
@@ -37234,7 +38604,7 @@ const synthSubSections = [
   }
 ];
 function ComparativePage() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(PortalLayout, { portal: portal$7, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(PortalLayout, { portal: portal$6, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
     motion.div,
     {
       initial: { opacity: 0 },
@@ -37247,7 +38617,7 @@ function ComparativePage() {
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-secondary/70 border border-secondary/20 px-2 py-1", children: "//STRATEGIC DOCTRINE — COMPARATIVE REVIEW//" }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-muted-foreground border border-border/40 px-2 py-1", children: "AUTHOR: CAPTAIN PROTON" })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display font-black text-4xl md:text-5xl uppercase leading-tight tracking-tight mb-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display font-black text-3xl md:text-4xl uppercase leading-tight tracking-tight mb-4", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "gradient-text", children: "ADOPTION AND" }),
             " ",
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-foreground", children: "AVOIDANCE" }),
@@ -37368,7 +38738,7 @@ function ComparativePage() {
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 mb-3", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(TrendingUp, { size: 16, className: "text-secondary/70" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display font-black text-lg md:text-3xl uppercase tracking-tight text-foreground", children: [
                     "STANDING ON THE SHOULDERS OF",
                     " ",
                     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-secondary", children: "GIANTS" })
@@ -37476,7 +38846,7 @@ function ComparativePage() {
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-3 mb-3", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { size: 16, className: "text-primary/70" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display font-black text-lg md:text-3xl uppercase tracking-tight text-foreground", children: [
                     "LESSONS FROM COLLAPSE —",
                     " ",
                     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "gradient-text", children: "FAILURES TRANSFORMED" })
@@ -37523,7 +38893,7 @@ function ComparativePage() {
                 /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 h-px bg-primary/40" })
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground mb-6", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display font-black text-lg md:text-3xl uppercase tracking-tight text-foreground mb-6", children: [
                   "THE TEN MOST",
                   " ",
                   /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "gradient-text", children: "SUCCESSFUL DAOs" }),
@@ -37618,7 +38988,7 @@ function ComparativePage() {
                     /* @__PURE__ */ jsxRuntimeExports.jsx(TrendingDown, { size: 18, className: "text-destructive" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-destructive/90 mb-1", children: "//WARNING: CAUTIONARY TALE//" }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display font-black text-2xl md:text-3xl uppercase tracking-tight", children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display font-black text-lg md:text-3xl uppercase tracking-tight", children: [
                         "WONDERLAND / TIME —",
                         " ",
                         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-destructive", children: "A CAUTIONARY TALE" })
@@ -37739,8 +39109,8 @@ function ComparativePage() {
                   }
                 ),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-8 md:p-12", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-secondary mb-6", children: "CODE, COMMUNITY, CONTINUITY" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("blockquote", { className: "border-l-4 border-secondary/60 pl-6 mb-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display font-black text-xl md:text-2xl text-foreground italic", children: "“Success is not an accident; it is architecture.”" }) }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-lg md:text-3xl uppercase tracking-tight text-secondary mb-6", children: "CODE, COMMUNITY, CONTINUITY" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("blockquote", { className: "border-l-4 border-secondary/60 pl-6 mb-6", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display font-black text-sm md:text-base text-foreground italic", children: "“Success is not an accident; it is architecture.”" }) }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-sm leading-relaxed max-w-3xl", children: "Gulag DAO’s doctrine fuses economic realism, governance discipline, and narrative unity. Code safeguards social trust; hierarchy balances democracy; and lore sustains cohesion. Each decision — whether in a Treasury motion or a mission vote — aligns with the movement’s creed: liberation through structure. Unlike the speculative models before it, Gulag DAO’s system rewards productive contribution, not blind staking. By encoding lessons into governance and myth, failure becomes our firewall, and history becomes our handbook." })
                 ] })
               ] })
@@ -37757,13 +39127,13 @@ function ComparativePage() {
             "data-ocid": "comparative.assurance",
             children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border border-primary/25 bg-card/20 p-6 md:p-8", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-primary/70 mb-4", children: "//ASSURANCE PROTOCOL: ACTIVE//" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground mb-5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display font-black text-lg md:text-3xl uppercase tracking-tight text-foreground mb-5", children: [
                 "ASSURANCE TO",
                 " ",
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "gradient-text", children: "PROSPECTIVE MEMBERS" })
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-sm leading-relaxed max-w-3xl mb-6", children: "New members can trust that every Payok spent, every mission executed, and every vote cast exists within an ecosystem purpose-built for endurance — free from the cycles of hype, compromise, and collapse that plagued earlier projects. The DAO’s Burn Bag ensures economic sanctity; mission wallets ensure transparency and distributed power; and the Agent’s intelligent architecture ensures evolution, not entropy." }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "border border-primary/30 bg-primary/5 px-6 py-4 inline-block", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display font-black text-lg md:text-xl tracking-wide text-primary", children: "“In Gulag DAO, participation is not risk — it is resistance.”" }) })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "border border-primary/30 bg-primary/5 px-6 py-4 inline-block", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display font-black text-sm md:text-xl tracking-wide text-primary", children: "“In Gulag DAO, participation is not risk — it is resistance.”" }) })
             ] })
           }
         ),
@@ -37777,7 +39147,7 @@ function ComparativePage() {
             className: "border border-secondary/20 bg-secondary/5 px-6 py-5 text-center",
             "data-ocid": "comparative.footer_motto",
             children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display font-black text-base md:text-lg text-secondary uppercase tracking-widest", children: "“From the failures of the past, we forge our unbreakable code.”" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display font-black text-sm md:text-lg text-secondary uppercase tracking-widest", children: "“From the failures of the past, we forge our unbreakable code.”" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-muted-foreground mt-2", children: "— Gulag DAO Codex" })
             ]
           }
@@ -37836,7 +39206,7 @@ const daoRoute = createRoute({
   path: "/dao",
   component: DaoPage
 });
-const portal$6 = PORTALS.find((p) => p.id === "dao");
+const portal$5 = PORTALS.find((p) => p.id === "dao");
 const principles = [
   {
     label: "DECENTRALIZATION",
@@ -37862,7 +39232,7 @@ function ClassifiedDivider$1({ label }) {
   ] });
 }
 function DaoPage() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(PortalLayout, { portal: portal$6, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(PortalLayout, { portal: portal$5, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
     motion.div,
     {
       initial: { opacity: 0 },
@@ -37871,7 +39241,7 @@ function DaoPage() {
       className: "flex flex-col gap-12",
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-3xl", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display font-black text-4xl md:text-5xl uppercase leading-tight tracking-tight mb-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display font-black text-3xl md:text-4xl uppercase leading-tight tracking-tight mb-4", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-foreground", children: "WHAT IS A" }),
             " ",
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "gradient-text", children: "DAO" })
@@ -37890,7 +39260,7 @@ function DaoPage() {
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-secondary/70 mb-3", children: "//CONCEPT: DECENTRALIZATION//" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display font-black text-2xl uppercase tracking-wide mb-4 text-foreground", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display font-black text-lg uppercase tracking-wide mb-4 text-foreground", children: [
                   "WHAT DOES ",
                   /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "gradient-text", children: "DECENTRALIZED" }),
                   " ",
@@ -37903,7 +39273,7 @@ function DaoPage() {
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-secondary/70 mb-3", children: "//CONCEPT: AUTONOMOUS ORGANIZATIONS//" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display font-black text-2xl uppercase tracking-wide mb-4 text-foreground", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("h2", { className: "font-display font-black text-lg uppercase tracking-wide mb-4 text-foreground", children: [
                   "FROM ",
                   /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "gradient-text", children: "CONCEPT" }),
                   " TO DAO"
@@ -37936,7 +39306,7 @@ function DaoPage() {
                     String(i + 1).padStart(2, "0"),
                     " // PRINCIPLE"
                   ] }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-black text-xl uppercase tracking-wide text-foreground", children: p.label }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-black text-base uppercase tracking-wide text-foreground", children: p.label }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("p", { className: "font-mono text-secondary text-xs font-bold uppercase tracking-wider", children: [
                     "— ",
                     p.sub
@@ -38023,7 +39393,7 @@ function DaoPage() {
                 }
               ),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-primary/60 mb-6", children: "//CONTEXT: WHY A DAO//" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("blockquote", { className: "font-display font-black text-2xl md:text-3xl uppercase leading-tight tracking-tight text-foreground mb-6", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("blockquote", { className: "font-display font-black text-lg md:text-2xl uppercase leading-tight tracking-tight text-foreground mb-6", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "gradient-text", children: "Distributed resistance" }),
                 " for distributed liberation —",
                 /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
@@ -38072,310 +39442,11 @@ function DaoPage() {
 const ecosystemRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/ecosystem",
-  component: EcosystemPage
+  beforeLoad: () => {
+    throw redirect({ to: "/", replace: true });
+  },
+  component: () => null
 });
-const portal$5 = PORTALS.find((p) => p.id === "ecosystem");
-const SECTION_DELAY = [0.1, 0.2, 0.3, 0.4];
-function SectionCard({
-  badge,
-  title,
-  children,
-  delay: delay2,
-  ocid,
-  accentColor = "primary"
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    motion.div,
-    {
-      initial: { opacity: 0, x: -12 },
-      animate: { opacity: 1, x: 0 },
-      transition: { duration: 0.45, delay: delay2 },
-      className: "relative bg-card/40 border border-border/50 hover:border-primary/40 transition-colors duration-300 overflow-hidden",
-      "data-ocid": ocid,
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            className: `absolute left-0 top-0 bottom-0 w-[3px] ${accentColor === "primary" ? "bg-primary" : "bg-secondary"}`,
-            "aria-hidden": true
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "pl-8 pr-6 py-7", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "p",
-            {
-              className: `classified-badge mb-3 ${accentColor === "primary" ? "text-primary/70" : "text-secondary/70"}`,
-              children: badge
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-xl md:text-2xl uppercase tracking-wide text-foreground mb-5", children: title }),
-          children
-        ] })
-      ]
-    }
-  );
-}
-function StatBox({
-  label,
-  value,
-  variant = "primary"
-}) {
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border border-border/50 bg-background/60 p-4 flex flex-col gap-1", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-muted-foreground text-[10px]", children: label }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(
-      "span",
-      {
-        className: `font-mono font-bold text-xl md:text-2xl tracking-wider ${variant === "primary" ? "text-secondary" : "text-primary"}`,
-        children: value
-      }
-    )
-  ] });
-}
-function FeeFlowDiagram() {
-  const nodes = [
-    { label: "TRANSACTION FEE", sub: "Protocol-level levy" },
-    { label: "TREASURY ALLOCATION", sub: "Held in canister vault" },
-    { label: "REDISTRIBUTION", sub: "Operatives & mission" }
-  ];
-  const routes = [
-    { pct: "40%", dest: "Mission Operations Fund" },
-    { pct: "30%", dest: "Treasury Reserve" },
-    { pct: "20%", dest: "Payok Staker Rewards" },
-    { pct: "10%", dest: "Protocol Development" }
-  ];
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-6", "data-ocid": "ecosystem.fee_flow", children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col sm:flex-row items-stretch gap-0", children: nodes.map((node, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(reactExports.Fragment, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1 border border-primary/40 bg-background/50 px-4 py-3 flex flex-col gap-1 items-center text-center", children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono font-bold text-xs text-primary uppercase tracking-widest", children: node.label }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-[11px] text-muted-foreground", children: node.sub })
-      ] }),
-      i < nodes.length - 1 && /* @__PURE__ */ jsxRuntimeExports.jsx(
-        "div",
-        {
-          className: "flex items-center justify-center self-center px-1 py-2 sm:py-0",
-          "aria-hidden": true,
-          children: /* @__PURE__ */ jsxRuntimeExports.jsx(ArrowRight, { className: "text-primary/60 w-5 h-5 rotate-90 sm:rotate-0" })
-        }
-      )
-    ] }, node.label)) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 md:grid-cols-4 gap-3", children: routes.map((r2) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "div",
-      {
-        className: "border border-primary/25 bg-card/30 p-3 flex flex-col items-center gap-1",
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono font-black text-2xl text-primary", children: r2.pct }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-[11px] text-muted-foreground text-center leading-snug", children: r2.dest })
-        ]
-      },
-      r2.dest
-    )) })
-  ] });
-}
-function EcosystemPage() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(PortalLayout, { portal: portal$5, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(
-    motion.div,
-    {
-      initial: { opacity: 0 },
-      animate: { opacity: 1 },
-      transition: { duration: 0.35 },
-      className: "flex flex-col gap-8",
-      children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-3xl", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display font-black text-4xl md:text-5xl uppercase leading-tight tracking-tight mb-3", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-foreground", children: "THE" }),
-            " ",
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "gradient-text", children: "ECOSYSTEM" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-sm leading-relaxed", children: "Gulag DAO operates a sovereign closed-loop economic system. Every component — treasury vault, governance token, liquidity pool, and fee routing — is enforced on-chain and auditable by every token holder. No back doors. No exceptions." })
-        ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          SectionCard,
-          {
-            badge: "//SECTOR: ICP-BASED TREASURY//",
-            title: "ICP TREASURY VAULT",
-            delay: SECTION_DELAY[0],
-            ocid: "ecosystem.treasury_card",
-            accentColor: "primary",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-6", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 font-mono text-sm text-muted-foreground leading-relaxed", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "All DAO funds are held in an Internet Computer Protocol canister smart contract. Treasury movements require governance approval via on-chain proposal. No single entity can access, redirect, or freeze treasury assets — only the collective can authorize disbursements." }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex flex-col gap-2", children: [
-                  ["NETWORK", "Internet Computer Protocol"],
-                  ["SMART CONTRACT", "Motoko Canister"],
-                  ["AUDIT STATUS", "Public, on-chain ledger"],
-                  ["ACCESS CONTROL", "Token-weighted proposal vote"]
-                ].map(([label, value]) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex gap-3 items-baseline", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-primary/50 min-w-[130px]", children: label }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-foreground/70 text-xs", children: value })
-                ] }, label)) })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(StatBox, { label: "TREASURY HOLDINGS", value: "423,455 ICP HELD" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  "div",
-                  {
-                    className: "border border-primary/30 bg-primary/5 px-4 py-3 flex items-center gap-3",
-                    "data-ocid": "ecosystem.treasury_status",
-                    children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(
-                        "div",
-                        {
-                          className: "h-2 w-2 rounded-full bg-primary animate-pulse",
-                          "aria-hidden": true
-                        }
-                      ),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono font-bold text-xs tracking-widest text-primary uppercase", children: "TREASURY STATUS: ACTIVE" })
-                    ]
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-[11px] text-muted-foreground leading-relaxed", children: "Treasury balance is updated with each on-chain transaction. Historical disbursements are permanently recorded on the Internet Computer blockchain." })
-              ] })
-            ] })
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          SectionCard,
-          {
-            badge: "//TOKEN: PAYOK COIN//",
-            title: "PAYOK COIN",
-            delay: SECTION_DELAY[1],
-            ocid: "ecosystem.payok_card",
-            accentColor: "secondary",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-6", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  StatBox,
-                  {
-                    label: "CIRCULATING SUPPLY",
-                    value: "12,000,000 PAYOK",
-                    variant: "secondary"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-sm text-muted-foreground leading-relaxed", children: "Payok Coin is the native governance and utility token of the Gulag DAO. Holders possess binding voting power over all proposals — treasury moves, mission funding, protocol upgrades." })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-3", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-secondary/60 mb-2", children: "HOLDER RIGHTS" }),
-                [
-                  [
-                    "VOTING",
-                    "Submit and vote on governance proposals. One token equals one vote. No founder override."
-                  ],
-                  [
-                    "STAKING",
-                    "Lock Payok Coin to earn protocol staking rewards from fee redistribution."
-                  ],
-                  [
-                    "MISSION YIELD",
-                    "Proportional share of Klondike Gold recovery proceeds upon mission completion."
-                  ],
-                  [
-                    "DISTRIBUTION",
-                    "Future DAO distributions to active stakers as treasury grows from protocol activity."
-                  ]
-                ].map(([right, desc], i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  "div",
-                  {
-                    className: "border-l border-secondary/30 pl-3 flex flex-col gap-0.5",
-                    "data-ocid": `ecosystem.payok_right.${i + 1}`,
-                    children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-secondary/60 text-[10px]", children: right }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-xs text-muted-foreground leading-snug", children: desc })
-                    ]
-                  },
-                  right
-                ))
-              ] })
-            ] })
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          SectionCard,
-          {
-            badge: "//PROTOCOL: LIQUIDITY POOLS//",
-            title: "LIQUIDITY POOLS — 5-YEAR LOCK",
-            delay: SECTION_DELAY[2],
-            ocid: "ecosystem.liquidity_card",
-            accentColor: "primary",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-6", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-4 font-mono text-sm text-muted-foreground leading-relaxed", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "All Gulag DAO liquidity pools are subject to a mandatory 5-year time-lock enforced at the smart contract level. This prevents extraction attacks, discourages speculative dumping, and ensures uninterrupted capital allocation for mission operations." }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("p", { children: "No governance vote can override the lock duration. The protocol is immutable on this point — a deliberate architectural decision to protect long-term mission integrity." })
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-4", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  "div",
-                  {
-                    className: "border border-primary/50 bg-primary/5 px-5 py-4 flex items-center gap-4",
-                    "data-ocid": "ecosystem.lock_status",
-                    children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { className: "text-primary w-8 h-8 shrink-0", "aria-hidden": true }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-1", children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono font-black text-sm text-primary uppercase tracking-widest", children: "5-YEAR LOCK ACTIVE" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-[11px] text-muted-foreground", children: "1,825 DAYS — SMART CONTRACT ENFORCED" })
-                      ] })
-                    ]
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 gap-3", children: [
-                  ["PURPOSE", "Mission stability"],
-                  ["ENFORCER", "Motoko canister"],
-                  ["OVERRIDE", "None — immutable"],
-                  ["UNLOCK", "Day 1,826 only"]
-                ].map(([label, value]) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  "div",
-                  {
-                    className: "border border-border/40 bg-background/40 px-3 py-2",
-                    children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-primary/40 text-[9px] mb-0.5", children: label }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-xs text-foreground/70", children: value })
-                    ]
-                  },
-                  label
-                )) })
-              ] })
-            ] })
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          SectionCard,
-          {
-            badge: "//ROUTING: TRANSACTION FEES//",
-            title: "FEE ROUTING ARCHITECTURE",
-            delay: SECTION_DELAY[3],
-            ocid: "ecosystem.fee_card",
-            accentColor: "primary",
-            children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-6", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-sm text-muted-foreground leading-relaxed max-w-2xl", children: "Every DAO-generated transaction triggers an automatic fee split. The routing logic is hardcoded at the protocol level — no governance actor can redirect fees outside the approved channels. Transparency is mandatory, not optional." }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(FeeFlowDiagram, {})
-            ] })
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          motion.div,
-          {
-            initial: { opacity: 0, y: 10 },
-            animate: { opacity: 1, y: 0 },
-            transition: { delay: 0.55 },
-            className: "flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-border/30",
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-xs text-muted-foreground", children: "CLEARANCE VERIFIED — PROCEED TO NEXT SECTOR" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                CTAButton,
-                {
-                  variant: "primary",
-                  size: "lg",
-                  asChild: true,
-                  "data-ocid": "ecosystem.proceed_governance_button",
-                  children: /* @__PURE__ */ jsxRuntimeExports.jsx(Link, { to: "/governance", children: "PROCEED TO GOVERNANCE" })
-                }
-              )
-            ]
-          }
-        )
-      ]
-    }
-  ) });
-}
 const governanceRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/governance",
@@ -38453,7 +39524,7 @@ function GovernancePage() {
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-3xl", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-primary/60 mb-3", children: "//GOVERNANCE PROTOCOL: ACTIVE//" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display font-black text-4xl md:text-5xl uppercase leading-tight tracking-tight mb-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display font-black text-3xl md:text-4xl uppercase leading-tight tracking-tight mb-4", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "gradient-text", children: "ON-CHAIN" }),
             " ",
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-foreground", children: "GOVERNANCE" })
@@ -38479,7 +39550,7 @@ function GovernancePage() {
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-8", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-primary/70 mb-4", children: "//SECTION 01 — ON-CHAIN VOTING//" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground mb-5", children: "Decentralized by Design" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-lg md:text-2xl uppercase tracking-tight text-foreground mb-5", children: "Decentralized by Design" }),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid md:grid-cols-3 gap-6 font-mono text-sm text-muted-foreground", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border-l border-primary/30 pl-4", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-primary font-bold uppercase text-xs mb-2", children: "Smart Contract Execution" }),
@@ -38508,7 +39579,7 @@ function GovernancePage() {
             "data-ocid": "governance.roles_section",
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-secondary/70 mb-6", children: "//SECTION 02 — PARTICIPANT ROLES//" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground mb-8", children: "Chain of Command" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-lg md:text-3xl uppercase tracking-tight text-foreground mb-8", children: "Chain of Command" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-5", children: roles.map((role, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 motion.div,
                 {
@@ -38525,7 +39596,7 @@ function GovernancePage() {
                         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-secondary/60", children: role.code }),
                         /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-secondary/40 text-[9px]", children: role.weight })
                       ] }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-black text-xl uppercase tracking-wide text-secondary mb-3 group-hover:text-secondary transition-colors", children: role.title }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-black text-base uppercase tracking-wide text-secondary mb-3 group-hover:text-secondary transition-colors", children: role.title }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-xs leading-relaxed", children: role.desc })
                     ] })
                   ]
@@ -38545,7 +39616,7 @@ function GovernancePage() {
             "data-ocid": "governance.proposal_section",
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-primary/70 mb-6", children: "//SECTION 03 — PROPOSAL LIFECYCLE//" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground mb-8", children: "From Idea to Execution" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-lg md:text-3xl uppercase tracking-tight text-foreground mb-8", children: "From Idea to Execution" }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "div",
@@ -38597,7 +39668,7 @@ function GovernancePage() {
             "data-ocid": "governance.metrics_section",
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-primary/70 mb-6", children: "//SECTION 04 — KEY METRICS: LIVE INTEL//" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground mb-8", children: "Governance Status" }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-lg md:text-3xl uppercase tracking-tight text-foreground mb-8", children: "Governance Status" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "grid grid-cols-2 md:grid-cols-4 gap-4", children: metrics.map((m, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 motion.div,
                 {
@@ -38610,7 +39681,7 @@ function GovernancePage() {
                   children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-primary/40 text-[9px]", children: m.tag }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display font-black text-xl md:text-2xl text-primary leading-none", children: m.value }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display font-black text-base md:text-lg text-primary leading-none", children: m.value }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-mono text-muted-foreground text-[10px] uppercase tracking-widest leading-tight", children: m.label })
                   ]
                 },
@@ -38631,25 +39702,25 @@ function GovernancePage() {
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px w-full bg-gradient-to-r from-secondary/50 via-secondary/25 to-transparent" }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-8", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-secondary/60 mb-4", children: "//SECTION 05 — QUORUM & THRESHOLDS//" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground mb-6", children: "Pass Conditions" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-lg md:text-3xl uppercase tracking-tight text-foreground mb-6", children: "Pass Conditions" }),
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid md:grid-cols-3 gap-6", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-3", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-baseline gap-3", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display font-black text-3xl text-secondary", children: "10%" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display font-black text-2xl text-secondary", children: "10%" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-secondary/60", children: "QUORUM" })
                     ] }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-xs leading-relaxed", children: "Minimum 10% of circulating Payok Coin supply must participate in a vote for it to be valid. Quorum ensures no small group can manipulate outcomes during low-activity periods." })
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-3", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-baseline gap-3", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display font-black text-3xl text-secondary", children: "51%" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display font-black text-2xl text-secondary", children: "51%" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-secondary/60", children: "SIMPLE MAJORITY" })
                     ] }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-xs leading-relaxed", children: "Standard proposals — such as operational directives, role assignments, and partnership approvals — require a simple majority of 51% to pass. The threshold is low by design to keep the DAO agile." })
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-3 border border-secondary/30 bg-secondary/5 p-4", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-baseline gap-3", children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display font-black text-3xl text-secondary", children: "67%" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display font-black text-2xl text-secondary", children: "67%" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-secondary", children: "SUPERMAJORITY" })
                     ] }),
                     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-xs leading-relaxed", children: "Critical treasury proposals — including large fund releases, liquidity pool modifications, and Klondike Gold recovery operations — require a supermajority of 67%. This protects mission-critical resources from rushed or contested decisions." })
@@ -38843,7 +39914,7 @@ function LaunchGateModal({ onClose }) {
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
                     "p",
                     {
-                      className: "font-display font-black text-2xl uppercase tracking-widest leading-tight",
+                      className: "font-display font-black text-lg uppercase tracking-widest leading-tight",
                       style: { color: "oklch(0.55 0.28 195)" },
                       children: "ONBOARDING PORTAL"
                     }
@@ -39438,7 +40509,7 @@ function NoticeModal({ onClose }) {
                           /* @__PURE__ */ jsxRuntimeExports.jsx(
                             "p",
                             {
-                              className: "font-display font-black text-2xl uppercase tracking-widest leading-tight",
+                              className: "font-display font-black text-lg uppercase tracking-widest leading-tight",
                               style: {
                                 color: "oklch(0.65 0.26 65)",
                                 textShadow: "0 0 20px oklch(0.65 0.26 65 / 0.4)"
@@ -39474,7 +40545,7 @@ function NoticeModal({ onClose }) {
                           /* @__PURE__ */ jsxRuntimeExports.jsx(
                             "p",
                             {
-                              className: "font-display font-black text-2xl uppercase tracking-widest leading-tight",
+                              className: "font-display font-black text-lg uppercase tracking-widest leading-tight",
                               style: {
                                 color: "oklch(0.65 0.26 65)",
                                 textShadow: "0 0 20px oklch(0.65 0.26 65 / 0.4)"
@@ -39536,7 +40607,7 @@ function NoticeModal({ onClose }) {
 function HomePage() {
   const [showLaunchModal, setShowLaunchModal] = reactExports.useState(false);
   const [showNoticeModal, setShowNoticeModal] = reactExports.useState(false);
-  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative min-h-screen flex flex-col bg-background pt-28 overflow-hidden", children: [
+  return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative min-h-screen flex flex-col bg-background pt-28 pb-20 overflow-hidden", children: [
     showLaunchModal && /* @__PURE__ */ jsxRuntimeExports.jsx(LaunchGateModal, { onClose: () => setShowLaunchModal(false) }),
     showNoticeModal && /* @__PURE__ */ jsxRuntimeExports.jsx(NoticeModal, { onClose: () => setShowNoticeModal(false) }),
     /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -39660,7 +40731,7 @@ function HomePage() {
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
                       "span",
                       {
-                        className: "block text-5xl md:text-6xl lg:text-7xl text-foreground",
+                        className: "block text-3xl md:text-4xl lg:text-4xl text-foreground",
                         style: { letterSpacing: "-0.02em" },
                         children: "GULAG DAO"
                       }
@@ -39668,7 +40739,7 @@ function HomePage() {
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
                       "span",
                       {
-                        className: "block text-4xl md:text-5xl lg:text-6xl gradient-text mt-1",
+                        className: "block text-2xl md:text-3xl lg:text-3xl gradient-text mt-1",
                         style: { letterSpacing: "-0.02em" },
                         children: "WHITE PAPER"
                       }
@@ -39683,7 +40754,7 @@ function HomePage() {
                 initial: { opacity: 0, x: 40 },
                 animate: { opacity: 1, x: 0 },
                 transition: { duration: 0.6, delay: 0.3 },
-                className: "font-display font-bold text-xl md:text-2xl uppercase italic text-secondary tracking-widest",
+                className: "font-display font-bold text-base md:text-lg uppercase italic text-secondary tracking-widest",
                 children: "Liberation Through Code"
               }
             ),
@@ -39712,7 +40783,7 @@ function HomePage() {
                 children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-secondary/60 text-[0.55rem] tracking-widest block", children: "//CLAIM//" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display font-black text-xl md:text-2xl uppercase tracking-widest text-secondary leading-tight", children: "The world's most sophisticated meme coin." })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display font-black text-base md:text-lg uppercase tracking-widest text-secondary leading-tight", children: "The world's most sophisticated meme coin." })
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-secondary/60 text-[0.55rem] tracking-widest block", children: "//MEME//" }),
@@ -39720,7 +40791,7 @@ function HomePage() {
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "space-y-1", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-secondary/60 text-[0.55rem] tracking-widest block", children: "//THEME//" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display font-black text-lg md:text-xl uppercase tracking-widest text-primary leading-tight", children: "Free the Gulag – Invest in Freedom" })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display font-black text-sm md:text-base uppercase tracking-widest text-primary leading-tight", children: "Free the Gulag – Invest in Freedom" })
                   ] })
                 ]
               }
@@ -39845,13 +40916,13 @@ function HomePage() {
                       /* @__PURE__ */ jsxRuntimeExports.jsx(
                         "span",
                         {
-                          className: "text-2xl text-primary/50 group-hover:text-primary transition-colors font-mono leading-none mt-1 flex-shrink-0",
+                          className: "text-sm text-primary/50 group-hover:text-primary transition-colors font-mono leading-none mt-1 flex-shrink-0",
                           "aria-hidden": true,
                           children: card.icon
                         }
                       ),
                       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-black text-lg uppercase leading-tight tracking-wide text-foreground group-hover:text-primary transition-colors whitespace-pre-line", children: card.title }),
+                        /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-black text-sm uppercase leading-tight tracking-wide text-foreground group-hover:text-primary transition-colors whitespace-pre-line", children: card.title }),
                         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-muted-foreground mt-2 whitespace-pre-line", children: card.subtitle })
                       ] })
                     ] })
@@ -39910,7 +40981,7 @@ function LorePage() {
           children: [
             /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-3xl", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-secondary/70 mb-3", children: "//ARCHIVE: THE JACOBSON FILES//" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display font-black text-4xl md:text-5xl uppercase leading-tight tracking-tight mb-4", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display font-black text-3xl md:text-4xl uppercase leading-tight tracking-tight mb-4", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "gradient-text", children: "THE FULL" }),
                 " ",
                 /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-foreground", children: "DOSSIER" })
@@ -39987,7 +41058,7 @@ function LorePage() {
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6 grid grid-cols-1 md:grid-cols-3 gap-0 border border-secondary/30", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-2 p-6 border-b md:border-b-0 md:border-r border-secondary/20", children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-secondary/70 mb-4", children: "//ASSET FILE: THE KLONDIKE GOLD//" }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-2xl md:text-3xl uppercase tracking-tight mb-4", children: "THE KLONDIKE GOLD" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-lg md:text-2xl uppercase tracking-tight mb-4", children: "THE KLONDIKE GOLD" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-sm leading-relaxed", children: "The gold predates every government that now claims jurisdiction over it. First extracted during the Klondike Gold Rush era — a period when raw resource extraction defined the northern frontier — it was later processed, refined, and quietly transferred to federal custody, catalogued under a historic reserve classification that placed it beyond public audit." }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-sm leading-relaxed mt-3", children: "In 1974, 2.3 metric tons of refined gold bars vanished from a federal historic reserve vault buried beneath the Alaskan permafrost. The official record describes a clerical reclassification. There was no clerical reclassification. There was theft — institutional, coordinated, and covered by the same agencies tasked with protecting the national reserve." }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-sm leading-relaxed mt-3", children: "The gold became more than wealth. It became a symbol of what institutions conceal from the people they claim to serve. Its recovery is not merely financial. It is an act of historical correction." })
@@ -40034,7 +41105,7 @@ function LorePage() {
                   /* @__PURE__ */ jsxRuntimeExports.jsx(SectionDivider, { stamp: "SECTION 03 — OPERATION: 2005" }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6 border border-primary/25 bg-card/30 p-6", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-primary/70 mb-4", children: "//OP LOG: CROSS-BORDER RETRIEVAL — YEAR 2005//" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-2xl md:text-3xl uppercase tracking-tight mb-5", children: "THE 2005 MISSION" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-lg md:text-3xl uppercase tracking-tight mb-5", children: "THE 2005 MISSION" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-6", children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
                         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-sm leading-relaxed", children: "In 2005, intelligence operative Jacobson assembled a seven-man team and launched a classified cross-border retrieval mission. The objective: locate and recover the Klondike Gold, now believed to be held in transit through a detention complex near the eastern frontier — a facility known in intelligence circles as the Gulag." }),
@@ -40092,7 +41163,7 @@ function LorePage() {
                   /* @__PURE__ */ jsxRuntimeExports.jsx(SectionDivider, { stamp: "SECTION 04 — OPERATION: 2009 EXTRACTION" }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6 border border-secondary/25 bg-card/30 p-6", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-secondary/70 mb-4", children: "//INCIDENT REPORT: UNAUTHORIZED RESCUE — YEAR 2009//" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-2xl md:text-3xl uppercase tracking-tight mb-5", children: "THE 2009 EXTRACTION" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-lg md:text-3xl uppercase tracking-tight mb-5", children: "THE 2009 EXTRACTION" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-6", children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
                         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-sm leading-relaxed", children: "Four years after the disappearance, a covert network of sympathizers within the intelligence community — individuals who knew the truth and refused to accept the official narrative — organized and funded an unauthorized rescue operation. No government sanction. No official support. No contingency plan." }),
@@ -40122,7 +41193,7 @@ function LorePage() {
                   /* @__PURE__ */ jsxRuntimeExports.jsx(SectionDivider, { stamp: "SECTION 05 — THE CODE INSURGENCY" }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "mt-6 border border-primary/25 bg-card/30 p-6", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-primary/70 mb-4", children: "//FOUNDING RECORD: GULAG DAO ORIGIN//" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-2xl md:text-3xl uppercase tracking-tight mb-5", children: "DAO FOUNDING" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-lg md:text-3xl uppercase tracking-tight mb-5", children: "DAO FOUNDING" }),
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-6", children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "md:col-span-2 flex flex-col gap-4", children: [
                         /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-sm leading-relaxed", children: "Jacobson and the surviving sympathizers did not give up. They regrouped slowly, carefully — communicating through methods that left no traceable record. In the years after the rescue, as distributed ledger technology matured and blockchain protocols demonstrated the capacity for trustless coordination at scale, a new architecture became possible." }),
@@ -40147,8 +41218,16 @@ function LorePage() {
                           event: "Internet Computer launches. DAO scaffolded."
                         },
                         {
-                          year: "2024",
-                          event: "Gulag DAO deployed. Recruitment opens."
+                          year: "2026",
+                          event: "Gulag DAO deployment. Recruitment opens."
+                        },
+                        {
+                          year: "2027",
+                          event: "Gulag DAO: Rogue."
+                        },
+                        {
+                          year: "2028",
+                          event: "Gulag DAO: Shadow Authority."
                         }
                       ].map((item, i) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
                         "div",
@@ -40184,7 +41263,7 @@ function LorePage() {
                     ] }),
                     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-8 flex flex-col gap-5", children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-secondary/70", children: "//CODEX: SYMBOL REINVENTION//" }),
-                      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-2xl uppercase tracking-tight", children: "THE COMMANDEERED SYMBOL" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-lg uppercase tracking-tight", children: "THE COMMANDEERED SYMBOL" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-sm leading-relaxed", children: "We took the symbol of oppression and turned it into a weapon of liberation. Every line redrawn. Every meaning inverted. The tools of the regime become the tools of resistance." }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-sm leading-relaxed", children: "The Hammer and Sickle carries centuries of misappropriated meaning — first as the working tools of farmers and laborers, then seized by authoritarian machinery as an emblem of state control. We seize it back. Not as communists. Not as Soviet sympathizers. As patriots who understand that a symbol only holds the power you give it." }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-sm leading-relaxed", children: "In our hands: the hammer drives the stake of accountability into corrupt institutions. The sickle cuts through the bureaucratic thicket that hides stolen gold and abandoned operatives. The tools of oppression, reclaimed by those they were used against." }),
@@ -40239,11 +41318,11 @@ function LorePage() {
                         ),
                         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "text-center flex flex-col items-center gap-6", children: [
                           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-secondary/70", children: "//GULAG DAO — OFFICIAL MISSION STATEMENT//" }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-2xl md:text-4xl uppercase tracking-tight", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-secondary", children: "MISSION STATEMENT" }) }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-lg md:text-4xl uppercase tracking-tight", children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-secondary", children: "MISSION STATEMENT" }) }),
                           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-16 h-px bg-secondary/50", "aria-hidden": true }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("blockquote", { className: "font-mono text-foreground text-base md:text-lg leading-relaxed max-w-3xl text-center", children: "To fund, coordinate, and execute the final mission — the rescue of six operatives left behind, and the recovery of the Klondike Gold. Through decentralized governance, on-chain transparency, and collective action, we will complete what the state abandoned." }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("blockquote", { className: "font-mono text-foreground text-sm md:text-base leading-relaxed max-w-3xl text-center", children: "To fund, coordinate, and execute the final mission — the rescue of six operatives left behind, and the recovery of the Klondike Gold. Through decentralized governance, on-chain transparency, and collective action, we will complete what the state abandoned." }),
                           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "w-16 h-px bg-secondary/50", "aria-hidden": true }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display font-black text-xl md:text-2xl tracking-widest text-secondary uppercase", children: "Liberation through code." }),
+                          /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display font-black text-base md:text-2xl tracking-widest text-secondary uppercase", children: "Liberation through code." }),
                           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-muted-foreground text-xs mt-2", children: "RATIFIED ON-CHAIN — GULAG DAO GENESIS BLOCK — PROPOSAL #0001" })
                         ] })
                       ]
@@ -40357,9 +41436,9 @@ function MissionPage() {
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-secondary/60", children: "//CASE FILE: ACTIVE//" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "h-px flex-1 bg-secondary/20" })
             ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display font-black text-4xl md:text-5xl uppercase leading-tight tracking-tight mb-4", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display font-black text-3xl md:text-4xl uppercase leading-tight tracking-tight mb-4", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "gradient-text", children: "OPERATION KLONDIKE" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-foreground text-3xl md:text-4xl mt-1", children: "— CASE FILE" })
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-foreground text-2xl md:text-3xl mt-1", children: "— CASE FILE" })
             ] }),
             /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-sm leading-relaxed", children: "Six operatives. One billion dollars. A classified mission unfinished since 2009. The following dossier reconstructs the chain of events that led to the founding of Gulag DAO — the decentralized front for liberation and recovery." })
           ] }),
@@ -40399,8 +41478,8 @@ function MissionPage() {
                     ) })
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-baseline gap-4 mb-3", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display font-black text-3xl md:text-4xl text-primary/20 tabular-nums leading-none", children: milestone.year }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-xl md:text-2xl uppercase tracking-wide text-foreground", children: milestone.title })
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display font-black text-2xl md:text-3xl text-primary/20 tabular-nums leading-none", children: milestone.year }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-base md:text-lg uppercase tracking-wide text-foreground", children: milestone.title })
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-sm leading-relaxed", children: milestone.body })
                 ]
@@ -40444,7 +41523,7 @@ function MissionPage() {
                   ] }),
                   /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex-1", children: [
                     /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-secondary/60 mb-3", children: "//SYMBOL TRANSFORMATION: AUTHORIZED//" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "font-display font-black text-2xl md:text-3xl uppercase tracking-wide mb-4", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsxs("h3", { className: "font-display font-black text-lg md:text-2xl uppercase tracking-wide mb-4", children: [
                       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "gradient-text", children: "THE TOOL TURNED AGAINST" }),
                       /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "block text-foreground", children: "THE OPPRESSOR" })
                     ] }),
@@ -40529,14 +41608,14 @@ const steps = [
   },
   {
     num: "03",
-    title: "ROLE ASSIGNMENT",
-    badge: "DAO INTEGRATION",
-    body: "Submit a governance proposal to be assigned your DAO role. The DAO votes on role assignments. Roles carry different voting weights and responsibilities. Choose deliberately.",
+    title: "Create a Gulag DAO Persona",
+    badge: "PERSONA PROTOCOL",
+    body: "Operative onboarding initiates July 4, 2026 — Financial Independence Day. On that date, the Persona Protocol goes live and all cleared operatives will be able to create their Gulag DAO Persona, assume their designated role within the DAO, and enter the operational grid. Stand by for deployment orders.",
     instructions: [
-      "Acquire PAYOK Coin via the DAO's on-chain exchange",
-      "Submit a role assignment proposal through the governance interface",
-      "Roles: Operator, Strategist, Executioner, or Observer",
-      "The DAO votes — your role is granted by the collective"
+      "Onboarding portal activates: July 4, 2026",
+      "Your Persona is your sovereign identity within the DAO",
+      "Role assignment is governed by the collective — not by any individual authority",
+      "Until activation: complete Steps 01 and 02. Remain dark. Await the signal."
     ],
     link: null,
     linkLabel: null
@@ -40548,12 +41627,8 @@ const faqs = [
     a: "A canister is a smart contract on the Internet Computer. Gulag DAO's entire treasury, governance, and state live in canisters — self-executing, on-chain, unstoppable."
   },
   {
-    q: "What's the difference between ICP and Payok?",
-    a: "ICP is the Internet Computer's native protocol token used for computation and treasury. Payok is Gulag DAO's governance token — used for voting, staking, and mission coordination."
-  },
-  {
-    q: "How do I submit a proposal?",
-    a: "Once you have an active DAO role, you can submit proposals via the governance interface. Proposals require a minimum PAYOK stake to prevent spam."
+    q: "What is the difference between ICP, the GULAG Token, and the PAYOK Coin?",
+    a: "ICP (Internet Computer Protocol) is the native token of the Internet Computer network — used to pay for network fees, fuel computation (cycles), and participate in the broader IC ecosystem. It is NOT a Gulag DAO token. GULAG Token is Gulag DAO's governance token — used exclusively for voting on proposals, staking, and mission coordination within the DAO. PAYOK Coin is Gulag DAO's utility and transaction coin — used for day-to-day transactions, payments within the ecosystem, and incentivizing participation. Each serves a distinct and separate purpose."
   }
 ];
 function ParticipatePage() {
@@ -40567,7 +41642,7 @@ function ParticipatePage() {
       children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-3xl", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-primary/60 mb-3", children: "//ONBOARDING PROTOCOL: ACTIVE//" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display font-black text-4xl md:text-5xl uppercase leading-tight tracking-tight mb-4", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display font-black text-3xl md:text-4xl uppercase leading-tight tracking-tight mb-4", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "gradient-text", children: "HOW TO" }),
             " ",
             /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-foreground", children: "PARTICIPATE" })
@@ -40596,7 +41671,7 @@ function ParticipatePage() {
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1 ml-6 pb-10", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border border-primary/20 bg-card/30 p-6 portal-border", children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-start justify-between gap-4 mb-3 flex-wrap", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-black text-xl uppercase tracking-wide text-foreground", children: step.title }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h3", { className: "font-display font-black text-base uppercase tracking-wide text-foreground", children: step.title }),
                   /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-secondary/70 flex-shrink-0", children: step.badge })
                 ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-sm leading-relaxed mb-4", children: step.body }),
@@ -41518,7 +42593,7 @@ function PurchaseHistory() {
         /* @__PURE__ */ jsxRuntimeExports.jsx(
           "h3",
           {
-            className: "font-display font-black text-base uppercase tracking-widest mb-4",
+            className: "font-display font-black text-sm uppercase tracking-widest mb-4",
             style: { color: "oklch(0.55 0.28 195 / 0.8)" },
             children: "YOUR PURCHASE HISTORY"
           }
@@ -41622,7 +42697,7 @@ function PresalePage() {
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "h1",
                 {
-                  className: "font-display font-black text-4xl md:text-5xl uppercase leading-none tracking-tight mb-2",
+                  className: "font-display font-black text-3xl md:text-4xl uppercase leading-none tracking-tight mb-2",
                   style: { color: "oklch(0.88 0 0)" },
                   children: [
                     "GULAG DAO",
@@ -41630,7 +42705,7 @@ function PresalePage() {
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
                       "span",
                       {
-                        className: "text-3xl md:text-4xl",
+                        className: "text-2xl md:text-3xl",
                         style: { color: "oklch(0.55 0.28 195)" },
                         children: "PRE-SALE MODULE"
                       }
@@ -41820,7 +42895,7 @@ function WhitelistPage() {
                 children: "//AUTHORIZATION PROTOCOL: ACTIVE//"
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display font-black text-4xl md:text-5xl uppercase leading-tight tracking-tight mb-3", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: "font-display font-black text-3xl md:text-4xl uppercase leading-tight tracking-tight mb-3", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "text-foreground", children: "//WHITELIST" }),
               " ",
               /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "gradient-text", children: "REGISTRY//" })
@@ -41872,7 +42947,7 @@ function WhitelistPage() {
                     /* @__PURE__ */ jsxRuntimeExports.jsx(
                       "span",
                       {
-                        className: "font-display font-black text-2xl",
+                        className: "font-display font-black text-lg",
                         style: { color: "#FFD700" },
                         children: stat.value
                       }
@@ -41902,7 +42977,7 @@ function WhitelistPage() {
                     style: { background: "oklch(0.55 0.28 195)" }
                   }
                 ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-xl uppercase tracking-widest text-foreground", children: "CHECK YOUR STATUS" })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-base uppercase tracking-widest text-foreground", children: "CHECK YOUR STATUS" })
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-muted-foreground text-sm leading-relaxed mb-5", children: "Enter your operative handle or principal ID to check your whitelist authorization status." }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("form", { onSubmit: handleCheckStatus, className: "flex flex-col gap-3", children: [
@@ -42000,7 +43075,7 @@ function WhitelistPage() {
                     style: { background: "#FFD700" }
                   }
                 ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-xl uppercase tracking-widest text-foreground", children: "REQUEST AUTHORIZATION" })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-base uppercase tracking-widest text-foreground", children: "REQUEST AUTHORIZATION" })
               ] }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs(
                 "div",
@@ -42402,7 +43477,7 @@ function WhitelistPage() {
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "h2",
                   {
-                    className: "font-display font-black text-base uppercase tracking-widest",
+                    className: "font-display font-black text-sm uppercase tracking-widest",
                     style: { color: "oklch(0.70 0.25 195)" },
                     children: "SECURE CHANNEL"
                   }

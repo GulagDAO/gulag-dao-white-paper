@@ -280,7 +280,7 @@ function ComparativePage() {
               AUTHOR: CAPTAIN PROTON
             </p>
           </div>
-          <h1 className="font-display font-black text-4xl md:text-5xl uppercase leading-tight tracking-tight mb-4">
+          <h1 className="font-display font-black text-3xl md:text-4xl uppercase leading-tight tracking-tight mb-4">
             <span className="gradient-text">ADOPTION AND</span>{" "}
             <span className="text-foreground">AVOIDANCE</span>
             <br />
@@ -463,7 +463,7 @@ function ComparativePage() {
           <div className="mt-6">
             <div className="flex items-center gap-3 mb-3">
               <TrendingUp size={16} className="text-secondary/70" />
-              <h2 className="font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground">
+              <h2 className="font-display font-black text-lg md:text-3xl uppercase tracking-tight text-foreground">
                 STANDING ON THE SHOULDERS OF{" "}
                 <span className="text-secondary">GIANTS</span>
               </h2>
@@ -598,7 +598,7 @@ function ComparativePage() {
           <div className="mt-6">
             <div className="flex items-center gap-3 mb-3">
               <Shield size={16} className="text-primary/70" />
-              <h2 className="font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground">
+              <h2 className="font-display font-black text-lg md:text-3xl uppercase tracking-tight text-foreground">
                 LESSONS FROM COLLAPSE &mdash;{" "}
                 <span className="gradient-text">FAILURES TRANSFORMED</span>
               </h2>
@@ -659,7 +659,7 @@ function ComparativePage() {
             <div className="flex-1 h-px bg-primary/40" />
           </div>
           <div className="mt-6">
-            <h2 className="font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground mb-6">
+            <h2 className="font-display font-black text-lg md:text-3xl uppercase tracking-tight text-foreground mb-6">
               THE TEN MOST{" "}
               <span className="gradient-text">SUCCESSFUL DAOs</span> (2024)
             </h2>
@@ -774,7 +774,7 @@ function ComparativePage() {
                   <p className="classified-badge text-destructive/90 mb-1">
                     &#47;&#47;WARNING: CAUTIONARY TALE&#47;&#47;
                   </p>
-                  <h2 className="font-display font-black text-2xl md:text-3xl uppercase tracking-tight">
+                  <h2 className="font-display font-black text-lg md:text-3xl uppercase tracking-tight">
                     WONDERLAND / TIME &mdash;{" "}
                     <span className="text-destructive">A CAUTIONARY TALE</span>
                   </h2>
@@ -933,11 +933,11 @@ function ComparativePage() {
               aria-hidden
             />
             <div className="p-8 md:p-12">
-              <h2 className="font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-secondary mb-6">
+              <h2 className="font-display font-black text-lg md:text-3xl uppercase tracking-tight text-secondary mb-6">
                 CODE, COMMUNITY, CONTINUITY
               </h2>
               <blockquote className="border-l-4 border-secondary/60 pl-6 mb-6">
-                <p className="font-display font-black text-xl md:text-2xl text-foreground italic">
+                <p className="font-display font-black text-sm md:text-base text-foreground italic">
                   &ldquo;Success is not an accident; it is architecture.&rdquo;
                 </p>
               </blockquote>
@@ -968,7 +968,7 @@ function ComparativePage() {
             <p className="classified-badge text-primary/70 mb-4">
               &#47;&#47;ASSURANCE PROTOCOL: ACTIVE&#47;&#47;
             </p>
-            <h2 className="font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground mb-5">
+            <h2 className="font-display font-black text-lg md:text-3xl uppercase tracking-tight text-foreground mb-5">
               ASSURANCE TO{" "}
               <span className="gradient-text">PROSPECTIVE MEMBERS</span>
             </h2>
@@ -982,7 +982,7 @@ function ComparativePage() {
               intelligent architecture ensures evolution, not entropy.
             </p>
             <div className="border border-primary/30 bg-primary/5 px-6 py-4 inline-block">
-              <p className="font-display font-black text-lg md:text-xl tracking-wide text-primary">
+              <p className="font-display font-black text-sm md:text-xl tracking-wide text-primary">
                 &ldquo;In Gulag DAO, participation is not risk &mdash; it is
                 resistance.&rdquo;
               </p>
@@ -999,7 +999,7 @@ function ComparativePage() {
           className="border border-secondary/20 bg-secondary/5 px-6 py-5 text-center"
           data-ocid="comparative.footer_motto"
         >
-          <p className="font-display font-black text-base md:text-lg text-secondary uppercase tracking-widest">
+          <p className="font-display font-black text-sm md:text-lg text-secondary uppercase tracking-widest">
             &ldquo;From the failures of the past, we forge our unbreakable
             code.&rdquo;
           </p>

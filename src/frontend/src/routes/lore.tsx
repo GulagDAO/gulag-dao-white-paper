@@ -52,7 +52,7 @@ function LorePage() {
           <p className="classified-badge text-secondary/70 mb-3">
             &#47;&#47;ARCHIVE: THE JACOBSON FILES&#47;&#47;
           </p>
-          <h1 className="font-display font-black text-4xl md:text-5xl uppercase leading-tight tracking-tight mb-4">
+          <h1 className="font-display font-black text-3xl md:text-4xl uppercase leading-tight tracking-tight mb-4">
             <span className="gradient-text">THE FULL</span>{" "}
             <span className="text-foreground">DOSSIER</span>
           </h1>
@@ -142,7 +142,7 @@ function LorePage() {
               <p className="classified-badge text-secondary/70 mb-4">
                 &#47;&#47;ASSET FILE: THE KLONDIKE GOLD&#47;&#47;
               </p>
-              <h2 className="font-display font-black text-2xl md:text-3xl uppercase tracking-tight mb-4">
+              <h2 className="font-display font-black text-lg md:text-2xl uppercase tracking-tight mb-4">
                 THE KLONDIKE GOLD
               </h2>
               <p className="font-mono text-muted-foreground text-sm leading-relaxed">
@@ -212,7 +212,7 @@ function LorePage() {
               &#47;&#47;OP LOG: CROSS-BORDER RETRIEVAL &#8212; YEAR
               2005&#47;&#47;
             </p>
-            <h2 className="font-display font-black text-2xl md:text-3xl uppercase tracking-tight mb-5">
+            <h2 className="font-display font-black text-lg md:text-3xl uppercase tracking-tight mb-5">
               THE 2005 MISSION
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -300,7 +300,7 @@ function LorePage() {
               &#47;&#47;INCIDENT REPORT: UNAUTHORIZED RESCUE &#8212; YEAR
               2009&#47;&#47;
             </p>
-            <h2 className="font-display font-black text-2xl md:text-3xl uppercase tracking-tight mb-5">
+            <h2 className="font-display font-black text-lg md:text-3xl uppercase tracking-tight mb-5">
               THE 2009 EXTRACTION
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -364,7 +364,7 @@ function LorePage() {
             <p className="classified-badge text-primary/70 mb-4">
               &#47;&#47;FOUNDING RECORD: GULAG DAO ORIGIN&#47;&#47;
             </p>
-            <h2 className="font-display font-black text-2xl md:text-3xl uppercase tracking-tight mb-5">
+            <h2 className="font-display font-black text-lg md:text-3xl uppercase tracking-tight mb-5">
               DAO FOUNDING
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -412,8 +412,16 @@ function LorePage() {
                     event: "Internet Computer launches. DAO scaffolded.",
                   },
                   {
-                    year: "2024",
-                    event: "Gulag DAO deployed. Recruitment opens.",
+                    year: "2026",
+                    event: "Gulag DAO deployment. Recruitment opens.",
+                  },
+                  {
+                    year: "2027",
+                    event: "Gulag DAO: Rogue.",
+                  },
+                  {
+                    year: "2028",
+                    event: "Gulag DAO: Shadow Authority.",
                   },
                 ].map((item, i) => (
                   <div
@@ -457,7 +465,7 @@ function LorePage() {
                 <p className="classified-badge text-secondary/70">
                   &#47;&#47;CODEX: SYMBOL REINVENTION&#47;&#47;
                 </p>
-                <h2 className="font-display font-black text-2xl uppercase tracking-tight">
+                <h2 className="font-display font-black text-lg uppercase tracking-tight">
                   THE COMMANDEERED SYMBOL
                 </h2>
                 <p className="font-mono text-muted-foreground text-sm leading-relaxed">
@@ -524,11 +532,11 @@ function LorePage() {
               <p className="classified-badge text-secondary/70">
                 &#47;&#47;GULAG DAO &#8212; OFFICIAL MISSION STATEMENT&#47;&#47;
               </p>
-              <h2 className="font-display font-black text-2xl md:text-4xl uppercase tracking-tight">
+              <h2 className="font-display font-black text-lg md:text-4xl uppercase tracking-tight">
                 <span className="text-secondary">MISSION STATEMENT</span>
               </h2>
               <div className="w-16 h-px bg-secondary/50" aria-hidden />
-              <blockquote className="font-mono text-foreground text-base md:text-lg leading-relaxed max-w-3xl text-center">
+              <blockquote className="font-mono text-foreground text-sm md:text-base leading-relaxed max-w-3xl text-center">
                 To fund, coordinate, and execute the final mission &mdash; the
                 rescue of six operatives left behind, and the recovery of the
                 Klondike Gold. Through decentralized governance, on-chain
@@ -536,7 +544,7 @@ function LorePage() {
                 state abandoned.
               </blockquote>
               <div className="w-16 h-px bg-secondary/50" aria-hidden />
-              <p className="font-display font-black text-xl md:text-2xl tracking-widest text-secondary uppercase">
+              <p className="font-display font-black text-base md:text-2xl tracking-widest text-secondary uppercase">
                 Liberation through code.
               </p>
               <p className="classified-badge text-muted-foreground text-xs mt-2">

@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import type { PortalMeta } from "@/types/portal";
+import { useNavigate } from "@tanstack/react-router";
 
 interface PortalFooterProps {
   portal: PortalMeta;
@@ -10,6 +11,14 @@ export function PortalFooter({ portal, className }: PortalFooterProps) {
   const year = new Date().getFullYear();
   const hostname =
     typeof window !== "undefined" ? window.location.hostname : "gulag.dao";
+  const navigate = useNavigate();
+
+  function handleReturn(e: React.MouseEvent) {
+    e.preventDefault();
+    navigate({ to: "/" }).then(() => {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    });
+  }
 
   return (
     <footer
@@ -23,6 +32,7 @@ export function PortalFooter({ portal, className }: PortalFooterProps) {
         <div className="flex items-center gap-4">
           <a
             href="/"
+            onClick={handleReturn}
             className="classified-badge text-primary/60 hover:text-primary transition-colors duration-200"
             data-ocid="footer.return_link"
           >

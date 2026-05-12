@@ -791,7 +791,7 @@ function PurchaseHistory() {
         />
       </div>
       <h3
-        className="font-display font-black text-base uppercase tracking-widest mb-4"
+        className="font-display font-black text-sm uppercase tracking-widest mb-4"
         style={{ color: "oklch(0.55 0.28 195 / 0.8)" }}
       >
         YOUR PURCHASE HISTORY
@@ -887,13 +887,13 @@ function PresalePage() {
           {"//CLASSIFIED: ACQUISITION PORTAL — AUTHORIZED OPERATIVES ONLY//"}
         </p>
         <h1
-          className="font-display font-black text-4xl md:text-5xl uppercase leading-none tracking-tight mb-2"
+          className="font-display font-black text-3xl md:text-4xl uppercase leading-none tracking-tight mb-2"
           style={{ color: "oklch(0.88 0 0)" }}
         >
           GULAG DAO
           <br />
           <span
-            className="text-3xl md:text-4xl"
+            className="text-2xl md:text-3xl"
             style={{ color: "oklch(0.55 0.28 195)" }}
           >
             PRE-SALE MODULE

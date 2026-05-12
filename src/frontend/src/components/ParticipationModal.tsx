@@ -94,7 +94,7 @@ export function ParticipationModal({
             >
               {"//PARTICIPATION//"}
             </span>
-            <h2 className="font-bold text-lg uppercase tracking-wide text-black">
+            <h2 className="font-bold text-sm uppercase tracking-wide text-black">
               {content.title}
             </h2>
           </div>

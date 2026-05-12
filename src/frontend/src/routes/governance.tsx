@@ -96,7 +96,7 @@ function GovernancePage() {
           <p className="classified-badge text-primary/60 mb-3">
             &#47;&#47;GOVERNANCE PROTOCOL: ACTIVE&#47;&#47;
           </p>
-          <h1 className="font-display font-black text-4xl md:text-5xl uppercase leading-tight tracking-tight mb-4">
+          <h1 className="font-display font-black text-3xl md:text-4xl uppercase leading-tight tracking-tight mb-4">
             <span className="gradient-text">ON-CHAIN</span>{" "}
             <span className="text-foreground">GOVERNANCE</span>
           </h1>
@@ -132,7 +132,7 @@ function GovernancePage() {
               <p className="classified-badge text-primary/70 mb-4">
                 &#47;&#47;SECTION 01 — ON-CHAIN VOTING&#47;&#47;
               </p>
-              <h2 className="font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground mb-5">
+              <h2 className="font-display font-black text-lg md:text-2xl uppercase tracking-tight text-foreground mb-5">
                 Decentralized by Design
               </h2>
               <div className="grid md:grid-cols-3 gap-6 font-mono text-sm text-muted-foreground">
@@ -185,7 +185,7 @@ function GovernancePage() {
           <p className="classified-badge text-secondary/70 mb-6">
             &#47;&#47;SECTION 02 — PARTICIPANT ROLES&#47;&#47;
           </p>
-          <h2 className="font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground mb-8">
+          <h2 className="font-display font-black text-lg md:text-3xl uppercase tracking-tight text-foreground mb-8">
             Chain of Command
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -210,7 +210,7 @@ function GovernancePage() {
                       {role.weight}
                     </span>
                   </div>
-                  <h3 className="font-display font-black text-xl uppercase tracking-wide text-secondary mb-3 group-hover:text-secondary transition-colors">
+                  <h3 className="font-display font-black text-base uppercase tracking-wide text-secondary mb-3 group-hover:text-secondary transition-colors">
                     {role.title}
                   </h3>
                   <p className="font-mono text-muted-foreground text-xs leading-relaxed">
@@ -233,7 +233,7 @@ function GovernancePage() {
           <p className="classified-badge text-primary/70 mb-6">
             &#47;&#47;SECTION 03 — PROPOSAL LIFECYCLE&#47;&#47;
           </p>
-          <h2 className="font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground mb-8">
+          <h2 className="font-display font-black text-lg md:text-3xl uppercase tracking-tight text-foreground mb-8">
             From Idea to Execution
           </h2>
           <div className="relative">
@@ -297,7 +297,7 @@ function GovernancePage() {
           <p className="classified-badge text-primary/70 mb-6">
             &#47;&#47;SECTION 04 — KEY METRICS: LIVE INTEL&#47;&#47;
           </p>
-          <h2 className="font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground mb-8">
+          <h2 className="font-display font-black text-lg md:text-3xl uppercase tracking-tight text-foreground mb-8">
             Governance Status
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -315,7 +315,7 @@ function GovernancePage() {
                 <p className="classified-badge text-primary/40 text-[9px]">
                   {m.tag}
                 </p>
-                <span className="font-display font-black text-xl md:text-2xl text-primary leading-none">
+                <span className="font-display font-black text-base md:text-lg text-primary leading-none">
                   {m.value}
                 </span>
                 <span className="font-mono text-muted-foreground text-[10px] uppercase tracking-widest leading-tight">
@@ -340,13 +340,13 @@ function GovernancePage() {
               <p className="classified-badge text-secondary/60 mb-4">
                 &#47;&#47;SECTION 05 — QUORUM &amp; THRESHOLDS&#47;&#47;
               </p>
-              <h2 className="font-display font-black text-2xl md:text-3xl uppercase tracking-tight text-foreground mb-6">
+              <h2 className="font-display font-black text-lg md:text-3xl uppercase tracking-tight text-foreground mb-6">
                 Pass Conditions
               </h2>
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="flex flex-col gap-3">
                   <div className="flex items-baseline gap-3">
-                    <span className="font-display font-black text-3xl text-secondary">
+                    <span className="font-display font-black text-2xl text-secondary">
                       10%
                     </span>
                     <span className="classified-badge text-secondary/60">
@@ -362,7 +362,7 @@ function GovernancePage() {
                 </div>
                 <div className="flex flex-col gap-3">
                   <div className="flex items-baseline gap-3">
-                    <span className="font-display font-black text-3xl text-secondary">
+                    <span className="font-display font-black text-2xl text-secondary">
                       51%
                     </span>
                     <span className="classified-badge text-secondary/60">
@@ -378,7 +378,7 @@ function GovernancePage() {
                 </div>
                 <div className="flex flex-col gap-3 border border-secondary/30 bg-secondary/5 p-4">
                   <div className="flex items-baseline gap-3">
-                    <span className="font-display font-black text-3xl text-secondary">
+                    <span className="font-display font-black text-2xl text-secondary">
                       67%
                     </span>
                     <span className="classified-badge text-secondary">

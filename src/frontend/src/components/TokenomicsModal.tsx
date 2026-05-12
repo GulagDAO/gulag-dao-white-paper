@@ -9,6 +9,7 @@ const TOKENOMICS_CONTENT: Record<string, { title: string; body: string[] }> = {
       '"Whaling" activity is any Game-Play or DAO participation which is intended to weaken the confidence in the Protocol. Friendly Whales are welcome as investors and participants, but not as speculators.',
       "Key Protocols:\n\u2022 No treasury investing using leverage.\n\u2022 Pre-sale for early adopters has anti-whaling mechanisms.\n\u2022 Harnessing the Whale (Financiers).\n\u2022 Initial 5-year treasury lock.\n\u2022 After lock release: Treasury governance using multisig strategy, where 51% of signees are non-whale participants.",
       'Whitelisted Pre-Sale:\n\u2022 Discount on both Gulag Tokens and Payok coins.\n\u2022 Amplifies voting rights for "certified" small (non-whale) whitelisted early adopters.\n\u2022 Part of the Anti-Whaling Protocols.',
+      "Anti-Whaling Protocols are always under development and consideration, and will adapt as treasury activities advances. In accordance with governance guidance.",
     ],
   },
   "token-coin": {
@@ -42,7 +43,7 @@ const TOKENOMICS_CONTENT: Record<string, { title: string; body: string[] }> = {
       "Most of the development of this DAO project will happen after the initial publishing to the IC. The first year after initial deployment will be devoted to building out DAO governance functions, lore mission portal, and very basic treasury functions.",
       'We intend to lock all funds in the treasury for the first five years. Income and fees feed into the treasury, but no withdrawing for the first five years \u2014 a simple man\'s "deferred rewards" scheme.',
       'This phased approach and the "deferred rewards" mechanism fits the Gulag DAO\'s ethos of discipline and delayed gratification.',
-      "For the first year, the treasury operates as a symbolic and strategic holding cell: all inflows from mission participation, token taxes, NFT activities, and suite fees are accumulated but cannot be withdrawn. This establishes trust, transparency, and economic integrity, showing that early contributors build the foundation before claiming benefit.",
+      "For the first five years, the treasury operates as a symbolic and strategic holding cell: all inflows from mission participation, token taxes, NFT activities, and suite fees are accumulated but cannot be withdrawn. This establishes trust, transparency, and economic integrity, showing that early contributors build the foundation before claiming benefit.",
       "During this phase, governance and lore modules evolve \u2014 token voting, mission creation, and on-chain recordkeeping \u2014 while the treasury smart contract enforces the five-year lock window automatically.",
       'After that "Liberation Cycle," controlled reward functions unlock gradually, signaling the DAO\'s transition from foundational solidarity to active prosperity \u2014 aligning perfectly with the narrative of endurance, restraint, and eventual economic emancipation.',
       "During this phase:\n\u2022 Governance features and lore modules are deployed (token voting, mission portals, etc.)\n\u2022 Smart contracts enforce the lock automatically\n\u2022 Contributors build the foundation before accessing rewards",
@@ -112,7 +113,7 @@ export function TokenomicsModal({
             >
               {"//TOKENOMICS//"}
             </span>
-            <h2 className="font-bold text-lg uppercase tracking-wide text-black">
+            <h2 className="font-bold text-sm uppercase tracking-wide text-black">
               {content.title}
             </h2>
           </div>

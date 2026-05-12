@@ -178,7 +178,7 @@ function AppModal({
             </div>
             <h2
               id="integrated-app-modal-title"
-              className="font-display font-black text-xl uppercase tracking-widest leading-tight"
+              className="font-display font-black text-base uppercase tracking-widest leading-tight"
               style={{ color: "#000000" }}
             >
               {app.name}

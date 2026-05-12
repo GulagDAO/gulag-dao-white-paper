@@ -53,7 +53,7 @@ function DaoPage() {
       >
         {/* ── HEADER ───────────────────────────────── */}
         <div className="max-w-3xl">
-          <h1 className="font-display font-black text-4xl md:text-5xl uppercase leading-tight tracking-tight mb-4">
+          <h1 className="font-display font-black text-3xl md:text-4xl uppercase leading-tight tracking-tight mb-4">
             <span className="text-foreground">WHAT IS A</span>{" "}
             <span className="gradient-text">DAO</span>
           </h1>
@@ -80,7 +80,7 @@ function DaoPage() {
             <p className="classified-badge text-secondary/70 mb-3">
               &#47;&#47;CONCEPT: DECENTRALIZATION&#47;&#47;
             </p>
-            <h2 className="font-display font-black text-2xl uppercase tracking-wide mb-4 text-foreground">
+            <h2 className="font-display font-black text-lg uppercase tracking-wide mb-4 text-foreground">
               WHAT DOES <span className="gradient-text">DECENTRALIZED</span>{" "}
               EVEN MEAN?
             </h2>
@@ -104,7 +104,7 @@ function DaoPage() {
             <p className="classified-badge text-secondary/70 mb-3">
               &#47;&#47;CONCEPT: AUTONOMOUS ORGANIZATIONS&#47;&#47;
             </p>
-            <h2 className="font-display font-black text-2xl uppercase tracking-wide mb-4 text-foreground">
+            <h2 className="font-display font-black text-lg uppercase tracking-wide mb-4 text-foreground">
               FROM <span className="gradient-text">CONCEPT</span> TO DAO
             </h2>
             <div className="space-y-4 font-mono text-sm text-muted-foreground leading-relaxed">
@@ -145,7 +145,7 @@ function DaoPage() {
               <span className="classified-badge text-primary/60">
                 {String(i + 1).padStart(2, "0")} &#47;&#47; PRINCIPLE
               </span>
-              <h3 className="font-display font-black text-xl uppercase tracking-wide text-foreground">
+              <h3 className="font-display font-black text-base uppercase tracking-wide text-foreground">
                 {p.label}
               </h3>
               <p className="font-mono text-secondary text-xs font-bold uppercase tracking-wider">
@@ -252,7 +252,7 @@ function DaoPage() {
             <p className="classified-badge text-primary/60 mb-6">
               &#47;&#47;CONTEXT: WHY A DAO&#47;&#47;
             </p>
-            <blockquote className="font-display font-black text-2xl md:text-3xl uppercase leading-tight tracking-tight text-foreground mb-6">
+            <blockquote className="font-display font-black text-lg md:text-2xl uppercase leading-tight tracking-tight text-foreground mb-6">
               <span className="gradient-text">Distributed resistance</span> for
               distributed liberation —
               <br />

@@ -97,9 +97,9 @@ function MissionPage() {
             </span>
             <div className="h-px flex-1 bg-secondary/20" />
           </div>
-          <h1 className="font-display font-black text-4xl md:text-5xl uppercase leading-tight tracking-tight mb-4">
+          <h1 className="font-display font-black text-3xl md:text-4xl uppercase leading-tight tracking-tight mb-4">
             <span className="gradient-text">OPERATION KLONDIKE</span>
-            <span className="block text-foreground text-3xl md:text-4xl mt-1">
+            <span className="block text-foreground text-2xl md:text-3xl mt-1">
               — CASE FILE
             </span>
           </h1>
@@ -154,10 +154,10 @@ function MissionPage() {
 
                 {/* Year + Title */}
                 <div className="flex items-baseline gap-4 mb-3">
-                  <span className="font-display font-black text-3xl md:text-4xl text-primary/20 tabular-nums leading-none">
+                  <span className="font-display font-black text-2xl md:text-3xl text-primary/20 tabular-nums leading-none">
                     {milestone.year}
                   </span>
-                  <h2 className="font-display font-black text-xl md:text-2xl uppercase tracking-wide text-foreground">
+                  <h2 className="font-display font-black text-base md:text-lg uppercase tracking-wide text-foreground">
                     {milestone.title}
                   </h2>
                 </div>
@@ -213,7 +213,7 @@ function MissionPage() {
               <p className="classified-badge text-secondary/60 mb-3">
                 &#47;&#47;SYMBOL TRANSFORMATION: AUTHORIZED&#47;&#47;
               </p>
-              <h3 className="font-display font-black text-2xl md:text-3xl uppercase tracking-wide mb-4">
+              <h3 className="font-display font-black text-lg md:text-2xl uppercase tracking-wide mb-4">
                 <span className="gradient-text">THE TOOL TURNED AGAINST</span>
                 <span className="block text-foreground">THE OPPRESSOR</span>
               </h3>

@@ -42,14 +42,14 @@ const steps = [
   },
   {
     num: "03",
-    title: "ROLE ASSIGNMENT",
-    badge: "DAO INTEGRATION",
-    body: "Submit a governance proposal to be assigned your DAO role. The DAO votes on role assignments. Roles carry different voting weights and responsibilities. Choose deliberately.",
+    title: "Create a Gulag DAO Persona",
+    badge: "PERSONA PROTOCOL",
+    body: "Operative onboarding initiates July 4, 2026 — Financial Independence Day. On that date, the Persona Protocol goes live and all cleared operatives will be able to create their Gulag DAO Persona, assume their designated role within the DAO, and enter the operational grid. Stand by for deployment orders.",
     instructions: [
-      "Acquire PAYOK Coin via the DAO's on-chain exchange",
-      "Submit a role assignment proposal through the governance interface",
-      "Roles: Operator, Strategist, Executioner, or Observer",
-      "The DAO votes — your role is granted by the collective",
+      "Onboarding portal activates: July 4, 2026",
+      "Your Persona is your sovereign identity within the DAO",
+      "Role assignment is governed by the collective — not by any individual authority",
+      "Until activation: complete Steps 01 and 02. Remain dark. Await the signal.",
     ],
     link: null,
     linkLabel: null,
@@ -62,12 +62,8 @@ const faqs = [
     a: "A canister is a smart contract on the Internet Computer. Gulag DAO's entire treasury, governance, and state live in canisters — self-executing, on-chain, unstoppable.",
   },
   {
-    q: "What's the difference between ICP and Payok?",
-    a: "ICP is the Internet Computer's native protocol token used for computation and treasury. Payok is Gulag DAO's governance token — used for voting, staking, and mission coordination.",
-  },
-  {
-    q: "How do I submit a proposal?",
-    a: "Once you have an active DAO role, you can submit proposals via the governance interface. Proposals require a minimum PAYOK stake to prevent spam.",
+    q: "What is the difference between ICP, the GULAG Token, and the PAYOK Coin?",
+    a: "ICP (Internet Computer Protocol) is the native token of the Internet Computer network — used to pay for network fees, fuel computation (cycles), and participate in the broader IC ecosystem. It is NOT a Gulag DAO token. GULAG Token is Gulag DAO's governance token — used exclusively for voting on proposals, staking, and mission coordination within the DAO. PAYOK Coin is Gulag DAO's utility and transaction coin — used for day-to-day transactions, payments within the ecosystem, and incentivizing participation. Each serves a distinct and separate purpose.",
   },
 ];
 
@@ -85,7 +81,7 @@ function ParticipatePage() {
           <p className="classified-badge text-primary/60 mb-3">
             &#47;&#47;ONBOARDING PROTOCOL: ACTIVE&#47;&#47;
           </p>
-          <h1 className="font-display font-black text-4xl md:text-5xl uppercase leading-tight tracking-tight mb-4">
+          <h1 className="font-display font-black text-3xl md:text-4xl uppercase leading-tight tracking-tight mb-4">
             <span className="gradient-text">HOW TO</span>{" "}
             <span className="text-foreground">PARTICIPATE</span>
           </h1>
@@ -126,7 +122,7 @@ function ParticipatePage() {
               <div className="flex-1 ml-6 pb-10">
                 <div className="border border-primary/20 bg-card/30 p-6 portal-border">
                   <div className="flex items-start justify-between gap-4 mb-3 flex-wrap">
-                    <h3 className="font-display font-black text-xl uppercase tracking-wide text-foreground">
+                    <h3 className="font-display font-black text-base uppercase tracking-wide text-foreground">
                       {step.title}
                     </h3>
                     <span className="classified-badge text-secondary/70 flex-shrink-0">
