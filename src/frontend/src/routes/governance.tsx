@@ -109,6 +109,116 @@ function GovernancePage() {
           </p>
         </div>
 
+        {/* — GULAG TOKEN CREDENTIAL CARD — */}
+        <motion.section
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          data-ocid="governance.gulag_token_section"
+        >
+          <div className="border border-primary/25 bg-card/20 relative overflow-hidden">
+            {/* Corner accents */}
+            <div className="absolute top-0 left-0 w-8 h-8" aria-hidden>
+              <div className="absolute top-0 left-0 w-8 h-px bg-primary/60" />
+              <div className="absolute top-0 left-0 w-px h-8 bg-primary/60" />
+            </div>
+            <div className="absolute top-0 right-0 w-8 h-8" aria-hidden>
+              <div className="absolute top-0 right-0 w-8 h-px bg-primary/60" />
+              <div className="absolute top-0 right-0 w-px h-8 bg-primary/60" />
+            </div>
+            <div className="p-8 flex flex-col gap-8">
+              <div>
+                <p className="classified-badge text-primary/70 mb-4">
+                  &#47;&#47;GULAG TOKEN — GOVERNANCE CREDENTIAL&#47;&#47;
+                </p>
+                <h2 className="font-display font-black text-lg md:text-2xl uppercase tracking-tight text-foreground mb-4">
+                  GULAG Token — Governance Credential
+                </h2>
+                <p className="font-mono text-sm text-muted-foreground leading-relaxed max-w-3xl">
+                  The GULAG Token is the governance instrument of Gulag DAO — a
+                  credential, not a currency. It represents ownership, standing,
+                  and voting authority within the DAO’s sovereign ecosystem. One
+                  token. One voice. Earned, not purchased.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6 font-mono text-sm text-muted-foreground">
+                {/* Acquisition Channels */}
+                <div className="border-l border-primary/30 pl-4">
+                  <p className="text-primary font-bold uppercase text-xs mb-2">
+                    Acquisition Channels
+                  </p>
+                  <p className="leading-relaxed">
+                    GULAG Tokens enter participant wallets through exactly two
+                    verified channels: (1) Direct purchase through the official
+                    DAO Token Sale portal — an ongoing opportunity throughout
+                    the life of the DAO, not limited to any pre-sale window. (2)
+                    Participation Rewards — earned through governance activity,
+                    mission contribution, ecosystem development, and community
+                    engagement. There is no third channel. There are no
+                    exceptions.
+                  </p>
+                </div>
+
+                {/* The Onboarding Gate */}
+                <div className="border-l border-primary/30 pl-4">
+                  <p className="text-primary font-bold uppercase text-xs mb-2">
+                    The Onboarding Gate
+                  </p>
+                  <p className="leading-relaxed">
+                    Token balance alone confers no rights. Every governance
+                    function — voting, proposal submission, reward eligibility,
+                    treasury participation — requires a verified Gulag DAO
+                    Persona. No profile. No vote. No standing. This is enforced
+                    by code, not policy.
+                  </p>
+                </div>
+
+                {/* Secondary Market Firewall */}
+                <div className="border-l border-primary/30 pl-4">
+                  <p className="text-primary font-bold uppercase text-xs mb-2">
+                    Secondary Market Firewall
+                  </p>
+                  <p className="leading-relaxed">
+                    Tokens acquired on secondary markets carry zero DAO utility.
+                    Governance weight is calculated from the DAO’s internal
+                    issuance registry — not raw wallet balance. Even registered
+                    participants cannot re-import externally purchased tokens.
+                    The registry is the source of truth.
+                  </p>
+                </div>
+
+                {/* The Dual-Arena Model */}
+                <div className="border-l border-primary/30 pl-4">
+                  <p className="text-primary font-bold uppercase text-xs mb-2">
+                    The Dual-Arena Model
+                  </p>
+                  <p className="leading-relaxed">
+                    Inside the DAO: all participants operate under anti-whaling
+                    protocols — governance influence is bounded, token
+                    accumulation is governed, the playing field is enforced by
+                    code. Outside the DAO: whales may accumulate freely on
+                    secondary markets with no DAO restrictions. These two arenas
+                    do not connect. Secondary market accumulation produces zero
+                    additional governance power. A whale holding 10,000 tokens
+                    bought on a DEX has the same DAO standing as someone with
+                    none — unless they completed onboarding through proper
+                    channels.
+                  </p>
+                </div>
+              </div>
+
+              <div className="border-t border-primary/20 pt-4 text-center">
+                <p className="font-display font-black text-primary/80 text-sm uppercase tracking-widest italic">
+                  &ldquo;Don&rsquo;t get outplayed. Don&rsquo;t get
+                  out-voted.&rdquo;
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
         {/* — SECTION 1: ON-CHAIN VOTING — */}
         <motion.section
           initial={{ opacity: 0, y: 24 }}

@@ -771,6 +771,21 @@ function HomePage() {
         className="relative z-10 flex-1 flex flex-col lg:flex-row items-center justify-center min-h-[calc(100vh-4rem)] max-w-7xl mx-auto w-full px-6 py-12 gap-8 lg:gap-16"
         data-ocid="hero.section"
       >
+        {/* Watchtower image — left side, fades to transparent on right edge */}
+        <img
+          src="/assets/watch_tower.png"
+          alt=""
+          aria-hidden={true}
+          className="absolute left-0 top-0 h-full w-auto max-w-xs object-cover pointer-events-none select-none"
+          style={{
+            zIndex: 1,
+            WebkitMaskImage:
+              "linear-gradient(to right, black 55%, transparent 95%)",
+            maskImage: "linear-gradient(to right, black 55%, transparent 95%)",
+            opacity: 0.85,
+          }}
+        />
+
         {/* Left: Symbol */}
         <motion.div
           initial={{ opacity: 0, scale: 0.75, rotateY: -15 }}

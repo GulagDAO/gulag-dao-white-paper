@@ -21,7 +21,7 @@ export function PortalLayout({
     <div
       className={cn(
         "relative min-h-screen flex flex-col bg-background",
-        "pt-28 pb-20", // offset fixed two-row nav; pb-20 clears fixed footer
+        "pt-16 pb-20", // offset single-row fixed nav (h-14 = 3.5rem ≈ pt-14, pt-16 adds breathing room); pb-20 clears fixed footer
       )}
       data-ocid={`${portal.id}.page`}
     >
@@ -33,7 +33,7 @@ export function PortalLayout({
 
       {/* Cyan corner frame — top-left */}
       <div
-        className="pointer-events-none fixed top-28 left-0 w-16 h-16 z-10"
+        className="pointer-events-none fixed top-16 left-0 w-16 h-16 z-10"
         aria-hidden
       >
         <div className="absolute top-4 left-4 w-8 h-px bg-primary/30" />
@@ -41,7 +41,7 @@ export function PortalLayout({
       </div>
       {/* Cyan corner frame — top-right */}
       <div
-        className="pointer-events-none fixed top-28 right-0 w-16 h-16 z-10"
+        className="pointer-events-none fixed top-16 right-0 w-16 h-16 z-10"
         aria-hidden
       >
         <div className="absolute top-4 right-4 w-8 h-px bg-primary/30" />

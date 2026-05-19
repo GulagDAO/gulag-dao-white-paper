@@ -24249,6 +24249,26 @@ function ParticipationModal({
   );
 }
 const TOKENOMICS_CONTENT = {
+  "gulag-token": {
+    title: "GULAG Token — Governance & Dual-Arena Model",
+    body: [
+      "What the GULAG Token Is\n\nThe GULAG Token is the governance instrument of Gulag DAO. It represents ownership, standing, and voting authority within the DAO's sovereign ecosystem. It is not a speculative vehicle, not a payment mechanism, and not a measure of wealth. It is a credential — proof that its holder earned their place at the table through the DAO's onboarding process and participation framework.\n\nOne token. One voice. Earned, not purchased.",
+      "How GULAG Tokens Are Acquired\n\nGULAG Tokens enter a participant's registered wallet through exactly two channels:\n\n1. DAO Token Sale — tokens purchased directly through the official Gulag DAO token sale portal, by wallets that have completed the whitelisting and onboarding process. Purchasing from the DAO reserve is an ongoing opportunity throughout the life of the DAO, not a one-time launch event.\n\n2. Participation Rewards — tokens earned through active contribution to the DAO ecosystem: governance activity, mission participation, ecosystem development, and community engagement.\n\nThere is no third channel. There are no exceptions.",
+      'The Onboarding Gate\n\nHolding a GULAG Token confers no rights whatsoever without a verified Gulag DAO Persona on file. Every governance function — voting, proposal submission, reward eligibility, treasury participation — is gated behind the participant profile established during onboarding.\n\nNo profile. No vote. No standing.\n\nThe governance canister does not ask "does this wallet hold GULAG?" It asks "is this wallet a verified participant with an active profile?" Token balance without profile verification is inert inside the DAO. This is not a policy — it is code. It cannot be bypassed, negotiated, or overridden.',
+      "The Secondary Market Firewall\n\nGULAG Tokens, once distributed to participant wallets, are sovereign property. Participants may transfer or sell them freely on any secondary market. The DAO neither controls nor interferes with that activity. However, the firewall is absolute and permanent:\n\n• Tokens acquired on secondary markets carry zero DAO utility. They cannot be used to vote, submit proposals, earn rewards, or access any DAO function — regardless of quantity held.\n\n• Tokens that leave a registered participant wallet enter a permanent external state. They do not return to the governance ecosystem. Ever.\n\n• Secondary market accumulation cannot enhance a participant's voting position. Governance weight is calculated exclusively from tokens acquired through verified DAO channels and held in registered wallets.\n\n• Even a fully registered participant cannot bring externally acquired GULAG Tokens back into the DAO's governance ecosystem. The registry is the source of truth. The wallet is just storage. Tokens purchased on secondary markets exist in the participant's wallet as personal property, but they carry no governance authority, earn no rewards, and cannot be presented to any DAO function as valid credentials.\n\nA GULAG Token held outside the registered ecosystem is a souvenir. It carries the lore, the identity, and the cultural weight of Gulag DAO — but it has no operational authority inside the DAO's walls.",
+      "The Dual-Arena Model — A Structural Answer to the Whale Problem\n\nMost DAOs face a fundamental tension: large token holders (whales) accumulate disproportionate governance power, distorting collective decision-making and threatening the integrity of the protocol. Most DAOs attempt to manage this through voting caps, quadratic voting formulas, or complex delegation schemes — all of which create friction and often fail under sustained pressure. Gulag DAO resolves this structurally, not mechanically.\n\nArena One — Inside the DAO: All participants operate under the DAO's anti-whaling protocols. Governance influence is bounded. Token accumulation through DAO channels is governed. The playing field is enforced by code, not culture. A whale inside the DAO is a participant like any other — their standing is earned through contribution, not capital.\n\nArena Two — The Secondary Market: Whales who wish to accumulate GULAG beyond DAO-governed limits are free to do so on secondary markets. They can speculate, trade, and hold as much as the open market allows. No rules, no caps, no restrictions. The secondary market is their arena — fully sovereign, fully unrestricted.\n\nThese two arenas do not connect. Secondary market accumulation produces zero additional governance power inside the DAO. A whale holding ten thousand GULAG tokens acquired on a DEX has identical DAO standing to a participant holding fifty tokens earned through contribution — which is to say, none, unless they completed onboarding through the proper channel.",
+      "The Meme Layer — Cultural Value Beyond Governance\n\nBecause GULAG Tokens traded on secondary markets carry no DAO utility, their external value is determined entirely by narrative, identity, and cultural resonance. Gulag DAO is lore-rich, visually distinctive, and ideologically sharp. The GULAG Token, as a cultural artifact, carries that identity into the broader cryosphere independently of the DAO's internal mechanics. Its secondary market value is a reflection of the story — not the protocol.\n\nPrice movements in the secondary market have no effect on treasury operations, governance integrity, or participant standing. The DAO operates on sovereign logic. The token does what the market does with it. Both can thrive simultaneously, in separate lanes, without interference.",
+      `Summary — The GULAG Token in Four Principles
+
+1. Earned, not bought — governance rights flow only from verified DAO participation, not from market accumulation.
+2. Profile-gated — no onboarding profile means no DAO utility, regardless of token balance.
+3. Firewall-protected — secondary market tokens are permanently external to the governance ecosystem.
+4. Dual-arena sovereign — whales have a place to play without threatening the integrity of the participants who built this.
+
+"Don't get outplayed. Don't get out-voted."`,
+      "Internal Issuance Registry (Technical Enforcement)\n\nThe governance canister maintains its own internal registry — a ledger of exactly which tokens were issued through valid DAO channels (token sale or participation rewards), mapped to which registered participant wallet received them. When a participant attempts any governance action, the canister checks: (1) Is this wallet a registered participant with an active profile? (2) Does the token balance recorded in the DAO's internal registry match what's being presented?\n\nIt never reads raw wallet balance. Tokens purchased externally never appear in the internal registry — invisible to every DAO function.\n\nThe GULAG token is pegged at $1 internally by the DAO for governance and accounting purposes. Outside the DAO, it may trade at any price on secondary markets — the DAO does not control or interfere with secondary market pricing."
+    ]
+  },
   "anti-whaling": {
     title: "Anti-Whaling Protocols",
     body: [
@@ -27681,6 +27701,32 @@ New members can trust that every Payok spent, every mission executed, and every 
       "TOKENOMICS",
       [
         sub(
+          "GULAG TOKEN — GOVERNANCE & DUAL-ARENA MODEL",
+          `GULAG Token — What It Is
+The GULAG Token is the governance instrument of Gulag DAO. It represents ownership, standing, and voting authority within the DAO's sovereign ecosystem. It is not a speculative vehicle, not a payment mechanism, and not a measure of wealth. It is a credential — proof that its holder earned their place at the table through the DAO's onboarding process and participation framework. One token. One voice. Earned, not purchased.
+
+How GULAG Tokens Are Acquired
+GULAG Tokens enter a participant's registered wallet through exactly two channels: (1) DAO Token Sale — tokens purchased directly through the official Gulag DAO token sale portal, by wallets that have completed the whitelisting and onboarding process. Purchasing from the DAO reserve is an ongoing opportunity throughout the life of the DAO, not a one-time launch event. (2) Participation Rewards — tokens earned through active contribution to the DAO ecosystem: governance activity, mission participation, ecosystem development, and community engagement. There is no third channel. There are no exceptions.
+
+The Onboarding Gate
+Holding a GULAG Token confers no rights whatsoever without a verified Gulag DAO Persona on file. Every governance function — voting, proposal submission, reward eligibility, treasury participation — is gated behind the participant profile established during onboarding. No profile. No vote. No standing. The governance canister does not ask "does this wallet hold GULAG?" It asks "is this wallet a verified participant with an active profile?" Token balance without profile verification is inert inside the DAO. This is not a policy — it is code. It cannot be bypassed, negotiated, or overridden.
+
+The Secondary Market Firewall
+GULAG Tokens, once distributed to participant wallets, are sovereign property. Participants may transfer or sell them freely on any secondary market. The DAO neither controls nor interferes with that activity. However, the firewall is absolute and permanent: Tokens acquired on secondary markets carry zero DAO utility. They cannot be used to vote, submit proposals, earn rewards, or access any DAO function — regardless of quantity held. Tokens that leave a registered participant wallet enter a permanent external state. They do not return to the governance ecosystem. Ever. Secondary market accumulation cannot enhance a participant's voting position. Governance weight is calculated exclusively from tokens acquired through verified DAO channels and held in registered wallets. Even a fully registered participant cannot bring externally acquired GULAG Tokens back into the DAO's governance ecosystem. The registry is the source of truth. The wallet is just storage. A GULAG Token held outside the registered ecosystem is a souvenir. It carries the lore, the identity, and the cultural weight of Gulag DAO — but it has no operational authority inside the DAO's walls.
+
+The Dual-Arena Model — A Structural Answer to the Whale Problem
+Most DAOs face a fundamental tension: large token holders (whales) accumulate disproportionate governance power, distorting collective decision-making and threatening the integrity of the protocol. Gulag DAO resolves this structurally, not mechanically. Arena One — Inside the DAO: All participants operate under the DAO's anti-whaling protocols. Governance influence is bounded. Token accumulation through DAO channels is governed. The playing field is enforced by code, not culture. A whale inside the DAO is a participant like any other — their standing is earned through contribution, not capital. Arena Two — The Secondary Market: Whales who wish to accumulate GULAG beyond DAO-governed limits are free to do so on secondary markets. They can speculate, trade, and hold as much as the open market allows. No rules, no caps, no restrictions. The secondary market is their arena — fully sovereign, fully unrestricted. These two arenas do not connect. Secondary market accumulation produces zero additional governance power inside the DAO.
+
+The Meme Layer — Cultural Value Beyond Governance
+Because GULAG Tokens traded on secondary markets carry no DAO utility, their external value is determined entirely by narrative, identity, and cultural resonance. Gulag DAO is lore-rich, visually distinctive, and ideologically sharp. The GULAG Token, as a cultural artifact, carries that identity into the broader cryosphere independently of the DAO's internal mechanics. Its secondary market value is a reflection of the story — not the protocol. Price movements in the secondary market have no effect on treasury operations, governance integrity, or participant standing. The DAO operates on sovereign logic. The token does what the market does with it. Both can thrive simultaneously, in separate lanes, without interference.
+
+Summary — The GULAG Token in Four Principles
+1. Earned, not bought — governance rights flow only from verified DAO participation, not from market accumulation. 2. Profile-gated — no onboarding profile means no DAO utility, regardless of token balance. 3. Firewall-protected — secondary market tokens are permanently external to the governance ecosystem. 4. Dual-arena sovereign — whales have a place to play without threatening the integrity of the participants who built this. Slogan: "Don't get outplayed. Don't get out-voted."
+
+Internal Issuance Registry (Technical Enforcement)
+The governance canister maintains its own internal registry — a ledger of exactly which tokens were issued through valid DAO channels (token sale or participation rewards), mapped to which registered participant wallet received them. When a participant attempts any governance action, the canister checks: (1) Is this wallet a registered participant with an active profile? (2) Does the token balance recorded in the DAO's internal registry match what's being presented? It never reads raw wallet balance. Tokens purchased externally never appear in the internal registry — invisible to every DAO function. The GULAG token is pegged at $1 internally by the DAO for governance and accounting purposes. Outside the DAO, it may trade at any price on secondary markets — the DAO does not control or interfere with secondary market pricing.`
+        ),
+        sub(
           "ANTI-WHALING PROTOCOLS",
           '"Whaling" activity is any Game-Play or DAO participation which is intended to weaken the confidence in the Protocol. Friendly Whales are welcome as investors and participants, but not as speculators.\n\nKey Protocols:\n• No treasury investing using leverage.\n• Pre-sale for early adopters has anti-whaling mechanisms.\n• Harnessing the Whale (Financiers).\n• Initial 5-year treasury lock.\n• After lock release: Treasury governance using multisig strategy, where 51% of signees are non-whale participants.\n\nWhitelisted Pre-Sale:\n• Discount on both Gulag Tokens and Payok coins.\n• Amplifies voting rights for "certified" small (non-whale) whitelisted early adopters.\n• Part of the Anti-Whaling Protocols.\n\nAnti-Whaling Protocols are always under development and consideration, and will adapt as treasury activities advances. In accordance with governance guidance.'
         ),
@@ -27833,18 +27879,6 @@ END OF CLASSIFIED DOSSIER
 ${HR}`
   );
   return parts.join("");
-}
-function isValidPath(p) {
-  return [
-    "/",
-    "/dao",
-    "/mission",
-    "/governance",
-    "/lore",
-    "/participate",
-    "/presale",
-    "/whitelist"
-  ].includes(p);
 }
 const INTEGRATED_APP_ITEMS = [
   {
@@ -28516,9 +28550,7 @@ function SecureCommunicationModal({ onClose }) {
         "_blank"
       );
       setStatus("success");
-      setTimeout(() => {
-        onClose();
-      }, 2200);
+      setTimeout(() => onClose(), 2200);
     } catch {
       setStatus("error");
     }
@@ -28761,15 +28793,13 @@ function SecureCommunicationModal({ onClose }) {
                         e.currentTarget.style.boxShadow = "0 0 16px oklch(0.55 0.28 195 / 0.2)";
                       }
                     },
-                    onFocus: (e) => {
-                      if (message.trim() && status === "idle") {
-                        e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.22)";
-                        e.currentTarget.style.boxShadow = "0 0 16px oklch(0.55 0.28 195 / 0.2)";
-                      }
-                    },
                     onMouseOut: (e) => {
                       e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.12)";
                       e.currentTarget.style.boxShadow = "none";
+                    },
+                    onFocus: (e) => {
+                      if (message.trim() && status === "idle")
+                        e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.22)";
                     },
                     onBlur: (e) => {
                       e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.12)";
@@ -28810,8 +28840,7 @@ function SecureCommunicationModal({ onClose }) {
                                 children: "Secure communications coming via Malyava Cove"
                               }
                             ),
-                            " ",
-                            "— the DAO's encrypted autonomy layer. Stay dark."
+                            " — the DAO's encrypted autonomy layer. Stay dark."
                           ]
                         }
                       )
@@ -29070,13 +29099,12 @@ function ComingSoonModal({
                     e.currentTarget.style.background = "rgba(0,255,255,0.18)";
                     e.currentTarget.style.boxShadow = "0 0 16px rgba(0,255,255,0.25)";
                   },
-                  onFocus: (e) => {
-                    e.currentTarget.style.background = "rgba(0,255,255,0.18)";
-                    e.currentTarget.style.boxShadow = "0 0 16px rgba(0,255,255,0.25)";
-                  },
                   onMouseOut: (e) => {
                     e.currentTarget.style.background = "rgba(0,255,255,0.07)";
                     e.currentTarget.style.boxShadow = "none";
+                  },
+                  onFocus: (e) => {
+                    e.currentTarget.style.background = "rgba(0,255,255,0.18)";
                   },
                   onBlur: (e) => {
                     e.currentTarget.style.background = "rgba(0,255,255,0.07)";
@@ -29340,13 +29368,13 @@ function DossierModal({ onClose }) {
                               e.currentTarget.style.boxShadow = "0 0 16px oklch(0.55 0.28 195 / 0.2)";
                             }
                           },
-                          onFocus: (e) => {
-                            if (code.trim())
-                              e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.22)";
-                          },
                           onMouseOut: (e) => {
                             e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.12)";
                             e.currentTarget.style.boxShadow = "none";
+                          },
+                          onFocus: (e) => {
+                            if (code.trim())
+                              e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.22)";
                           },
                           onBlur: (e) => {
                             e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.12)";
@@ -29371,12 +29399,12 @@ function DossierModal({ onClose }) {
                             e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.08)";
                             e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.45)";
                           },
-                          onFocus: (e) => {
-                            e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.08)";
-                          },
                           onMouseOut: (e) => {
                             e.currentTarget.style.background = "transparent";
                             e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.2)";
+                          },
+                          onFocus: (e) => {
+                            e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.08)";
                           },
                           onBlur: (e) => {
                             e.currentTarget.style.background = "transparent";
@@ -29407,17 +29435,15 @@ function DossierModal({ onClose }) {
   );
 }
 function Navigation() {
-  const [open, setOpen] = reactExports.useState(false);
+  const [sidePanelOpen, setSidePanelOpen] = reactExports.useState(false);
   const [underConstructionMsg, setUnderConstructionMsg] = reactExports.useState(false);
   const [tokenomicsModalOpen, setTokenomicsModalOpen] = reactExports.useState(false);
   const [tokenomicsModalTopic, setTokenomicsModalTopic] = reactExports.useState("");
   const [participationModalOpen, setParticipationModalOpen] = reactExports.useState(false);
   const [participationModalTopic, setParticipationModalTopic] = reactExports.useState("");
-  const [integratedAppsOpen, setIntegratedAppsOpen] = reactExports.useState(false);
   const [integratedAppsActiveApp, setIntegratedAppsActiveApp] = reactExports.useState(null);
-  const [affiliatedAppsOpen, setAffiliatedAppsOpen] = reactExports.useState(false);
-  const [affiliatedGamingOpen, setAffiliatedGamingOpen] = reactExports.useState(false);
   const [affiliatedCryptoOpen, setAffiliatedCryptoOpen] = reactExports.useState(false);
+  const [affiliatedGamingOpen, setAffiliatedGamingOpen] = reactExports.useState(false);
   const [showEnterGateModal, setShowEnterGateModal] = reactExports.useState(false);
   const [cryptoModalTopic, setCryptoModalTopic] = reactExports.useState(null);
   const [operationalDirectivesOpen, setOperationalDirectivesOpen] = reactExports.useState(false);
@@ -29427,38 +29453,33 @@ function Navigation() {
   const [ecosystemsModalOpen, setEcosystemsModalOpen] = reactExports.useState(false);
   const [ecosystemsTopic, setEcosystemsTopic] = reactExports.useState("");
   const [dossierModalOpen, setDossierModalOpen] = reactExports.useState(false);
-  const integratedAppsRef = reactExports.useRef(null);
-  const affiliatedAppsRef = reactExports.useRef(null);
   const routerState = useRouterState();
   const currentPath = routerState.location.pathname;
   const navigate = useNavigate();
   reactExports.useEffect(() => {
-    if (!integratedAppsOpen) return;
-    const handler = (e) => {
-      if (integratedAppsRef.current && !integratedAppsRef.current.contains(e.target)) {
-        setIntegratedAppsOpen(false);
-      }
+    if (!sidePanelOpen) return;
+    const h = (e) => {
+      if (e.key === "Escape") setSidePanelOpen(false);
     };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, [integratedAppsOpen]);
-  reactExports.useEffect(() => {
-    if (!affiliatedAppsOpen) return;
-    const handler = (e) => {
-      if (affiliatedAppsRef.current && !affiliatedAppsRef.current.contains(e.target)) {
-        setAffiliatedAppsOpen(false);
-        setAffiliatedGamingOpen(false);
-        setAffiliatedCryptoOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, [affiliatedAppsOpen]);
+    document.addEventListener("keydown", h);
+    return () => document.removeEventListener("keydown", h);
+  }, [sidePanelOpen]);
+  function closePanel() {
+    setSidePanelOpen(false);
+    setAffiliatedCryptoOpen(false);
+    setAffiliatedGamingOpen(false);
+  }
+  function panelNavigate(path) {
+    closePanel();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate({ to: path });
+  }
   const handleDropdownChange = (e) => {
     const val = e.target.value;
     const name = e.target.name;
     e.target.value = "";
     if (!val) return;
+    closePanel();
     if (name === "tokenomics") {
       setTokenomicsModalTopic(val);
       setTokenomicsModalOpen(true);
@@ -29467,8 +29488,10 @@ function Navigation() {
       setParticipationModalOpen(true);
     } else if (val === "nav:/participate") {
       navigate({ to: "/participate" });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else if (val === "nav:/governance") {
       navigate({ to: "/governance" });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } else if (val.startsWith("eco-")) {
       setEcosystemsTopic(val);
       setEcosystemsModalOpen(true);
@@ -29476,700 +29499,795 @@ function Navigation() {
       setUnderConstructionMsg(true);
     }
   };
-  const selectCls = "bg-black/70 border border-cyan-400/40 text-cyan-400 text-[0.65rem] tracking-widest font-mono uppercase px-2 py-1 focus:outline-none focus:border-cyan-400 hover:border-cyan-400/70 transition-colors cursor-pointer min-w-[110px]";
-  const customBtnCls = "bg-black/70 border border-cyan-400/40 text-cyan-400 text-[0.65rem] tracking-widest font-mono uppercase px-2 py-1 focus:outline-none focus:border-cyan-400 hover:border-cyan-400/70 transition-colors cursor-pointer min-w-[140px] flex items-center justify-between gap-1 w-full";
-  const dropdownPanelStyle = {
-    background: "oklch(0.10 0.01 200)",
-    border: "1px solid oklch(0.55 0.28 195 / 0.35)",
-    boxShadow: "0 8px 32px rgba(0,0,0,0.7), 0 0 24px oklch(0.55 0.28 195 / 0.08)"
-  };
-  const menuItemCls = "w-full text-left px-4 py-2.5 text-cyan-400/80 hover:text-cyan-300 hover:bg-cyan-400/5 transition-colors duration-150 border-b last:border-b-0 classified-badge text-[0.6rem] tracking-widest uppercase";
+  const panelSelectCls = "w-full bg-black/80 border border-cyan-400/40 text-cyan-400 text-[0.6rem] tracking-wider font-mono uppercase px-2 py-1.5 focus:outline-none focus:border-cyan-400 hover:border-cyan-400/70 transition-colors cursor-pointer";
+  const panelNavRowBase = "w-full text-left px-4 py-2.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border-b transition-colors duration-150 hover:bg-cyan-400/5";
+  function panelNavRowStyle(path) {
+    const active = currentPath === path;
+    return {
+      background: active ? "oklch(0.55 0.28 195 / 0.15)" : "transparent",
+      color: active ? "oklch(0.85 0.25 195)" : "oklch(0.60 0.25 195)",
+      borderColor: "oklch(0.55 0.28 195 / 0.12)"
+    };
+  }
+  const tbBtn = "px-2 py-1 classified-badge tracking-widest uppercase font-mono border transition-colors duration-200 whitespace-nowrap";
+  const tbBtnStyle = { fontSize: "0.55rem" };
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
-    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+    /* @__PURE__ */ jsxRuntimeExports.jsx(
       "header",
       {
         className: "fixed top-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-b border-primary/20 shadow-[0_1px_0_oklch(0.55_0.28_195/0.15)]",
         "data-ocid": "nav.header",
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-6 h-16 flex items-center justify-between", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(
-              Link,
-              {
-                to: "/",
-                className: "flex items-center gap-3 group",
-                "data-ocid": "nav.logo_link",
-                children: [
+        children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-[1600px] mx-auto px-3 h-14 flex items-center gap-1.5 overflow-hidden", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "button",
+            {
+              type: "button",
+              onClick: () => setSidePanelOpen(true),
+              className: "flex-shrink-0 flex items-center justify-center w-8 h-8 border transition-colors duration-200",
+              style: {
+                background: "oklch(0.55 0.28 195 / 0.07)",
+                borderColor: "oklch(0.55 0.28 195 / 0.40)",
+                color: "oklch(0.55 0.28 195)"
+              },
+              onMouseOver: (e) => {
+                e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.18)";
+                e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.8)";
+              },
+              onMouseOut: (e) => {
+                e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.07)";
+                e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.40)";
+              },
+              onFocus: (e) => {
+                e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.18)";
+              },
+              onBlur: (e) => {
+                e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.07)";
+              },
+              "aria-label": "Open navigation panel",
+              "data-ocid": "nav.hamburger_button",
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(Menu, { size: 14 })
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            Link,
+            {
+              to: "/",
+              className: "flex-shrink-0 flex items-center gap-2 group",
+              "data-ocid": "nav.logo_link",
+              onClick: () => window.scrollTo({ top: 0, behavior: "smooth" }),
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  GulagSymbol,
+                  {
+                    size: 28,
+                    className: "group-hover:opacity-80 transition-opacity"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col leading-none", children: [
                   /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    GulagSymbol,
+                    "span",
                     {
-                      size: 36,
-                      className: "group-hover:opacity-80 transition-opacity"
+                      className: "font-display font-black text-foreground leading-none tracking-widest uppercase",
+                      style: { fontSize: "0.65rem" },
+                      children: "GULAG DAO"
                     }
                   ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display font-black text-foreground text-base leading-none tracking-widest uppercase", children: "GULAG DAO" }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-primary/60 mt-0.5", children: "WHITE PAPER" })
-                  ] })
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "span",
+                    {
+                      className: "classified-badge text-primary/60",
+                      style: { fontSize: "0.43rem" },
+                      children: "WHITE PAPER"
+                    }
+                  )
+                ] })
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "flex-1" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-1 flex-shrink-0", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(
+              "button",
+              {
+                type: "button",
+                onClick: () => setSecureCommunicationOpen(true),
+                className: cn(tbBtn, "hidden md:flex items-center gap-1"),
+                style: {
+                  ...tbBtnStyle,
+                  background: "oklch(0.55 0.28 195 / 0.07)",
+                  borderColor: "oklch(0.55 0.28 195 / 0.45)",
+                  color: "oklch(0.55 0.28 195)"
+                },
+                onMouseOver: (e) => {
+                  e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.15)";
+                  e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.8)";
+                },
+                onMouseOut: (e) => {
+                  e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.07)";
+                  e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.45)";
+                },
+                onFocus: (e) => {
+                  e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.15)";
+                },
+                onBlur: (e) => {
+                  e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.07)";
+                },
+                "data-ocid": "nav.secure_comm_button",
+                "aria-label": "Open Secure Communication form",
+                children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { size: 9, "aria-hidden": true }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "SECURE COMM" })
                 ]
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                onClick: () => setShowPresaleComingSoon(true),
+                className: tbBtn,
+                style: {
+                  ...tbBtnStyle,
+                  background: "rgba(255,215,0,0.07)",
+                  borderColor: "rgba(255,215,0,0.45)",
+                  color: "#FFD700"
+                },
+                onMouseOver: (e) => {
+                  e.currentTarget.style.background = "rgba(255,215,0,0.16)";
+                  e.currentTarget.style.borderColor = "rgba(255,215,0,0.8)";
+                },
+                onMouseOut: (e) => {
+                  e.currentTarget.style.background = "rgba(255,215,0,0.07)";
+                  e.currentTarget.style.borderColor = "rgba(255,215,0,0.45)";
+                },
+                onFocus: (e) => {
+                  e.currentTarget.style.background = "rgba(255,215,0,0.16)";
+                },
+                onBlur: (e) => {
+                  e.currentTarget.style.background = "rgba(255,215,0,0.07)";
+                },
+                "data-ocid": "nav.presale_button",
+                children: "PRE-SALE"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                onClick: () => setShowWhitelistComingSoon(true),
+                className: tbBtn,
+                style: {
+                  ...tbBtnStyle,
+                  background: "oklch(0.55 0.28 195 / 0.07)",
+                  borderColor: "oklch(0.55 0.28 195 / 0.45)",
+                  color: "oklch(0.55 0.28 195)"
+                },
+                onMouseOver: (e) => {
+                  e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.18)";
+                  e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.85)";
+                },
+                onMouseOut: (e) => {
+                  e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.07)";
+                  e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.45)";
+                },
+                onFocus: (e) => {
+                  e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.18)";
+                },
+                onBlur: (e) => {
+                  e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.07)";
+                },
+                "data-ocid": "nav.whitelisting_button",
+                children: "WHITELISTING"
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsxs(
               "button",
               {
                 type: "button",
-                onClick: () => setSecureCommunicationOpen(true),
-                className: "hidden lg:flex items-center gap-1.5 px-3 py-1.5 classified-badge text-[0.62rem] tracking-widest uppercase font-mono border transition-all duration-200",
+                onClick: () => setDossierModalOpen(true),
+                className: cn(tbBtn, "flex items-center gap-1"),
                 style: {
-                  background: "oklch(0.55 0.28 195 / 0.07)",
-                  borderColor: "oklch(0.55 0.28 195 / 0.45)",
-                  color: "oklch(0.55 0.28 195)",
-                  boxShadow: "0 0 8px oklch(0.55 0.28 195 / 0.08)"
+                  ...tbBtnStyle,
+                  background: "oklch(0.55 0.28 195 / 0.05)",
+                  borderColor: "oklch(0.55 0.28 195 / 0.28)",
+                  color: "oklch(0.55 0.28 195 / 0.75)"
                 },
                 onMouseOver: (e) => {
-                  e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.15)";
-                  e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.8)";
-                  e.currentTarget.style.boxShadow = "0 0 14px oklch(0.55 0.28 195 / 0.25)";
-                },
-                onFocus: (e) => {
-                  e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.15)";
-                  e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.8)";
-                  e.currentTarget.style.boxShadow = "0 0 14px oklch(0.55 0.28 195 / 0.25)";
+                  e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.14)";
+                  e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.6)";
+                  e.currentTarget.style.color = "oklch(0.70 0.25 195)";
                 },
                 onMouseOut: (e) => {
-                  e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.07)";
-                  e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.45)";
-                  e.currentTarget.style.boxShadow = "0 0 8px oklch(0.55 0.28 195 / 0.08)";
+                  e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.05)";
+                  e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.28)";
+                  e.currentTarget.style.color = "oklch(0.55 0.28 195 / 0.75)";
+                },
+                onFocus: (e) => {
+                  e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.14)";
                 },
                 onBlur: (e) => {
-                  e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.07)";
-                  e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.45)";
-                  e.currentTarget.style.boxShadow = "0 0 8px oklch(0.55 0.28 195 / 0.08)";
+                  e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.05)";
                 },
-                "data-ocid": "nav.secure_comm_button",
-                "aria-label": "Open Secure Communication form",
+                "aria-label": "Download Dossier",
+                "data-ocid": "nav.dossier_download_button",
                 children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Lock, { size: 11, "aria-hidden": true }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "SECURE COMMUNICATION" })
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { size: 8, "aria-hidden": true }),
+                  "DOSSIER"
                 ]
               }
             ),
             /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "nav",
+              "button",
               {
-                className: "hidden lg:flex items-center gap-1.5",
-                "aria-label": "Portal navigation"
+                type: "button",
+                onClick: () => setOperationalDirectivesOpen(true),
+                className: cn(
+                  tbBtn,
+                  "hidden lg:block bg-black/70 border-red-700/70 text-red-400 hover:border-red-500 hover:text-red-300 hover:bg-red-950/40"
+                ),
+                style: tbBtnStyle,
+                "data-ocid": "nav.operational_directives_button",
+                children: "OP DIRECTIVES"
               }
             ),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "button",
-                {
-                  type: "button",
-                  onClick: () => setShowPresaleComingSoon(true),
-                  className: "px-3 py-1.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border transition-colors duration-200",
-                  style: {
-                    background: "rgba(255,215,0,0.07)",
-                    borderColor: "rgba(255,215,0,0.45)",
-                    color: "#FFD700"
-                  },
-                  onMouseOver: (e) => {
-                    e.currentTarget.style.background = "rgba(255,215,0,0.16)";
-                    e.currentTarget.style.borderColor = "rgba(255,215,0,0.8)";
-                    e.currentTarget.style.boxShadow = "0 0 12px rgba(255,215,0,0.2)";
-                  },
-                  onFocus: (e) => {
-                    e.currentTarget.style.background = "rgba(255,215,0,0.16)";
-                    e.currentTarget.style.borderColor = "rgba(255,215,0,0.8)";
-                  },
-                  onMouseOut: (e) => {
-                    e.currentTarget.style.background = "rgba(255,215,0,0.07)";
-                    e.currentTarget.style.borderColor = "rgba(255,215,0,0.45)";
-                    e.currentTarget.style.boxShadow = "none";
-                  },
-                  onBlur: (e) => {
-                    e.currentTarget.style.background = "rgba(255,215,0,0.07)";
-                    e.currentTarget.style.borderColor = "rgba(255,215,0,0.45)";
-                    e.currentTarget.style.boxShadow = "none";
-                  },
-                  "data-ocid": "nav.presale_button",
-                  children: "PRE-SALE"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "button",
-                {
-                  type: "button",
-                  onClick: () => setShowWhitelistComingSoon(true),
-                  className: "px-3 py-1.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border transition-colors duration-200",
-                  style: {
-                    background: "oklch(0.55 0.28 195 / 0.07)",
-                    borderColor: "oklch(0.55 0.28 195 / 0.45)",
-                    color: "oklch(0.55 0.28 195)"
-                  },
-                  onMouseOver: (e) => {
-                    e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.18)";
-                    e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.85)";
-                    e.currentTarget.style.boxShadow = "0 0 12px oklch(0.55 0.28 195 / 0.2)";
-                  },
-                  onFocus: (e) => {
-                    e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.18)";
-                    e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.85)";
-                  },
-                  onMouseOut: (e) => {
-                    e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.07)";
-                    e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.45)";
-                    e.currentTarget.style.boxShadow = "none";
-                  },
-                  onBlur: (e) => {
-                    e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.07)";
-                    e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.45)";
-                    e.currentTarget.style.boxShadow = "none";
-                  },
-                  "data-ocid": "nav.whitelisting_button",
-                  children: "WHITELISTING"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "button",
-                {
-                  type: "button",
-                  onClick: () => setOperationalDirectivesOpen(true),
-                  className: "px-3 py-1.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border transition-colors duration-200 bg-black/70 border-red-700/70 text-red-400 hover:border-red-500 hover:text-red-300 hover:bg-red-950/40",
-                  "data-ocid": "nav.operational_directives_button",
-                  children: "OPERATIONAL DIRECTIVES"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                CTAButton,
-                {
-                  variant: "primary",
-                  size: "sm",
-                  onClick: () => setShowEnterGateModal(true),
-                  "data-ocid": "nav.enter_gate_button",
-                  children: "Enter The GATE"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                CTAButton,
-                {
-                  variant: "secondary",
-                  size: "sm",
-                  onClick: () => window.close(),
-                  "data-ocid": "nav.exit_button",
-                  children: "EXIT"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                "button",
-                {
-                  type: "button",
-                  onClick: () => setOpen(true),
-                  className: "ml-2 lg:hidden flex items-center gap-1.5 classified-badge text-primary/70 hover:text-primary border border-primary/30 hover:border-primary/60 px-3 py-2 transition-colors",
-                  "aria-label": "Open dossier navigation",
-                  "data-ocid": "nav.dossier_button",
-                  children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(Menu, { size: 14 }),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "hidden sm:block", children: "DOSSIER" })
-                  ]
-                }
-              )
-            ] })
-          ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              CTAButton,
+              {
+                variant: "primary",
+                size: "sm",
+                onClick: () => setShowEnterGateModal(true),
+                "data-ocid": "nav.enter_gate_button",
+                style: {
+                  fontSize: "0.55rem",
+                  padding: "0.25rem 0.5rem",
+                  whiteSpace: "nowrap"
+                },
+                children: "Enter GATE"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              CTAButton,
+              {
+                variant: "secondary",
+                size: "sm",
+                onClick: () => window.close(),
+                "data-ocid": "nav.exit_button",
+                style: {
+                  fontSize: "0.55rem",
+                  padding: "0.25rem 0.5rem",
+                  whiteSpace: "nowrap"
+                },
+                children: "EXIT"
+              }
+            )
+          ] })
+        ] })
+      }
+    ),
+    sidePanelOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(
+      "button",
+      {
+        type: "button",
+        className: "fixed inset-0 z-[60] bg-black/50",
+        onClick: closePanel,
+        "aria-label": "Close navigation panel",
+        tabIndex: -1,
+        "data-ocid": "nav.panel_backdrop"
+      }
+    ),
+    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      "div",
+      {
+        className: cn(
+          "fixed top-0 left-0 h-full w-72 z-[70] flex flex-col transition-transform duration-300 ease-in-out",
+          sidePanelOpen ? "translate-x-0" : "-translate-x-full"
+        ),
+        style: {
+          background: "oklch(0.05 0.012 200)",
+          borderRight: "1px solid oklch(0.55 0.28 195 / 0.45)",
+          boxShadow: sidePanelOpen ? "4px 0 32px rgba(0,0,0,0.8), 0 0 24px oklch(0.55 0.28 195 / 0.08)" : "none"
+        },
+        "aria-label": "Navigation panel",
+        "data-ocid": "nav.side_panel",
+        children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             "div",
             {
-              className: "border-t border-primary/15 bg-black/40",
-              "data-ocid": "nav.secondary_row",
-              children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "max-w-7xl mx-auto px-6 py-2 flex items-center gap-2 flex-wrap", children: [
+              className: "circuit-texture absolute inset-0 pointer-events-none opacity-30",
+              "aria-hidden": true
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "relative h-0.5 w-full flex-shrink-0",
+              style: {
+                background: "linear-gradient(90deg, transparent, oklch(0.55 0.28 195), oklch(0.65 0.26 65 / 0.6), transparent)"
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(
+            "div",
+            {
+              className: "relative flex items-center justify-between px-4 py-3 flex-shrink-0",
+              style: { borderBottom: "1px solid oklch(0.55 0.28 195 / 0.2)" },
+              children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(GulagSymbol, { size: 20 }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(
+                    "span",
+                    {
+                      className: "classified-badge tracking-widest uppercase",
+                      style: { fontSize: "0.58rem", color: "oklch(0.55 0.28 195)" },
+                      children: "NAVIGATION"
+                    }
+                  )
+                ] }),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Link,
+                  "button",
                   {
-                    to: "/dao",
-                    className: "px-6 py-1.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border transition-colors duration-200 whitespace-nowrap",
+                    type: "button",
+                    onClick: closePanel,
+                    className: "p-1.5 transition-colors duration-200",
+                    style: { color: "oklch(0.55 0.28 195 / 0.7)" },
+                    "aria-label": "Close navigation panel",
+                    "data-ocid": "nav.panel_close_button",
+                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 14 })
+                  }
+                )
+              ]
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative flex-1 overflow-y-auto", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: "px-4 pt-3 pb-1.5",
+                style: { borderBottom: "1px solid oklch(0.55 0.28 195 / 0.1)" },
+                children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "span",
+                  {
+                    className: "classified-badge tracking-[0.25em] uppercase",
                     style: {
-                      background: currentPath === "/dao" ? "oklch(0.55 0.28 195 / 0.2)" : "oklch(0.08 0.01 200)",
-                      borderColor: currentPath === "/dao" ? "oklch(0.55 0.28 195)" : "oklch(0.55 0.28 195 / 0.4)",
-                      color: currentPath === "/dao" ? "oklch(0.80 0.25 195)" : "oklch(0.60 0.25 195)"
+                      fontSize: "0.48rem",
+                      color: "oklch(0.55 0.28 195 / 0.5)"
                     },
-                    "data-ocid": "nav.secondary_dao_link",
-                    children: "WHAT IS A DAO"
+                    children: "NAVIGATION PORTALS"
+                  }
+                )
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                onClick: () => panelNavigate("/dao"),
+                className: panelNavRowBase,
+                style: panelNavRowStyle("/dao"),
+                "data-ocid": "nav.panel_dao_button",
+                children: "WHAT IS A DAO"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                onClick: () => panelNavigate("/mission"),
+                className: panelNavRowBase,
+                style: panelNavRowStyle("/mission"),
+                "data-ocid": "nav.panel_mission_button",
+                children: "THE MISSION"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                onClick: () => panelNavigate("/lore"),
+                className: panelNavRowBase,
+                style: panelNavRowStyle("/lore"),
+                "data-ocid": "nav.panel_lore_button",
+                children: "LORE"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "button",
+              {
+                type: "button",
+                onClick: () => panelNavigate("/comparative"),
+                className: panelNavRowBase,
+                style: panelNavRowStyle("/comparative"),
+                "data-ocid": "nav.panel_comparative_button",
+                children: "COMPARATIVE ANALYSIS"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                className: "mx-4 my-3 h-px",
+                style: { background: "oklch(0.55 0.28 195 / 0.18)" },
+                "aria-hidden": true
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "px-4 pb-2", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "span",
+              {
+                className: "classified-badge tracking-[0.25em] uppercase",
+                style: {
+                  fontSize: "0.48rem",
+                  color: "oklch(0.55 0.28 195 / 0.5)"
+                },
+                children: "NAVIGATION SELECTORS"
+              }
+            ) }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "px-3 pb-4 space-y-2.5", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "label",
+                  {
+                    htmlFor: "panel-tok",
+                    className: "classified-badge px-1 tracking-widest uppercase",
+                    style: {
+                      fontSize: "0.47rem",
+                      color: "oklch(0.55 0.28 195 / 0.5)"
+                    },
+                    children: "TOKENOMICS"
                   }
                 ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Link,
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "select",
                   {
-                    to: "/mission",
-                    className: "px-6 py-1.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border transition-colors duration-200 whitespace-nowrap",
+                    id: "panel-tok",
+                    name: "tokenomics",
+                    defaultValue: "",
+                    onChange: handleDropdownChange,
+                    className: panelSelectCls,
+                    "data-ocid": "nav.panel_select.tokenomics",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", disabled: true, children: "— TOKENOMICS —" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "anti-whaling", children: "Anti-Whaling Protocols" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "token-coin", children: "Token / Coin" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "liquidity-pools", children: "Liquidity Pools & AMM" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "phased-treasury", children: "Phased Treasury Impl." }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "global-objectives", children: "Global Objectives" })
+                    ]
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "label",
+                  {
+                    htmlFor: "panel-par",
+                    className: "classified-badge px-1 tracking-widest uppercase",
                     style: {
-                      background: currentPath === "/mission" ? "oklch(0.55 0.28 195 / 0.2)" : "oklch(0.08 0.01 200)",
-                      borderColor: currentPath === "/mission" ? "oklch(0.55 0.28 195)" : "oklch(0.55 0.28 195 / 0.4)",
-                      color: currentPath === "/mission" ? "oklch(0.80 0.25 195)" : "oklch(0.60 0.25 195)"
+                      fontSize: "0.47rem",
+                      color: "oklch(0.55 0.28 195 / 0.5)"
                     },
-                    "data-ocid": "nav.secondary_mission_link",
-                    children: "THE MISSION"
+                    children: "PARTICIPATION"
                   }
                 ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Link,
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "select",
                   {
-                    to: "/lore",
-                    className: "px-6 py-1.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border transition-colors duration-200 whitespace-nowrap",
+                    id: "panel-par",
+                    name: "participation",
+                    defaultValue: "",
+                    onChange: handleDropdownChange,
+                    className: panelSelectCls,
+                    "data-ocid": "nav.panel_select.participation",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", disabled: true, children: "— PARTICIPATION —" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "nav:/participate", children: "How to Participate" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "participation-levels", children: "Participation Levels" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "participation-governance", children: "Participation Governance" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "personas", children: "Personas" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "rewarding-early-adopters", children: "Rewarding Early Adopters" })
+                    ]
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "label",
+                  {
+                    htmlFor: "panel-gov",
+                    className: "classified-badge px-1 tracking-widest uppercase",
                     style: {
-                      background: currentPath === "/lore" ? "oklch(0.55 0.28 195 / 0.2)" : "oklch(0.08 0.01 200)",
-                      borderColor: currentPath === "/lore" ? "oklch(0.55 0.28 195)" : "oklch(0.55 0.28 195 / 0.4)",
-                      color: currentPath === "/lore" ? "oklch(0.80 0.25 195)" : "oklch(0.60 0.25 195)"
+                      fontSize: "0.47rem",
+                      color: "oklch(0.55 0.28 195 / 0.5)"
                     },
-                    "data-ocid": "nav.secondary_lore_link",
-                    children: "LORE"
+                    children: "GOVERNANCE"
                   }
                 ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Link,
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "select",
                   {
-                    to: "/comparative",
-                    className: "px-6 py-1.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border transition-colors duration-200 whitespace-nowrap",
+                    id: "panel-gov",
+                    name: "governance",
+                    defaultValue: "",
+                    onChange: handleDropdownChange,
+                    className: panelSelectCls,
+                    "data-ocid": "nav.panel_select.governance",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", disabled: true, children: "— GOVERNANCE —" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "nav:/governance", children: "Governance Overview" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "option-g2", children: "Option 2" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "option-g3", children: "Option 3" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "option-g4", children: "Option 4" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "option-g5", children: "Option 5" })
+                    ]
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "label",
+                  {
+                    htmlFor: "panel-eco",
+                    className: "classified-badge px-1 tracking-widest uppercase",
                     style: {
-                      background: currentPath === "/comparative" ? "oklch(0.55 0.28 195 / 0.2)" : "oklch(0.08 0.01 200)",
-                      borderColor: currentPath === "/comparative" ? "oklch(0.55 0.28 195)" : "oklch(0.55 0.28 195 / 0.4)",
-                      color: currentPath === "/comparative" ? "oklch(0.80 0.25 195)" : "oklch(0.60 0.25 195)"
+                      fontSize: "0.47rem",
+                      color: "oklch(0.55 0.28 195 / 0.5)"
                     },
-                    "data-ocid": "nav.secondary_comparative_link",
-                    children: "COMPARATIVE ANALYSIS"
+                    children: "ECOSYSTEMS"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "select",
+                  {
+                    id: "panel-eco",
+                    name: "ecosystems",
+                    defaultValue: "",
+                    onChange: handleDropdownChange,
+                    className: panelSelectCls,
+                    "data-ocid": "nav.panel_select.ecosystems",
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", disabled: true, children: "— ECOSYSTEMS —" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-apps", children: "Apps EcoSystem" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-treasury", children: "Treasury EcoSystem" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-governance", children: "Governance EcoSystem" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-lore", children: "Lore EcoSystem" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-gameplay", children: "Game-Play EcoSystem" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-unified-doc", children: "Unified Document Eco." }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-comms", children: "Comms & Outreach" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-security", children: "Security & Verification" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-development", children: "Development EcoSystem" }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-community", children: "Community Engagement" })
+                    ]
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "span",
+                  {
+                    className: "classified-badge px-1 tracking-widest uppercase",
+                    style: {
+                      fontSize: "0.47rem",
+                      color: "oklch(0.55 0.28 195 / 0.5)"
+                    },
+                    children: "INTEGRATED APPS"
                   }
                 ),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(
                   "div",
                   {
-                    className: "w-px h-5 self-center flex-shrink-0",
-                    style: { background: "oklch(0.55 0.28 195 / 0.2)" },
-                    "aria-hidden": true
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    "label",
-                    {
-                      htmlFor: "nav-select-0",
-                      className: "classified-badge text-primary/50 text-[0.5rem] tracking-widest uppercase",
-                      children: "TOKENOMICS"
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                    "select",
-                    {
-                      id: "nav-select-0",
-                      name: "tokenomics",
-                      defaultValue: "",
-                      onChange: handleDropdownChange,
-                      className: selectCls,
-                      "data-ocid": "nav.secondary_select.1",
-                      children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", disabled: true, children: "— TOKENOMICS —" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "anti-whaling", children: "Anti-Whaling Protocols" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "token-coin", children: "Token / Coin" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "liquidity-pools", children: "Liquidity Pools & AMM" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "phased-treasury", children: "Phased Treasury Implementation" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "global-objectives", children: "Global Objectives" })
-                      ]
-                    }
-                  )
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    "label",
-                    {
-                      htmlFor: "nav-select-1",
-                      className: "classified-badge text-primary/50 text-[0.5rem] tracking-widest uppercase",
-                      children: "PARTICIPATION"
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                    "select",
-                    {
-                      id: "nav-select-1",
-                      name: "participation",
-                      defaultValue: "",
-                      onChange: handleDropdownChange,
-                      className: selectCls,
-                      "data-ocid": "nav.secondary_select.2",
-                      children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", disabled: true, children: "— PARTICIPATION —" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "nav:/participate", children: "How to Participate" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "participation-levels", children: "Participation Levels" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "participation-governance", children: "Participation Governance" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "personas", children: "Personas" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "rewarding-early-adopters", children: "Rewarding Early Adopters" })
-                      ]
-                    }
-                  )
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    "label",
-                    {
-                      htmlFor: "nav-select-2",
-                      className: "classified-badge text-primary/50 text-[0.5rem] tracking-widest uppercase",
-                      children: "GOVERNANCE"
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                    "select",
-                    {
-                      id: "nav-select-2",
-                      name: "governance",
-                      defaultValue: "",
-                      onChange: handleDropdownChange,
-                      className: selectCls,
-                      "data-ocid": "nav.secondary_select.3",
-                      children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", disabled: true, children: "— GOVERNANCE —" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "nav:/governance", children: "Governance Overview" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "option-g2", children: "Option 2" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "option-g3", children: "Option 3" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "option-g4", children: "Option 4" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "option-g5", children: "Option 5" })
-                      ]
-                    }
-                  )
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                  "button",
-                  {
-                    type: "button",
-                    onClick: () => setDossierModalOpen(true),
-                    className: "ml-auto px-3 py-1.5 classified-badge text-[0.65rem] tracking-widest uppercase font-mono border transition-colors duration-200 flex items-center gap-1.5 flex-shrink-0",
+                    className: "w-full border",
                     style: {
-                      background: "oklch(0.55 0.28 195 / 0.05)",
-                      borderColor: "oklch(0.55 0.28 195 / 0.28)",
-                      color: "oklch(0.55 0.28 195 / 0.65)"
+                      background: "oklch(0.08 0.01 200)",
+                      borderColor: "oklch(0.55 0.28 195 / 0.35)"
                     },
-                    onMouseOver: (e) => {
-                      e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.14)";
-                      e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.6)";
-                      e.currentTarget.style.color = "oklch(0.70 0.25 195)";
-                    },
-                    onFocus: (e) => {
-                      e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.14)";
-                      e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.6)";
-                    },
-                    onMouseOut: (e) => {
-                      e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.05)";
-                      e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.28)";
-                      e.currentTarget.style.color = "oklch(0.55 0.28 195 / 0.65)";
-                    },
-                    onBlur: (e) => {
-                      e.currentTarget.style.background = "oklch(0.55 0.28 195 / 0.05)";
-                      e.currentTarget.style.borderColor = "oklch(0.55 0.28 195 / 0.28)";
-                      e.currentTarget.style.color = "oklch(0.55 0.28 195 / 0.65)";
-                    },
-                    "aria-label": "Download Dossier",
-                    title: "Download Dossier",
-                    "data-ocid": "nav.dossier_download_button",
-                    children: [
-                      /* @__PURE__ */ jsxRuntimeExports.jsx(ChevronRight, { size: 10, "aria-hidden": true }),
-                      "DOSSIER"
-                    ]
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    "label",
-                    {
-                      htmlFor: "nav-select-3",
-                      className: "classified-badge text-primary/50 text-[0.5rem] tracking-widest uppercase",
-                      children: "ECOSYSTEMS"
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                    "select",
-                    {
-                      id: "nav-select-3",
-                      name: "ecosystems",
-                      defaultValue: "",
-                      onChange: handleDropdownChange,
-                      className: selectCls,
-                      "data-ocid": "nav.secondary_select.4",
-                      children: [
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "", disabled: true, children: "— ECOSYSTEMS —" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-apps", children: "Apps EcoSystem" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-treasury", children: "Treasury EcoSystem" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-governance", children: "Governance EcoSystem" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-lore", children: "Lore EcoSystem" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-gameplay", children: "Game-Play EcoSystem" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-unified-doc", children: "Unified Document EcoSystem" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-comms", children: "Communications & Outreach EcoSystem" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-security", children: "Security & Verification EcoSystem" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-development", children: "Development EcoSystem" }),
-                        /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: "eco-community", children: "Community Engagement EcoSystem" })
-                      ]
-                    }
-                  )
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", ref: integratedAppsRef, children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-primary/50 text-[0.5rem] tracking-widest uppercase", children: "INTEGRATED APPS" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                    children: INTEGRATED_APP_ITEMS.map((item, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
                       "button",
                       {
                         type: "button",
                         onClick: () => {
-                          setIntegratedAppsOpen((p) => !p);
+                          setIntegratedAppsActiveApp(item.id);
+                          closePanel();
                         },
-                        className: customBtnCls,
-                        "aria-haspopup": "true",
-                        "aria-expanded": integratedAppsOpen,
-                        "data-ocid": "nav.integrated_apps_toggle",
-                        children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "INTEGRATED APPS" }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            "span",
-                            {
-                              className: cn(
-                                "transition-transform duration-200 inline-block text-[0.55rem]",
-                                integratedAppsOpen && "rotate-180"
-                              ),
-                              children: "▾"
-                            }
-                          )
-                        ]
-                      }
-                    ),
-                    integratedAppsOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(
-                      "div",
-                      {
-                        className: "absolute top-full left-0 mt-0.5 z-[70] min-w-[220px]",
-                        style: dropdownPanelStyle,
-                        role: "menu",
-                        children: INTEGRATED_APP_ITEMS.map((item, i) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        className: "w-full text-left px-3 py-2 classified-badge tracking-widest uppercase border-b last:border-b-0 hover:bg-cyan-400/5 transition-colors duration-150",
+                        style: {
+                          fontSize: "0.58rem",
+                          color: "oklch(0.60 0.25 195 / 0.9)",
+                          borderColor: "oklch(0.55 0.28 195 / 0.12)"
+                        },
+                        "data-ocid": `nav.panel_integrated_item.${i + 1}`,
+                        children: item.label
+                      },
+                      item.id
+                    ))
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  "span",
+                  {
+                    className: "classified-badge px-1 tracking-widest uppercase",
+                    style: {
+                      fontSize: "0.47rem",
+                      color: "oklch(0.55 0.28 195 / 0.5)"
+                    },
+                    children: "AFFILIATED APPS"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                  "div",
+                  {
+                    className: "w-full border",
+                    style: {
+                      background: "oklch(0.08 0.01 200)",
+                      borderColor: "oklch(0.55 0.28 195 / 0.35)"
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
                           "button",
                           {
                             type: "button",
-                            role: "menuitem",
-                            onClick: () => {
-                              setIntegratedAppsActiveApp(item.id);
-                              setIntegratedAppsOpen(false);
-                            },
-                            className: menuItemCls,
+                            onClick: () => setAffiliatedCryptoOpen((p) => !p),
+                            className: "w-full text-left px-3 py-2 classified-badge tracking-widest uppercase border-b flex items-center justify-between hover:bg-cyan-400/5 transition-colors duration-150",
                             style: {
+                              fontSize: "0.58rem",
+                              color: "oklch(0.60 0.25 195 / 0.9)",
                               borderColor: "oklch(0.55 0.28 195 / 0.12)"
                             },
-                            "data-ocid": `nav.integrated_apps_item.${i + 1}`,
-                            children: item.label
-                          },
-                          item.id
-                        ))
-                      }
-                    )
-                  ] })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex flex-col gap-0.5", ref: affiliatedAppsRef, children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-primary/50 text-[0.5rem] tracking-widest uppercase", children: "AFFILIATED APPS" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative", children: [
-                    /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                      "button",
-                      {
-                        type: "button",
-                        onClick: () => {
-                          setAffiliatedAppsOpen((p) => !p);
-                          setAffiliatedGamingOpen(false);
-                        },
-                        className: customBtnCls,
-                        "aria-haspopup": "true",
-                        "aria-expanded": affiliatedAppsOpen,
-                        "data-ocid": "nav.affiliated_apps_toggle",
-                        children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "AFFILIATED APPS" }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            "span",
-                            {
-                              className: cn(
-                                "transition-transform duration-200 inline-block text-[0.55rem]",
-                                affiliatedAppsOpen && "rotate-180"
-                              ),
-                              children: "▾"
-                            }
-                          )
-                        ]
-                      }
-                    ),
-                    affiliatedAppsOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                      "div",
-                      {
-                        className: "absolute top-full left-0 mt-0.5 z-[70] min-w-[210px]",
-                        style: dropdownPanelStyle,
-                        role: "menu",
-                        children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                            "div",
-                            {
-                              className: "relative",
-                              onMouseLeave: () => setAffiliatedCryptoOpen(false),
-                              children: [
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                                  "button",
-                                  {
-                                    type: "button",
-                                    role: "menuitem",
-                                    onClick: () => setAffiliatedCryptoOpen((p) => !p),
-                                    onMouseEnter: () => setAffiliatedCryptoOpen(true),
-                                    className: cn(
-                                      menuItemCls,
-                                      "flex items-center justify-between"
-                                    ),
-                                    "aria-haspopup": "true",
-                                    "aria-expanded": affiliatedCryptoOpen,
-                                    "data-ocid": "nav.affiliated_apps_item.1",
-                                    children: [
-                                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Crypto Playground" }),
-                                      /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                        ChevronRight,
-                                        {
-                                          size: 10,
-                                          className: "flex-shrink-0 text-cyan-400/50"
-                                        }
-                                      )
-                                    ]
-                                  }
-                                ),
-                                affiliatedCryptoOpen && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                                  "div",
-                                  {
-                                    className: "absolute top-0 left-full ml-0.5 z-[80] min-w-[220px]",
-                                    style: dropdownPanelStyle,
-                                    role: "menu",
-                                    children: [
-                                      /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                        "button",
-                                        {
-                                          type: "button",
-                                          role: "menuitem",
-                                          onClick: () => {
-                                            setAffiliatedAppsOpen(false);
-                                            setAffiliatedCryptoOpen(false);
-                                            setCryptoModalTopic("crypto-fetch");
-                                          },
-                                          className: menuItemCls,
-                                          "data-ocid": "nav.affiliated_apps_subitem.crypto_fetch",
-                                          children: "Crypto Fetch"
-                                        }
-                                      ),
-                                      /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                        "button",
-                                        {
-                                          type: "button",
-                                          role: "menuitem",
-                                          onClick: () => {
-                                            setAffiliatedAppsOpen(false);
-                                            setAffiliatedCryptoOpen(false);
-                                            setCryptoModalTopic("crypto-trading");
-                                          },
-                                          className: menuItemCls,
-                                          "data-ocid": "nav.affiliated_apps_subitem.crypto_trading",
-                                          children: "Crypto Trading Analytics"
-                                        }
-                                      ),
-                                      /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                        "button",
-                                        {
-                                          type: "button",
-                                          role: "menuitem",
-                                          onClick: () => {
-                                            setAffiliatedAppsOpen(false);
-                                            setAffiliatedCryptoOpen(false);
-                                            setCryptoModalTopic("crypto-lottery");
-                                          },
-                                          className: menuItemCls,
-                                          "data-ocid": "nav.affiliated_apps_subitem.crypto_lottery",
-                                          children: "Crypto Lottery"
-                                        }
-                                      )
-                                    ]
-                                  }
-                                )
-                              ]
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx(
-                            "button",
-                            {
-                              type: "button",
-                              role: "menuitem",
-                              onClick: () => {
-                                setAffiliatedAppsOpen(false);
-                                setUnderConstructionMsg(true);
+                            "aria-expanded": affiliatedCryptoOpen,
+                            "data-ocid": "nav.panel_affiliated_crypto_toggle",
+                            children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Crypto Playground" }),
+                              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                "span",
+                                {
+                                  className: cn(
+                                    "transition-transform duration-200 inline-block",
+                                    affiliatedCryptoOpen && "rotate-180"
+                                  ),
+                                  style: { fontSize: "0.5rem" },
+                                  children: "▾"
+                                }
+                              )
+                            ]
+                          }
+                        ),
+                        affiliatedCryptoOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "div",
+                          {
+                            className: "border-b",
+                            style: {
+                              borderColor: "oklch(0.55 0.28 195 / 0.12)",
+                              background: "oklch(0.06 0.01 200)"
+                            },
+                            children: [
+                              { key: "crypto-fetch", label: "Crypto Fetch" },
+                              {
+                                key: "crypto-trading",
+                                label: "Crypto Trading Analytics"
                               },
-                              className: menuItemCls,
-                              style: { borderColor: "oklch(0.55 0.28 195 / 0.12)" },
-                              "data-ocid": "nav.affiliated_apps_item.2",
-                              children: "Fitness Tracker"
-                            }
-                          ),
-                          /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                            "div",
-                            {
-                              className: "relative",
-                              onMouseLeave: () => setAffiliatedGamingOpen(false),
-                              children: [
-                                /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                                  "button",
-                                  {
-                                    type: "button",
-                                    role: "menuitem",
-                                    onClick: () => {
-                                      setAffiliatedGamingOpen((p) => !p);
-                                    },
-                                    onMouseEnter: () => setAffiliatedGamingOpen(true),
-                                    className: cn(
-                                      menuItemCls,
-                                      "flex items-center justify-between"
-                                    ),
-                                    "aria-haspopup": "true",
-                                    "aria-expanded": affiliatedGamingOpen,
-                                    "data-ocid": "nav.affiliated_apps_item.3",
-                                    children: [
-                                      /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Character Driven Gaming" }),
-                                      /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                        ChevronRight,
-                                        {
-                                          size: 10,
-                                          className: "flex-shrink-0 text-cyan-400/50"
-                                        }
-                                      )
-                                    ]
-                                  }
-                                ),
-                                affiliatedGamingOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                  "div",
-                                  {
-                                    className: "absolute top-0 left-full ml-0.5 z-[80] min-w-[200px]",
-                                    style: dropdownPanelStyle,
-                                    role: "menu",
-                                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                                      "button",
-                                      {
-                                        type: "button",
-                                        role: "menuitem",
-                                        onClick: () => {
-                                          setAffiliatedAppsOpen(false);
-                                          setAffiliatedGamingOpen(false);
-                                          setUnderConstructionMsg(true);
-                                        },
-                                        className: menuItemCls,
-                                        "data-ocid": "nav.affiliated_apps_subitem.1",
-                                        children: "Quest: The Awakening"
-                                      }
-                                    )
-                                  }
-                                )
-                              ]
-                            }
-                          )
-                        ]
-                      }
-                    )
-                  ] })
-                ] })
+                              { key: "crypto-lottery", label: "Crypto Lottery" }
+                            ].map((sub2, si) => /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                              "button",
+                              {
+                                type: "button",
+                                onClick: () => {
+                                  setCryptoModalTopic(sub2.key);
+                                  closePanel();
+                                },
+                                className: "w-full text-left pl-6 pr-3 py-2 classified-badge tracking-widest uppercase border-b last:border-b-0 hover:bg-cyan-400/5 transition-colors duration-150",
+                                style: {
+                                  fontSize: "0.56rem",
+                                  color: "oklch(0.55 0.22 195 / 0.85)",
+                                  borderColor: "oklch(0.55 0.28 195 / 0.08)"
+                                },
+                                "data-ocid": `nav.panel_crypto_subitem.${si + 1}`,
+                                children: [
+                                  "▸ ",
+                                  sub2.label
+                                ]
+                              },
+                              sub2.key
+                            ))
+                          }
+                        )
+                      ] }),
+                      /* @__PURE__ */ jsxRuntimeExports.jsx(
+                        "button",
+                        {
+                          type: "button",
+                          onClick: () => {
+                            setUnderConstructionMsg(true);
+                            closePanel();
+                          },
+                          className: "w-full text-left px-3 py-2 classified-badge tracking-widest uppercase border-b hover:bg-cyan-400/5 transition-colors duration-150",
+                          style: {
+                            fontSize: "0.58rem",
+                            color: "oklch(0.60 0.25 195 / 0.9)",
+                            borderColor: "oklch(0.55 0.28 195 / 0.12)"
+                          },
+                          "data-ocid": "nav.panel_affiliated_fitness_button",
+                          children: "Fitness Tracker"
+                        }
+                      ),
+                      /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                        /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                          "button",
+                          {
+                            type: "button",
+                            onClick: () => setAffiliatedGamingOpen((p) => !p),
+                            className: "w-full text-left px-3 py-2 classified-badge tracking-widest uppercase border-b last:border-b-0 flex items-center justify-between hover:bg-cyan-400/5 transition-colors duration-150",
+                            style: {
+                              fontSize: "0.58rem",
+                              color: "oklch(0.60 0.25 195 / 0.9)",
+                              borderColor: "oklch(0.55 0.28 195 / 0.12)"
+                            },
+                            "aria-expanded": affiliatedGamingOpen,
+                            "data-ocid": "nav.panel_affiliated_gaming_toggle",
+                            children: [
+                              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "Character Driven Gaming" }),
+                              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                                "span",
+                                {
+                                  className: cn(
+                                    "transition-transform duration-200 inline-block",
+                                    affiliatedGamingOpen && "rotate-180"
+                                  ),
+                                  style: { fontSize: "0.5rem" },
+                                  children: "▾"
+                                }
+                              )
+                            ]
+                          }
+                        ),
+                        affiliatedGamingOpen && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { background: "oklch(0.06 0.01 200)" }, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                          "button",
+                          {
+                            type: "button",
+                            onClick: () => {
+                              setUnderConstructionMsg(true);
+                              closePanel();
+                            },
+                            className: "w-full text-left pl-6 pr-3 py-2 classified-badge tracking-widest uppercase hover:bg-cyan-400/5 transition-colors duration-150",
+                            style: {
+                              fontSize: "0.56rem",
+                              color: "oklch(0.55 0.22 195 / 0.85)"
+                            },
+                            "data-ocid": "nav.panel_gaming_subitem.1",
+                            children: "▸ Quest: The Awakening"
+                          }
+                        ) })
+                      ] })
+                    ]
+                  }
+                )
               ] })
+            ] })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "relative px-4 py-3 flex-shrink-0",
+              style: { borderTop: "1px solid oklch(0.55 0.28 195 / 0.15)" },
+              children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                "p",
+                {
+                  className: "classified-badge text-center",
+                  style: {
+                    fontSize: "0.47rem",
+                    color: "oklch(0.55 0.28 195 / 0.35)"
+                  },
+                  children: "GULAG DAO — PATRIOT RESISTANCE NETWORK"
+                }
+              )
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: "relative h-0.5 w-full flex-shrink-0",
+              style: {
+                background: "linear-gradient(90deg, transparent, oklch(0.65 0.26 65 / 0.5), oklch(0.55 0.28 195 / 0.7), transparent)"
+              }
             }
           )
         ]
@@ -30296,80 +30414,7 @@ function Navigation() {
         onClose: () => setShowWhitelistComingSoon(false)
       }
     ),
-    dossierModalOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(DossierModal, { onClose: () => setDossierModalOpen(false) }),
-    open && /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      "div",
-      {
-        className: "fixed inset-0 z-[100] flex",
-        "aria-modal": "true",
-        "aria-label": "Portal dossier",
-        "data-ocid": "nav.dossier_dialog",
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            "button",
-            {
-              type: "button",
-              className: "absolute inset-0 bg-background/80 backdrop-blur-sm",
-              onClick: () => setOpen(false),
-              "aria-label": "Close dossier",
-              tabIndex: -1
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative ml-auto w-80 max-w-full h-full bg-card border-l border-primary/30 shadow-[-8px_0_32px_oklch(0.55_0.28_195/0.1)] flex flex-col", children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "circuit-texture absolute inset-0 pointer-events-none opacity-50" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "relative z-10 flex flex-col h-full", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center justify-between p-5 border-b border-primary/20", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "flex items-center gap-2", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Shield, { size: 14, className: "text-primary" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-primary", children: "OPEN DOSSIER" })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  "button",
-                  {
-                    type: "button",
-                    onClick: () => setOpen(false),
-                    className: "text-muted-foreground hover:text-primary transition-colors p-1",
-                    "aria-label": "Close",
-                    "data-ocid": "nav.dossier_close_button",
-                    children: /* @__PURE__ */ jsxRuntimeExports.jsx(X, { size: 16 })
-                  }
-                )
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                "nav",
-                {
-                  className: "flex-1 py-4 overflow-y-auto",
-                  "aria-label": "Dossier portal list",
-                  children: PORTALS.map((portal2, i) => {
-                    if (!isValidPath(portal2.path)) return null;
-                    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                      Link,
-                      {
-                        to: portal2.path,
-                        onClick: () => setOpen(false),
-                        className: cn(
-                          "flex flex-col gap-1 px-5 py-4 border-b border-border/20 transition-all duration-200",
-                          "hover:bg-primary/5 group",
-                          currentPath === portal2.path && "bg-primary/5 border-l-2 border-l-primary"
-                        ),
-                        "data-ocid": `nav.dossier_item.${i + 1}`,
-                        children: [
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-primary/60 group-hover:text-primary transition-colors", children: portal2.classified }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "font-display font-bold text-foreground text-sm uppercase tracking-wide group-hover:text-primary transition-colors", children: portal2.label }),
-                          /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: "classified-badge text-muted-foreground/50 text-[0.55rem]", children: portal2.tagline })
-                        ]
-                      },
-                      portal2.id
-                    );
-                  })
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "p-5 border-t border-primary/20", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-muted-foreground/40 text-center", children: "GULAG DAO — PATRIOT RESISTANCE NETWORK" }) })
-            ] })
-          ] })
-        ]
-      }
-    )
+    dossierModalOpen && /* @__PURE__ */ jsxRuntimeExports.jsx(DossierModal, { onClose: () => setDossierModalOpen(false) })
   ] });
 }
 const rootRoute = createRootRoute({
@@ -30488,8 +30533,8 @@ function PortalLayout({
     {
       className: cn(
         "relative min-h-screen flex flex-col bg-background",
-        "pt-28 pb-20"
-        // offset fixed two-row nav; pb-20 clears fixed footer
+        "pt-16 pb-20"
+        // offset single-row fixed nav (h-14 = 3.5rem ≈ pt-14, pt-16 adds breathing room); pb-20 clears fixed footer
       ),
       "data-ocid": `${portal2.id}.page`,
       children: [
@@ -30503,7 +30548,7 @@ function PortalLayout({
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
-            className: "pointer-events-none fixed top-28 left-0 w-16 h-16 z-10",
+            className: "pointer-events-none fixed top-16 left-0 w-16 h-16 z-10",
             "aria-hidden": true,
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-4 left-4 w-8 h-px bg-primary/30" }),
@@ -30514,7 +30559,7 @@ function PortalLayout({
         /* @__PURE__ */ jsxRuntimeExports.jsxs(
           "div",
           {
-            className: "pointer-events-none fixed top-28 right-0 w-16 h-16 z-10",
+            className: "pointer-events-none fixed top-16 right-0 w-16 h-16 z-10",
             "aria-hidden": true,
             children: [
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-4 right-4 w-8 h-px bg-primary/30" }),
@@ -39538,6 +39583,52 @@ function GovernancePage() {
             whileInView: { opacity: 1, y: 0 },
             viewport: { once: true },
             transition: { duration: 0.5 },
+            "data-ocid": "governance.gulag_token_section",
+            children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border border-primary/25 bg-card/20 relative overflow-hidden", children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute top-0 left-0 w-8 h-8", "aria-hidden": true, children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-0 left-0 w-8 h-px bg-primary/60" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-0 left-0 w-px h-8 bg-primary/60" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute top-0 right-0 w-8 h-8", "aria-hidden": true, children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-0 right-0 w-8 h-px bg-primary/60" }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "absolute top-0 right-0 w-px h-8 bg-primary/60" })
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "p-8 flex flex-col gap-8", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "classified-badge text-primary/70 mb-4", children: "//GULAG TOKEN — GOVERNANCE CREDENTIAL//" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("h2", { className: "font-display font-black text-lg md:text-2xl uppercase tracking-tight text-foreground mb-4", children: "GULAG Token — Governance Credential" }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-mono text-sm text-muted-foreground leading-relaxed max-w-3xl", children: "The GULAG Token is the governance instrument of Gulag DAO — a credential, not a currency. It represents ownership, standing, and voting authority within the DAO’s sovereign ecosystem. One token. One voice. Earned, not purchased." })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "grid md:grid-cols-2 gap-6 font-mono text-sm text-muted-foreground", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border-l border-primary/30 pl-4", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-primary font-bold uppercase text-xs mb-2", children: "Acquisition Channels" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "leading-relaxed", children: "GULAG Tokens enter participant wallets through exactly two verified channels: (1) Direct purchase through the official DAO Token Sale portal — an ongoing opportunity throughout the life of the DAO, not limited to any pre-sale window. (2) Participation Rewards — earned through governance activity, mission contribution, ecosystem development, and community engagement. There is no third channel. There are no exceptions." })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border-l border-primary/30 pl-4", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-primary font-bold uppercase text-xs mb-2", children: "The Onboarding Gate" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "leading-relaxed", children: "Token balance alone confers no rights. Every governance function — voting, proposal submission, reward eligibility, treasury participation — requires a verified Gulag DAO Persona. No profile. No vote. No standing. This is enforced by code, not policy." })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border-l border-primary/30 pl-4", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-primary font-bold uppercase text-xs mb-2", children: "Secondary Market Firewall" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "leading-relaxed", children: "Tokens acquired on secondary markets carry zero DAO utility. Governance weight is calculated from the DAO’s internal issuance registry — not raw wallet balance. Even registered participants cannot re-import externally purchased tokens. The registry is the source of truth." })
+                  ] }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border-l border-primary/30 pl-4", children: [
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "text-primary font-bold uppercase text-xs mb-2", children: "The Dual-Arena Model" }),
+                    /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "leading-relaxed", children: "Inside the DAO: all participants operate under anti-whaling protocols — governance influence is bounded, token accumulation is governed, the playing field is enforced by code. Outside the DAO: whales may accumulate freely on secondary markets with no DAO restrictions. These two arenas do not connect. Secondary market accumulation produces zero additional governance power. A whale holding 10,000 tokens bought on a DEX has the same DAO standing as someone with none — unless they completed onboarding through proper channels." })
+                  ] })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "border-t border-primary/20 pt-4 text-center", children: /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: "font-display font-black text-primary/80 text-sm uppercase tracking-widest italic", children: "“Don’t get outplayed. Don’t get out-voted.”" }) })
+              ] })
+            ] })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          motion.section,
+          {
+            initial: { opacity: 0, y: 24 },
+            whileInView: { opacity: 1, y: 0 },
+            viewport: { once: true },
+            transition: { duration: 0.5 },
             "data-ocid": "governance.voting_section",
             children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "border border-primary/25 bg-card/20 relative overflow-hidden", children: [
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "absolute top-0 left-0 w-8 h-8", "aria-hidden": true, children: [
@@ -40644,6 +40735,21 @@ function HomePage() {
         className: "relative z-10 flex-1 flex flex-col lg:flex-row items-center justify-center min-h-[calc(100vh-4rem)] max-w-7xl mx-auto w-full px-6 py-12 gap-8 lg:gap-16",
         "data-ocid": "hero.section",
         children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "img",
+            {
+              src: "/assets/watch_tower.png",
+              alt: "",
+              "aria-hidden": true,
+              className: "absolute left-0 top-0 h-full w-auto max-w-xs object-cover pointer-events-none select-none",
+              style: {
+                zIndex: 1,
+                WebkitMaskImage: "linear-gradient(to right, black 55%, transparent 95%)",
+                maskImage: "linear-gradient(to right, black 55%, transparent 95%)",
+                opacity: 0.85
+              }
+            }
+          ),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             motion.div,
             {
